@@ -1,4 +1,4 @@
-# nanoCluster Bill of Materials
+# Bill of Materials
 
 ## Cluster
 
