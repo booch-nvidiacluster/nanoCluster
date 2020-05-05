@@ -1,9 +1,21 @@
 # nanoCluster Bill of Materials
 
 NVIDIA Jetson Nano Development Kit (4)<br>
-Quantity: 4<br>
 Source: <a href="https://www.amazon.com/NVIDIA-Jetson-Nano-Developer-Kit/dp/B07PZHBDKT">https://www.amazon.com/NVIDIA-Jetson-Nano-Developer-Kit/dp/B07PZHBDKT</a><br>
-<img width="400pt" src="/Documentation/Images/Jetson Nano.jpg" alt="Jetson Nano">
 
-<img width="400pt" src="/Documentation/Images/Grand Central.jpg" alt="Grand Central">
-<img width="275pt" src="/Documentation/Images/TFT Shield.jpg" alt="TFT Shield">
+SanDisk 64GB SD Memory Card (4)<br>
+Source: <a href="https://www.amazon.com/SanDisk-Ultra-UHS-I-Memory-SDSDUNC-064G-GN6IN/dp/B0143IIP4W">https://www.amazon.com/SanDisk-Ultra-UHS-I-Memory-SDSDUNC-064G-GN6IN/dp/B0143IIP4W</a><br>
+
+Samsung T5 500GB SSD (4)<br>
+Source: <a href="https://www.amazon.com/Samsung-T5-Portable-SSD-MU-PA500B/dp/B073GZBT36">https://www.amazon.com/Samsung-T5-Portable-SSD-MU-PA500B/dp/B073GZBT36</a><br>
+
+Intel Dual Band Wireless Card (4)<br>
+Source: <a href="https://www.amazon.com/Intel-Dual-Band-Wireless-Ac-8265/dp/B01MZA1AB2">https://www.amazon.com/Intel-Dual-Band-Wireless-Ac-8265/dp/B01MZA1AB2</a><br>
+
+Molex Antenna (4)<br>
+Source: <a href="https://www.arrow.com/en/products/2042811100/molex">https://www.arrow.com/en/products/2042811100/molex</a><br>
+
+Cooling Fan (4)<br>
+Source: <a href="https://geekworm.com/products/4007-40mm-4cm-40-40-7-dc-5v-cooling-fan-for-nvidia-jetson-nano-developer-kit">https://geekworm.com/products/4007-40mm-4cm-40-40-7-dc-5v-cooling-fan-for-nvidia-jetson-nano-developer-kit</a>
+
+
