@@ -28,8 +28,11 @@ Source: <a href="https://www.adafruit.com/product/1466">https://www.adafruit.com
 
 ## Console
 
-**Adafruit Grand Central M4** (4)<br>
+**Adafruit Grand Central M4** (1)<br>
 Source: <a href="https://www.adafruit.com/product/4064">https://www.adafruit.com/product/4064</a><br>
 
-**Adafruit 2.8" TFT Touch Shield** (4)<br>
-Source: <a href="https://www.adafruit.com/product/1947">https://www.adafruit.com/product/1947</a>
+**Adafruit 2.8" TFT Touch Shield** (1)<br>
+Source: <a href="https://www.adafruit.com/product/1947">https://www.adafruit.com/product/1947</a><br>
+
+**9V 1A Power Supply** (1)<br>
+Source: <a href="https://www.adafruit.com/product/63">https://www.adafruit.com/product/63</a>
