@@ -19,3 +19,17 @@ Source: <a href="https://www.arrow.com/en/products/2042811100/molex">https://www
 
 **Cooling Fan** (4)<br>
 Source: <a href="https://geekworm.com/products/4007-40mm-4cm-40-40-7-dc-5v-cooling-fan-for-nvidia-jetson-nano-developer-kit">https://geekworm.com/products/4007-40mm-4cm-40-40-7-dc-5v-cooling-fan-for-nvidia-jetson-nano-developer-kit</a><br>
+
+**Jumper Shunt** (4)<br>
+Source: <a href="https://www.adafruit.com/product/3525">https://www.adafruit.com/product/3525</a><br>
+
+**5V 4A Power Supply** (4)<br>
+Source: <a href="https://www.adafruit.com/product/1466">https://www.adafruit.com/product/1466</a><br>
+
+## Console
+
+**Adafruit Grand Central M4** (4)<br>
+Source: <a href="https://www.adafruit.com/product/4064">https://www.adafruit.com/product/4064</a><br>
+
+**Adafruit 2.8" TFT Touch Shield** (4)<br>
+Source: <a href="https://www.adafruit.com/product/1947">https://www.adafruit.com/product/1947</a>
