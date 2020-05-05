@@ -1,5 +1,5 @@
 # nanoCluster
-An edge compute platform for AGI
+An edge compute platform
 
 Slack channel for this project resides here: https://nanocluster-agi.slack.com
 
