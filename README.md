@@ -5,7 +5,7 @@ An edge compute platform.
 
 This is a simple cluster, composed of four NVIDIA Jetson Nano single board computers (which provide the cluster's essential computational resources) together with an AdaFruit Grand Central (which serves as the cluster's monitoring and control console). While the nanoCluster is a general-purpose edge compute platform suitable for many use cases, it was created primarly as an experimental platform for the development of <a href="https://github.com/booch-self/self">Self</a>, a hybrid neuro/symbolic architecture for AGI.
 
-The physical components of the nanoCluster are enumerated in its <a href="/Documentation/Bill%20of%20Materials.md">Bill of Materials</a>; the details of the cluster's physical assembly are described here, in <a href="/Documentation/Construction.md">Construction</a>.
+The physical components of the nanoCluster are enumerated in its <a href="/Documentation/Bill%20of%20Materials.md">Bill of Materials</a>; the details of the cluster's physical assembly are described in <a href="/Documentation/Construction.md">Construction</a>.
 
 The setup and provisioning of each Nano's sofware is found in <a href="/Documentation/Nano%20Software.md">Nano Software</a>, while the software for the console is found in <a href="/Documentation/Console%20Software.md">Console Software</a>.
 
