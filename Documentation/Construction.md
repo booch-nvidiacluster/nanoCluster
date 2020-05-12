@@ -4,7 +4,7 @@ The nanoCluster has a small footprint, measuring 24" long and 3" wide (not count
 <img src="/Documentation/Images/top.jpg" alt="Top View">
 <img src="/Documentation/Images/bottom.jpg" alt="Bottom View">
 
-Each of the four NVIDID Jetson Nanos as well as the Adafruit Grand Central are secured to a wooden base using four nylon nuts, bolts, and spaces.
+Each of the four NVIDID Jetson Nanos as well as the Adafruit Grand Central are secured to a wooden base using four nylon nuts, bolts, and spaces. Eight rubber feet keep the base raised.
 
 <img src="/Documentation/Images/bottom detail.jpg" alt="Bottom Detail View">
 
@@ -25,7 +25,7 @@ An SSD is positioned to the right of each Nano, using two repurposed cable clamp
 
 <img src="/Documentation/Images/nano detail 3.jpg" alt="Nano Detail 3">
 
-The console - consisting of the Adfruit Grand Central and a TFT Touch Shield - is positioned to the far left of the wooden base. All the cables coming from each Nano to the console are twisted to reduce crosstalk and then outed under each board. Because of the way the TFT obscures some of the Grand Central pins, it is necessary to clip four of the unused pins on the TFT and then use L-shaped male-to-male adaptors to connect serial pairs from two of the Nanos to the console.
+The console - consisting of the Adfruit Grand Central and a TFT Touch Shield - is positioned to the far left of the wooden base. All the cables coming from each Nano to the console are twisted to reduce crosstalk and then routed under each board. Because of the way the TFT obscures some of the Grand Central pins, it is necessary to clip four of the unused pins on the TFT and then use L-shaped male-to-male adaptors to connect serial pairs from two of the Nanos to the console.
 
 <img src="/Documentation/Images/console.jpg" alt="Console">
 <img src="/Documentation/Images/console detail 1.jpg" alt="Console Detail 1">
