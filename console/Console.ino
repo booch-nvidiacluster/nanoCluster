@@ -1,3 +1,17 @@
+// This is the software that powers the console in the nanoCluster. It serves
+// two use cases: to display the state of each node in the cluster and to
+// permit the user to power off individual nodes. The software is targeted to
+// an Adafruit Grand Central, to which is attached a TFT Touch Shield. This
+// software is conceptually simple. There are abstractions for each of the
+// console's major components: an individual node, a serial communication
+// channel for each node, a node's general purpose IO connections, the
+// display, and the touchscreen. Because these are each just singletons,
+// they are implemented not as classes but as simple data structures. Each
+// node goes through a lifecycle - from powered off to powering on to
+// powered on to booting to booted to logging in to logged in - and once
+// logged in its CPU and memory utilization are queried regularly according
+// to its heartbeat, until it is again powered off by user command.
+
 #include "Arduino.h"
 #include "Adafruit_GFX.h"
 #include "Adafruit_ILI9341.h"
@@ -9,7 +23,6 @@
 #include "wiring_private.h"
 
 // Nodes ***********************************************************************
-//
 // A cluster is composed of nodes, each of which represents an independent
 // computational resource.
 
@@ -18,8 +31,8 @@
 // In the lifecycle of a node, it takes time to bring each change of state to
 // a stable place (for example, powering up takes a short amount of time before
 // a node can start booting, while booting itself takes several seconds). These
-// delays have no precise theoretic function behind them, but rather were gathered
-// by experimentation.
+// delays have no precise theoretic function behind them, but rather were
+// gathered by experimentation.
 
 const int poweringOnDelay = 2000;
 const int confirmPowerOnDelay = 1000;
@@ -31,15 +44,16 @@ const int writeDelay = 50;
 const int readDelay = 50;
 
 // Each node's username and password must be set in accordance with how a
-// node's software is set up. Having this information in the clear is
+// node's software is configured. Having this information in the clear is
 // admittedly not particuarly secure, but then, this cluster was never meant to
-// roam in the wild.
+// be set loose in the wild.
 
 const String userName = "xxxx";
 const String password = "xxxxxxxxxxx";
 
-// These strings label each state of a node in its lifecycle, and serve to make
-// visible that state to the user.
+// These strings label each state of a node over its lifecycle (until the
+// node's real name can be discerned) and serve to make visible that state to
+// the user.
 
 const String poweredOffName = "Powered off";
 const String poweringOnName = "Powering on...";
@@ -48,11 +62,14 @@ const String bootingName = "Booting...";
 const String bootedName = "Booted";
 const String loggingInName = "Logging in...";
 
+// These strings label the IP of a node over its lifecycle (until the node's
+// real IP can be discerned).
+
 const String defaultIP = "xxx.xxx.x.xx";
 const String noIP = "";
 
-// These strings serve as the Ubntu terminal commands the console directs to each node
-// during setup and operation.
+// These strings serve as the Ubntu terminal commands the console directs to
+// each node during setup and operation.
 
 const String requestHostname = "hostname";
 const String requestIP = "ping -c 1 ";
@@ -61,13 +78,14 @@ const String requestPowerOffSuffix = " | sudo -S shutdown -P now";
 const String requestCPUUtilization = "mpstat";
 const String requestMemoryUtilization = "free";
 
-// In the lifetime of a node, it passes through several different states.
+// Each node passes through several different states during its lifecycle.
 
 enum nodeState {poweredOff, poweringOn, poweredOn, booting, booted, loggingIn, loggedIn};
 
-// An individual node is represented by a unique ID, a name znd its IP address. It
-// progresses through several different states, and once logged in, its heartbeat, CPU
-// utiliization, and and memory utilization are tracked.
+// An individual node is represented by a unique ID, a name and its IP address.
+// It progresses through several different states and once logged in, its name
+// and IP address are discerned and its heartbeat, CPU utiliization, and and
+// memory utilization are reqularly queried.
 
 typedef struct node {
   int id;
@@ -81,9 +99,9 @@ typedef struct node {
 
 };
 
-// A cluster is composed of several individual nodes; collectively, we keep count of
-// the number of nodes powered on, the number of nodes booted, and the number of nodes
-// logged in.
+// A cluster is composed of several individual nodes; collectively, we keep
+// count of the number of nodes powered on, the number of nodes booted,
+// and the number of nodes logged in.
 
 int totalNodesPoweredOn = 0;
 int totalNodesBooted = 0;
@@ -91,7 +109,8 @@ int totalNodesLoggedIn = 0;
 
 node nodes[clusterSize];
 
-// initializeNodes is a constructor that sets the initial state of an individual node.
+// initializeNodes is a constructor that sets the initial state of an
+// individual node.
 
 void initializeNodes() {
 
@@ -109,6 +128,12 @@ void initializeNodes() {
 }
 
 // Node serial communication ***************************************************
+// Each node communicates to the console via its own serial channel, which
+// means that the console must embrace a different channel for each node in
+// the cluster. One channel (Serial1) is predefined in the Grand Central
+// environment, but the other three must be configured.
+
+// Here we define the pin assignments for the three additional serial channels.
 
 #define serial2TX 14
 #define serial2RX 15
@@ -117,27 +142,38 @@ void initializeNodes() {
 #define serial4TX 18
 #define serial4RX 19
 
+// Here we define the baud rate of each channel, together with a constant
+// representing the value of a new line sent or received during transmission.
+
 const int baudRate = 115200;
 const int newLine = 10;
+
+// Here we declare the three additional serial channels, together with
+// helper functions required by the Grand Central to connect each
+// channel to its approprite interrupt handler (which are part of the
+// Uart class definition).
 
 Uart Serial2(&sercom5, serial2TX, serial2RX, SERCOM_RX_PAD_1, UART_TX_PAD_0);
 Uart Serial3(&sercom1, serial3TX, serial3RX, SERCOM_RX_PAD_1, UART_TX_PAD_0);
 Uart Serial4(&sercom4, serial4TX, serial4RX, SERCOM_RX_PAD_1, UART_TX_PAD_0);
 
-void SERCOM1_0_Handler() {Serial3.IrqHandler();}
-void SERCOM1_1_Handler() {Serial3.IrqHandler();}
-void SERCOM1_2_Handler() {Serial3.IrqHandler();}
-void SERCOM1_3_Handler() {Serial3.IrqHandler();}
- 
+void SERCOM5_0_Handler() {Serial2.IrqHandler();}
+void SERCOM5_1_Handler() {Serial2.IrqHandler();}
+void SERCOM5_2_Handler() {Serial2.IrqHandler();}
+void SERCOM5_3_Handler() {Serial2.IrqHandler();}
+
 void SERCOM4_0_Handler() {Serial4.IrqHandler();}
 void SERCOM4_1_Handler() {Serial4.IrqHandler();}
 void SERCOM4_2_Handler() {Serial4.IrqHandler();}
 void SERCOM4_3_Handler() {Serial4.IrqHandler();}
 
-void SERCOM5_0_Handler() {Serial2.IrqHandler();}
-void SERCOM5_1_Handler() {Serial2.IrqHandler();}
-void SERCOM5_2_Handler() {Serial2.IrqHandler();}
-void SERCOM5_3_Handler() {Serial2.IrqHandler();}
+void SERCOM1_0_Handler() {Serial3.IrqHandler();}
+void SERCOM1_1_Handler() {Serial3.IrqHandler();}
+void SERCOM1_2_Handler() {Serial3.IrqHandler();}
+void SERCOM1_3_Handler() {Serial3.IrqHandler();}
+
+// initializeSerialCommunication is a constructor that sets the initial
+// state of the serial channels.
 
 void initializeSerialCommunication() {
   
@@ -155,6 +191,9 @@ void initializeSerialCommunication() {
 
 }
 
+// serialIsAvailable is an accessor function that returns true if there
+// is data ready to be read for given serial channel.
+
 boolean serialIsAvailable(int nodeNumber) {
 
   switch (nodeNumber) {
@@ -166,6 +205,9 @@ boolean serialIsAvailable(int nodeNumber) {
   }
   
 }
+
+// readSerial is an accessor function that returns the next available
+// byte for a given serial channel.
 
 int readSerial(int nodeNumber) 
 {
@@ -179,6 +221,9 @@ int readSerial(int nodeNumber)
   }
   
 }
+
+// readSerialLine is an accessor function that reads bytes from a
+// given serial channel upto and including a new line terminator.
 
 String readSerialLine(int nodeNumber) {
 
@@ -198,6 +243,9 @@ String readSerialLine(int nodeNumber) {
   
 }
 
+// writeSerial is a mutator function that write a byte to the 
+// given serial channel.
+
 void writeSerial(int nodeNumber, int output) {
 
   switch (nodeNumber) {
@@ -209,6 +257,10 @@ void writeSerial(int nodeNumber, int output) {
   
 }
 
+// writeSerialLine is a mutator function that writes a string
+// to the given serial channel, then termiates that string with
+// a new line.
+
 void writeSerialLine(int nodeNumber, String line) {
 
   for (int characterPosition = 0; characterPosition < line.length(); characterPosition++)
@@ -219,6 +271,9 @@ void writeSerialLine(int nodeNumber, String line) {
 
 }
 
+// flushSerial is a manager function that clears the buffer of the given
+// serial channel.
+
 void flushSerial(int nodeNumber) {
 
   int output;
@@ -227,6 +282,14 @@ void flushSerial(int nodeNumber) {
     output = readSerial(nodeNumber);
   
 }
+
+// parseIP is a helper function that takes a string and parses the IP
+// address found therein. There is no error checking taking place here:
+// the function assumes that the given string is well-formed, having
+// derived as the response to a requestIP command sent across a serial
+// channel to a given node. By well-formed, the function expects the IP
+// address to reside between the first set of matched parenthesis in the
+// given string.
 
 String parseIP(String line) {
 
@@ -238,6 +301,14 @@ String parseIP(String line) {
   return line.substring(leftParenthesis + 1, rightParenthesis);
   
 }
+
+// parseCPUUtilization is a helper function that takes a string and
+// parses the value found therein. There is no error checking taking
+// place here: the function assumes that the given string is well-formed,
+// having derived as a response to a requestCPUUtilization command
+// sent across a serial channel to a given node. By well-formed, the
+// function expects a percentage value in the last numeric token in
+// the given string.
 
  int parseCPUUtilization(String line) {
 
@@ -257,6 +328,16 @@ String parseIP(String line) {
   return cpuUtilization;
 
  }
+
+// parseMemoryUtilization is a helper function that takes a string and
+// parses the value found therein. There is no error checking taking place
+// here: the function assumes that the given string is well-formed, having
+// derived as a response to a requestMemoryUtilization command sent across
+// a serial channel to a given node. By well-formed, the function expects to
+// find two numeric values, the leftmost enumerating the total amount of
+// primary memory in a node, and the right most enumerating the total amount of
+// available memory in that node. These two values are parsed, and a percentage
+// value is calculated.
 
  int parseMemoryUtilization(String line) {
 
