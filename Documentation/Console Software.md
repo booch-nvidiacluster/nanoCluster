@@ -10,6 +10,6 @@ The console's software is targeted to an Adafruit Grand Central, to which is att
 <img src="/Documentation/Images/Grand Central.jpg" alt="Grand Central">
 <img src="/Documentation/Images/TFT Shield.jpg" alt="TFT Shield">
 
-The console's software is conceptually simple. There are abstractions for each of the console's major components: an individual node, a serial communication channel for each node, a node's general purpose IO connections, the display, and the touchscreen. Because these are each just singletons, they are implemented not as classes but as simple data structures. Each node goes through a lifecycle - from powered off to powering on to powered on to booting to booted to loggin in to logged in - and once logged in, according to its heartbeat, its CPU and memory utilization are queried regularly, until it is powered off again by user command.
+The console's software is conceptually simple. There are abstractions for each of the console's major components: an individual node, a serial communication channel for each node, a node's general purpose IO connections, the display, and the touchscreen. Because these are each just singletons, they are implemented not as classes but as simple data structures. Each node goes through a lifecycle - from powered off to powering on to powered on to booting to booted to logging in to logged in - and once logged in, its CPU and memory utilization are queried regularly according to its heartbeat, until it is powered off again by user command.
 
 The console's source code resides <a href="../console">here</a>.
