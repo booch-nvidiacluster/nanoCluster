@@ -8,9 +8,18 @@
 #include "Wire.h"                   
 #include "wiring_private.h"
 
-// Nodes ***********************************************************************s
+// Nodes ***********************************************************************
+//
+// A cluster is composed of nodes, each of which represents an independent
+// computational resource.
 
 #define clusterSize 4
+
+// In the lifecycle of a node, it takes time to bring each change of state to
+// a stable place (for example, powering up takes a short amount of time before
+// a node can start booting, while booting itself takes several seconds). These
+// delays have no precise theoretic function behind them, but rather were gathered
+// by experimentation.
 
 const int poweringOnDelay = 2000;
 const int confirmPowerOnDelay = 1000;
@@ -21,8 +30,16 @@ const int confirmLoggedInDelay = 0;
 const int writeDelay = 50;
 const int readDelay = 50;
 
-const String userName = "nano";
-const String password = "Turing7Test*";
+// Each node's username and password must be set in accordance with how a
+// node's software is set up. Having this information in the clear is
+// admittedly not particuarly secure, but then, this cluster was never meant to
+// roam in the wild.
+
+const String userName = "xxxx";
+const String password = "xxxxxxxxxxx";
+
+// These strings label each state of a node in its lifecycle, and serve to make
+// visible that state to the user.
 
 const String poweredOffName = "Powered off";
 const String poweringOnName = "Powering on...";
@@ -34,6 +51,9 @@ const String loggingInName = "Logging in...";
 const String defaultIP = "xxx.xxx.x.xx";
 const String noIP = "";
 
+// These strings serve as the Ubntu terminal commands the console directs to each node
+// during setup and operation.
+
 const String requestHostname = "hostname";
 const String requestIP = "ping -c 1 ";
 const String requestPowerOff = "echo ";
@@ -41,9 +61,13 @@ const String requestPowerOffSuffix = " | sudo -S shutdown -P now";
 const String requestCPUUtilization = "mpstat";
 const String requestMemoryUtilization = "free";
 
-const int requestUtilizationThreshold = (clusterSize * 2);
+// In the lifetime of a node, it passes through several different states.
 
 enum nodeState {poweredOff, poweringOn, poweredOn, booting, booted, loggingIn, loggedIn};
+
+// An individual node is represented by a unique ID, a name znd its IP address. It
+// progresses through several different states, and once logged in, its heartbeat, CPU
+// utiliization, and and memory utilization are tracked.
 
 typedef struct node {
   int id;
@@ -57,11 +81,17 @@ typedef struct node {
 
 };
 
+// A cluster is composed of several individual nodes; collectively, we keep count of
+// the number of nodes powered on, the number of nodes booted, and the number of nodes
+// logged in.
+
 int totalNodesPoweredOn = 0;
 int totalNodesBooted = 0;
 int totalNodesLoggedIn = 0;
 
 node nodes[clusterSize];
+
+// initializeNodes is a constructor that sets the initial state of an individual node.
 
 void initializeNodes() {
 
