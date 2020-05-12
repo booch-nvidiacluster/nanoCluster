@@ -1,14 +1,15 @@
 # Console Software
-The cluster's monitoring and control console
+The cluster's monitoring and control console.
 
 <img src="/Documentation/Images/console.jpg" alt="Console">
 
-The console serves two use cases: to display the state of each node, and to permit the user to power off individual nodes. The console's display is divided into several rows, each of which represents a single node. During the lifecycle of a node, its state is display here, and once a node is logged in, node's name is displayed along with its IP addres. Below these labels are two bars: the grey one representing the node's CPU utilization, and the blue one representing the node's primary memory utilization. To the right of these lables is a power icon, which can be touched to power off a node. in the center of each power icon is a blinking dot, representing the node's heartbeat.
+The console serves two use cases: to display the state of each node in the cluster and to permit the user to power off individual nodes. The console's display is divided into several rows, each of which represents a single node. During the lifecycle of a node, its state is displayed here. Once a node is logged in, the node's name is displayed along with its IP address. Below these labels are two bars, the gray one representing the node's CPU utilization and the blue one representing the node's primary memory utilization. To the right of these lables is a power icon which can be touched to power off a node. In the center of each power icon is a blinking dot, mirroring the node's heartbeat.
 
-This is a simple cluster, composed of four NVIDIA Jetson Nano single board computers (which provide the cluster's essential computational resources) together with an AdaFruit Grand Central (which serves as the cluster's monitoring and control console). While the nanoCluster is a general-purpose edge compute platform suitable for many use cases, it was created primarly as an experimental platform for the development of <a href="https://github.com/booch-self/self">Self</a>, a hybrid neuro/symbolic architecture for AGI.
+The console's software is targeted to an Adafruit Grand Central, to which is attached a TFT Touch Shield.
 
-operation: dispay contents/control contens
-why no classes
-concept basic state machine (init cycle)
+<img src="/Documentation/Images/Grand Central.jpg" alt="Grand Central">
+<img src="/Documentation/Images/TFT Shield.jpg" alt="TFT Shield">
 
-nodes
+The console's software is conceptually simple. There are abstractions for each of the console's major components: a single node, a serial communication channel for each node, a node's general purpose IO connections, the display, and the touchscreen. Because these are each just singletons, they are implemented not as classes but as simple data structures. Each node goes through a lifecycle - from powered off to powering on to powered on to booting to booted to loggin in to logged in - and once logged in, according to its heartbeat, its CPU and memory utilization are queried regularly, until it is powered off again by user command.
+
+The console's source code resides <a href="../console/Console.ino">here</a>.
