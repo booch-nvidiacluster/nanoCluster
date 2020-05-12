@@ -684,6 +684,12 @@ void displayHeartbeat(int nodeNumber, boolean value) {
 }
 
 // Touchscreen *****************************************************************
+// The console's touchscreen overlays its display, and is used to permit
+// the user to power off individual nodes.
+
+// Here we have a plethora of constants that represent the properties
+// of the touchscreen, with regions corresponding to the visualization of
+// of each node.
 
 const int touchSensitivity = 40;
 const int touchDelay = 250;
@@ -692,14 +698,22 @@ const int touchBoxPadding = 10;
 const int touchBoxOffset = touchBoxPadding / 2;
 const int touchBoxSize = (powerOuterRadius * 2) + touchBoxPadding;
 
+// A touchBox represents a rectangular region on the display that is
+// resonsive to a user's touch.
+
 typedef struct touchBox {
   TS_Point upperLeft;
   TS_Point bottomRight;
 };
 
+// Here we declare an instance of the touchscreen and its corresponding boxes.
+
 touchBox touchBoxes[clusterSize];
 
 Adafruit_FT6206 touchscreen = Adafruit_FT6206();
+
+// initializeTouchscreen is a constructor that sets the initial state of the
+// touchscreen.
 
 void initializeTouchscreen() {
 
@@ -717,6 +731,9 @@ void initializeTouchscreen() {
 
 // *****************************************************************************
 
+// poweringOnNodes is the first function in the set up phase of each node,
+// serving to visualize to the user that the cluster is awake.
+
 void poweringOnNodes() {
   
   for (int nodeNumber = 0; nodeNumber < clusterSize; nodeNumber++) { 
@@ -729,6 +746,11 @@ void poweringOnNodes() {
   delay(poweringOnDelay);
     
 }
+
+// confirmPoweredOnNodes is the second function in the set up phase of
+// each node, serving to confirm and then visualize that a node is powered on.
+// If it is discovered that a given node is in fact not powered up, it is 
+// marked as such and the cluster's set up is allowed to proceed.
 
 void confirmPoweredOnNodes() {
 
@@ -752,6 +774,10 @@ void confirmPoweredOnNodes() {
 
 }
 
+// bootingNodes is the third function in the set up phase of each node,
+// serving to visualize to the user which nodes have power and are
+// proceeding to boot.
+
 void bootingNodes () {
 
   for (int nodeNumber = 0; nodeNumber < clusterSize; nodeNumber++) {
@@ -766,6 +792,14 @@ void bootingNodes () {
   delay(bootingDelay);
   
 }
+
+// confirmBootedNodes is the fourth function in the set up phase of each
+// node, serving to confirm and then visualize that a node has booted.
+// This is perhaps the most complex phase in a node's lifecycle. During
+// this time, a node pushes out a long and complex stream of output
+// and this function looks for an indicator that the booting process
+// has in fact completed. There is no error-checking that takes place:
+// if a node fails to boot, the start up process will hang.
 
 void confirmBootedNodes() {
 
@@ -980,6 +1014,14 @@ void listenToHeartbeat() {
 
 // *****************************************************************************
 
+// setUp is a function that is exectuted when the console is first powered up,
+// encompassing two phases: initialization (of the console itself as well as
+// each node and its corresponding parts) and the progress of a simple state
+// machine (that tracks the collective lifecyle of each node). There is no
+// error-checking taking place here: we assume that all nodes are well-behaved,
+// and if they are not, set up will hang (with the user able to visualize exactly
+// where the process failed by examining the display).
+
 void setup() {
 
   initializeNodes();
@@ -997,6 +1039,11 @@ void setup() {
   confirmLoggedInNodes();
 
 }
+
+// loop is a function that runs continuously after the console has
+// successfully completed set up. Here, we check to see if the
+// user has touched any node's power buttons, and we listen for
+// each node's heartbeat.
 
 void loop(void) {
 
