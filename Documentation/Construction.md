@@ -8,6 +8,8 @@ Each of the four NVIDID Jetson Nanos as well as the Adafruit Grand Central are s
 
 <img src="/Documentation/Images/bottom detail.jpg" alt="Bottom Detail View">
 
+There is a jumper shunt placed on J48, which directs the Nano to draw its power from the barrel jack rather than the micro-USB port (see also https://www.jetsonhacks.com/2019/04/10/jetson-nano-use-more-power/). The cooling fan, anchored on top of the Nano's heatsink, is connected to J15 (see https://www.jetsonhacks.com/2019/09/08/jetson-nano-add-a-fan/). The wireless card and antenna are placed below each Nano, and are connected to M.2 Key E (see https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/).
+
 There are four signal connections from each Nano to the console:
 * powerOn (black wire)
 * heartbeat (white wire)
