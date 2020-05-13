@@ -1,4 +1,4 @@
-# Console Software
+# Console Software Documentation
 The cluster's monitoring and control console.
 
 <img src="/Documentation/Images/console.jpg" alt="Console">
