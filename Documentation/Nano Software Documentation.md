@@ -9,7 +9,8 @@ Various bits of code, needed in support of this provisioning, reside <a href="..
 
  ## Ubuntu
  
- ```sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
+ ```
+ sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
  ```
  
  ## Python
