@@ -3,8 +3,20 @@ The cluster's essential computational resource.
 
 <img src="/Documentation/Images/Jetson Nano.jpg" alt="Jetson Nano">
 
-Lorem ipsum dolor sit amet, et nam probo consectetuer. Tibique qualisque pro te. An laoreet eligendi posidonium duo, solet similique ne vis, in hinc eros hendrerit nam. Stet utroque ius ut. Eirmod invidunt intellegam vis an, platonem principes intellegam no sea. Nec ubique dolorem lobortis eu, nec alii prima praesent ad, libris eligendi eu his.
+Here are receipes for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Apache, and MySQL - plus various libraries for general development, frameworks for AI, and an infrastructure for hosting microservices.
+
+Various bits of code, needed in support of reside <a href="../nano">here</a>.
+
+ ## Ubuntu
  
- ## Base Software Provisioning
+ ## Python
  
- Lorem ipsum dolor sit amet, et nam probo consectetuer. Tibique qualisque pro te. An laoreet eligendi posidonium duo, solet similique ne vis, in hinc eros hendrerit nam. Stet utroque ius ut. Eirmod invidunt intellegam vis an, platonem principes intellegam no sea. Nec ubique dolorem lobortis eu, nec alii prima praesent ad, libris eligendi eu his.
+ ## Apache
+ 
+ ## MySql
+ 
+ ## Libraries
+ 
+ ## Frameworks
+ 
+ ## Microservices
