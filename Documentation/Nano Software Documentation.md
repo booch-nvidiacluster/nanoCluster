@@ -22,8 +22,7 @@ sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
 
 5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
 
-      Disks -> Format -> Compatible with modern systems and hard drives
-  
+      Disks -> Format -> Compatible with modern systems and hard drives<br>
       Disks -> Add Partition -> 500GB | nanoCluster#SSD | internal disk
 
 6. Copy the root file system to the SSD (write down the SSD's UUID for later use).
@@ -100,137 +99,79 @@ sudo apt install gir1.2-notify-0.7
       Software ->  installed -> remove
 
       a. Activity Log Monitor
-      
-      b. Aislerot Solitaire
-      
-      c. Amazon
-      
-      d. Calendar
-      
-      e. Cheese
-      
-      f. Deja Dup Backup Tool
-      
-      g. Document Viewer
-      
-      h. Eye of Gnome
-      
-      i. File Roller
-      
-      j. GNOME Calculator
-      
-      k. GNOME Fonts
-      
-      l. GNOME Mahjongg
-      
-      m. GNOME Mines
-      
-      n. GNOME Power Statistics
-      
-      o. GNOME Screenshot
-      
-      p. GNOME Sudkuo
-      
-      q. Ibus Table
-      
-      r. Input Method
-      
-      s. LibreOffice
-      
-      t. LibreOffice Calc
-      
-      u. LibreOffice Draw
-      
-      v. LibreOffice Impress
-      
-      w. LibreOffice Math
-      
-      x. LibreOffice Writer
-      
-      y. Photo Lens for Unity
-      
-      z. PrintSettings
-      
-      aa. Remmina
-      
-      bb. RhythmBox
-      
-      cc. Seahorse
-      
-      dd. Shotwell
-      
-      ee. SimpleScan
-      
-      ff. Thunderbird Mail
-      
-      gg. ToDo
-      
-      hh. Transmission
-      
-      ii. UXTerm
-      
-      jj. Videos
-      
-      kk. Vim
-      
+      b. Aislerot Solitaire      
+      c. Amazon      
+      d. Calendar      
+      e. Cheese      
+      f. Deja Dup Backup Tool      
+      g. Document Viewer      
+      h. Eye of Gnome      
+      i. File Roller      
+      j. GNOME Calculator      
+      k. GNOME Fonts      
+      l. GNOME Mahjongg      
+      m. GNOME Mines      
+      n. GNOME Power Statistics      
+      o. GNOME Screenshot      
+      p. GNOME Sudkuo      
+      q. Ibus Table      
+      r. Input Method      
+      s. LibreOffice      
+      t. LibreOffice Calc      
+      u. LibreOffice Draw      
+      v. LibreOffice Impress      
+      w. LibreOffice Math      
+      x. LibreOffice Writer      
+      y. Photo Lens for Unity      
+      z. PrintSettings      
+      aa. Remmina      
+      bb. RhythmBox      
+      cc. Seahorse      
+      dd. Shotwell      
+      ee. SimpleScan      
+      ff. Thunderbird Mail      
+      gg. ToDo      
+      hh. Transmission      
+      ii. UXTerm      
+      jj. Videos      
+      kk. Vim      
       ll. XTerm
       
       This leaves eleven user applications.
       
-      a. Chromium Web Browser
-      
-      b, Disk Usage Analyzer
-      
-      c. gedit
-      
-      d. GNOME Central Control
-      
-      e. GNOME Disks
-      
-      f. GNOME Help
-      
-      g. GNOME Software
-      
-      h. GNOME System Monitor
-      
-      i. IBus Preferences
-      
-      j. Startup Applications
-      
+      a. Chromium Web Browser      
+      b, Disk Usage Analyzer      
+      c. gedit      
+      d. GNOME Central Control      
+      e. GNOME Disks      
+      f. GNOME Help      
+      g. GNOME Software      
+      h. GNOME System Monitor      
+      i. IBus Preferences      
+      j. Startup Applications      
       k. Terminal
       
-      This also leave four system applications.
+      This also leaves four system applications.
       
-      a) Nautilus
-      
-      b) Software
-      
-      c) Software Updater
-      
+      a) Nautilus      
+      b) Software      
+      c) Software Updater      
       d) Unity Control Center
       
 17. Use the Nano's System Settings application to customize the desktop.
 
-      System Settings -> Appearance -> Background -> Colors & Gradients -> black
-      
-      System Settings -> Brightness & Look -> Turn screen off when inactive -> never
-      
-      System Settings -> Brightness & Look -> Lock -> off
-      
-      System Settings -> Brightness & Look -> Require my password when walking from suspend -> off
-      
+      System Settings -> Appearance -> Background -> Colors & Gradients -> black      
+      System Settings -> Brightness & Look -> Turn screen off when inactive -> never      
+      System Settings -> Brightness & Look -> Lock -> off      
+      System Settings -> Brightness & Look -> Require my password when walking from suspend -> off      
       System Settings -> Bluetooth -> off
 
 18. Configure the Nano's launcher.
 
-      Delete all desktop items.
-      
-      Unlock L4T-README from the launcher.
-      
+      Delete all desktop items.      
+      Unlock L4T-README from the launcher.      
       Unlock 64 GB Volume from the launcher.
-      
-      Launch the Terminal application and lock it to the launcher.
-      
+      Launch the Terminal application and lock it to the launcher.      
       Launch the Chromium Web Browser and lock it to the launcher.
       
 19. Patch desktok sharing (see also https://www.hackster.io/news/getting-started-with-the-nvidia-jetson-nano-developer-kit-43aa7c298797).
