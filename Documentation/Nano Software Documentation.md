@@ -175,21 +175,21 @@ sudo apt install gir1.2-notify-0.7
       Launch the Chromium Web Browser and lock it to the launcher.
       
 19. Patch desktok sharing (see also https://www.hackster.io/news/getting-started-with-the-nvidia-jetson-nano-developer-kit-43aa7c298797).
-<pre><code>csudo vim /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
+<pre><code>sudo vim /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
     <i>Add the following key</i>
-        \<key name=\'enabled\' type=\'b\'\>
-	  \<summary\>
-	    Enable remote access to the desktop
-	  <\/summary\>
-          \<description\>
-            If true, allows remote access to the desktop via the RFB
-            protocol. Users on remote machines may then connect to the
-            desktop using a VNC viewer.
-          \<\/description\>
-          \<default\>
-	    false
-	  \</\default\>
-	\<\/key\>
+        <key name=\'enabled\' type=\'b\'>
+	    <summary>
+	        Enable remote access to the desktop
+	    </summary>
+            <description>
+                If true, allows remote access to the desktop via the RFB
+                protocol. Users on remote machines may then connect to the
+                desktop using a VNC viewer.
+            </description>
+            <default>
+	        false
+	    </default>
+	</key>
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas</code></pre>
 
 20. Use the Nano's System Settings application to customer desktop sharing.
