@@ -177,7 +177,7 @@ sudo apt install gir1.2-notify-0.7
 19. Patch desktok sharing (see also https://www.hackster.io/news/getting-started-with-the-nvidia-jetson-nano-developer-kit-43aa7c298797).
 <pre><code>sudo vim /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
     <i>Add the following key</i>
-        <key name=\'enabled\' type=\'b\'>
+        \<key name='enabled' type='b'\>
 	    <summary>
 	        Enable remote access to the desktop
 	    </summary>
