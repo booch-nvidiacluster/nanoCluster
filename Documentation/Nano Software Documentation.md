@@ -38,9 +38,9 @@ cd rootOnUSB
 ```
 cd /boot/extlinux
 sudo vi extlinux.conf
-    *change the INITRD line to*
+    <em>change the INITRD line to</em>
         INTRD /boot/initrd-xusb.img
-    *change the APPEND ilne to the UUID for sda1*
+    <em>change the APPEND ilne to the UUID for sda1</em>
         APPEND ${cbootargs} root=UUID=<UUID for sda1> rootwait rootfstype=ext4
 ```
 
