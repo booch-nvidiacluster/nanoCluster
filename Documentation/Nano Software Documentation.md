@@ -43,6 +43,10 @@ sudo vim extlinux.conf
     Change the APPEND line to the UUID for sda1
         APPEND ${cbootargs} root=UUID=<UUID for sda1> rootwait rootfstype=ext4
 ```
+<pre><code>&lt;div class="footer"&gt;
+    &amp;copy; 2004 Foo Corporation
+&lt;/div&gt;
+<i>italic</i></code></pre>
 
 8. Reboot the Nano.
 ```
