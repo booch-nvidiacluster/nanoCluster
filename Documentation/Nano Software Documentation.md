@@ -3,7 +3,7 @@ The cluster's essential computational resource.
 
 <img src="/Documentation/Images/Jetson Nano.jpg" alt="Jetson Nano">
 
-Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Apache, and MySQL - together with various tools and libraries for general development, frameworks for AI, and an infrastructure for hosting microservices.
+Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Apache, and MySQL - together with various tools and libraries for general development, frameworks for artificial intelligence, and an infrastructure for hosting microservices.
 
 Several bits of code needed in support of this provisioning reside <a href="../nano">here</a>.
 
@@ -13,7 +13,7 @@ Several bits of code needed in support of this provisioning reside <a href="../n
  
 2.	Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
  
-3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano, then follow the on screen start up instructions to configure the computer's name (in the form *nanoCluster#*, where # is the node ID from 0 to 3), user account, and wireless connection (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
+3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano (but first ensure that the SSD is NOT yet connected to the Nano), then follow the on screen start up instructions to configure the computer's name (in the form *nanoCluster#*, where # is the node ID from 0 to 3), user account, and wireless connection (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
  
 4. Use the Nano's Terminal application to clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
 ```
@@ -64,7 +64,7 @@ sudo zramctl --reset /dev/zram2
 sudo zramctl --reset /dev/zram3
 ```
 
-11. Enable SSD swapspace (see also https://www.jetsonhacks.com/2019/04/14/jetson-nano-use-more-memory/).
+11. Enable SSD swapping (see also https://www.jetsonhacks.com/2019/04/14/jetson-nano-use-more-memory/).
 ```
 cd /home/nano/Downloads
 sudo git clone https://github.com/JetsonHacksNano/installSwapfile
@@ -90,10 +90,30 @@ sudo apt autoremove
 sudo systemctl set-default multi-user.target
 ```
 
-15.
+15. Patch notify.
+```
+sudo apt install gir1.2-notify-0.7
+```
 
-16.
+16. Use that Nano's Software application to remove various superflurous other applications.
 
+      Software ->  installed -> remove
+
+      a) Activity Log Monitor
+      b) Aislerot Solitaire
+      
+      This leaves eleven user applications
+      
+      a) Chromium Web Browser
+      b) Disk Usage Analyzer
+      
+      And four system appilcations
+      
+      a) Nautilus
+      b) Software
+      c) Software Updater
+      d) Unity Control Center
+      
 17.
 
 18.
