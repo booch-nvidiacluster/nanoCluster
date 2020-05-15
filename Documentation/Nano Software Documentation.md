@@ -7,24 +7,24 @@ Here are instructions for provisioning each Nano in the cluster with a basic sta
 
 Several bits of code needed in support of this provisioning reside <a href="../nano">here</a>.
 
- ## Ubuntu
+## Ubuntu
  
- 1.	Download the Jetson Nano Developer Kit SD Card Image from https://developer.nvidia.com/embedded/jetpack to a host computer.
+1.	Download the Jetson Nano Developer Kit SD Card Image from https://developer.nvidia.com/embedded/jetpack to a host computer.
  
- 2.	Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
+2.	Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
  
- 3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano, then follow the on screen start up instructions to configure the computer name (in the form nanoCluster#, where # is the node ID from 0 to 3), user account, and wireless connection (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
+3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano, then follow the on screen start up instructions to configure the computer name (in the form nanoCluster#, where # is the node ID from 0 to 3), user account, and wireless connection (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
  
- 4. Use the Nano's Terminal application to clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/)
- ```
- sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
- ```
-Unless otherwise specified, all future  
- 5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form nanoCluster#SSD, where # is the node ID from 0 to 3), format, and mount the SSD.
- 
-    Disks -> Format -> Compatible with modern systems and hard drives
-    Disks -> Add Partition -> 500GB | nanoCluster#SSD | internal disk
- 
+4. Use the Nano's Terminal application to clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
+```
+sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
+```
+
+5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form nanoCluster#SSD, where # is the node ID from 0 to 3), format, and mount the SSD.
+
+  Disks -> Format -> Compatible with modern systems and hard drives
+  Disks -> Add Partition -> 500GB | nanoCluster#SSD | internal disk
+
 6. Copy the root file system to the SSD.
 ```
 cd rootOnUSB
@@ -87,14 +87,14 @@ sudo apt unminimize
 sudo apt autoremove
 ```
 
- ## Python
+## Python
  
- ## Apache
+## Apache
  
- ## MySql
+## MySql
  
- ## Libraries
+## Libraries
  
- ## Frameworks
+## Frameworks
  
- ## Microservices
+## Microservices
