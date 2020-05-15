@@ -37,11 +37,11 @@ cd rootOnUSB
 7. Redirect the root file system.
 ```
 cd /boot/extlinux
-sudo vi extlinux.conf
-  Change the INITRD line to
-    INTRD /boot/initrd-xusb.img
-  Change the APPEND line to the UUID for sda1
-    APPEND ${cbootargs} root=UUID=<UUID for sda1> rootwait rootfstype=ext4
+sudo vim extlinux.conf
+    Change the INITRD line to
+        INTRD /boot/initrd-xusb.img
+    Change the APPEND line to the UUID for sda1
+        APPEND ${cbootargs} root=UUID=<UUID for sda1> rootwait rootfstype=ext4
 ```
 
 8. Reboot the Nano.
