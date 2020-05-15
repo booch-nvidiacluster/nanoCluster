@@ -37,9 +37,9 @@ cd rootOnUSB
 7. Redirect the root file system.
 <pre><code>cd /boot/extlinux
 sudo vim extlinux.conf
-    <i>Change the INITRD line to</i>
+    <i>Change the INITRD line.</i>
         INTRD /boot/initrd-xusb.img
-    <i>Change the APPEND line to the UUID for sda1</i>
+    <i>Change the APPEND line to reflect the UUID for sda1.</i>
         APPEND ${cbootargs} root=UUID=<UUID for sda1> rootwait rootfstype=ext4</code></pre>
 
 8. Reboot the Nano.
@@ -95,36 +95,117 @@ sudo systemctl set-default multi-user.target
 sudo apt install gir1.2-notify-0.7
 ```
 
-16. Use that Nano's Software application to remove various superflurous other applications.
+16. Use the Nano's Software application to remove various superflurous other applications.
 
       Software ->  installed -> remove
 
-      a) Activity Log Monitor
-      b) Aislerot Solitaire
+      a. Activity Log Monitor
+      b. Aislerot Solitaire
+      c. Amazon
+      d. Calendar
+      e. Cheese
+      f. Deja Dup Backup Tool
+      g.	Document Viewer
+      h.	Eye of Gnome
+      i.	File Roller
+      j.	GNOME Calculator
+      k.	GNOME Fonts
+      l.	GNOME Mahjongg
+      m.	GNOME Mines
+      n.	GNOME Power Statistics
+      o.	GNOME Screenshot
+      p.	GNOME Sudkuo
+      q.	Ibus Table
+      r.	Input Method
+      s.	LibreOffice
+      t.	LibreOffice Calc
+      u.	LibreOffice Draw
+      v.	LibreOffice Impress
+      w.	LibreOffice Math
+      x.	LibreOffice Writer
+      y.	Photo Lens for Unity
+      z.	PrintSettings
+      aa.	Remmina
+      bb.	RhythmBox
+      cc.	Seahorse
+      dd.	Shotwell
+      ee.	SimpleScan
+      ff.	Thunderbird Mail
+      gg.	ToDo
+      hh.	Transmission
+      ii.	UXTerm
+      jj.	Videos
+      kk.	Vim
+      ll.	XTerm
+
+      This leaves eleven user applications.
       
-      This leaves eleven user applications
+      a. Chromium Web Browser
+      b, Disk Usage Analyzer
+      c. gedit
+      d. GNOME Central Control
+      e. GNOME Disks
+      f. GNOME Help
+      g. GNOME Software
+      h. GNOME System Monitor
+      i. IBus Preferences
+      j. Startup Applications
+      k. Terminal
       
-      a) Chromium Web Browser
-      b) Disk Usage Analyzer
-      
-      And four system appilcations
+      This also leave four system applications.
       
       a) Nautilus
       b) Software
       c) Software Updater
       d) Unity Control Center
       
-17.
+17. Use the Nano's System Settings application to customize the desktop.
 
-18.
+      System Settings -> Appearance -> Background -> Colors & Gradients -> black
+      System Settings -> Brightness & Look -> Turn screen off when inactive -> never
+      System Settings -> Brightness & Look -> Lock -> off
+      System Settings -> Brightness & Look -> Require my password when walking from suspend -> off
+      System Settings -> Bluetooth -> off
 
-19.
+18. Configure the Nano's launcher.
 
-20.
+      Delete all desktop items.
+      Unlock L4T-README from the launcher.
+      Unlock 64 GB Volume from the launcher.
+      Launch the Terminal application and lock it to the launcher.
+      Launch the Chromium Web Browser and lock it to the launcher.
+      
+19. Patch desktok sharing (see also https://www.hackster.io/news/getting-started-with-the-nvidia-jetson-nano-developer-kit-43aa7c298797).
+<pre><code>csudo vim /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
+    <i>Add the following key</i>
+        <key name='enabled' type='b'>
+			       <summary>Enable remote access to the desktop</summary>
+			       <description>
+				        If true, allows remote access to the desktop via the RFB
+				        protocol. Users on remote machines may then connect to the
+				        desktop using a VNC viewer.
+			      </description>
+			      <default>
+				       false
+			      </default>
+	     	</key>
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas</code></pre>
 
-21.
+20. Use the Nano's System Settings application to customer desktop sharing.
 
-22.
+      System Settings -> Desktop Sharing -> Allow others to view your desktop
+      System Settings -> Desktop Sharing -> Allow others to control your desktop
+      System Settings -> Desktop Sharing -> You must confirm access to this machine -> off
+
+21. Use the Nano's Startup Applications applications to launch virual network computing on start up.
+
+      Startup Applications -> Add -> Vino | /usr/lib/vino/vino-server | VNC server
+
+22. Configure virtual network computing.
+```
+gsettings set org.gnome.Vino require-encryption false
+gsettings set org.gnome.Vino prompt-enabled false
+```
 
 23. Reboot the Nano.
 ```
