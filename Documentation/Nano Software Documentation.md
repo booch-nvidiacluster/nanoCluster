@@ -177,19 +177,19 @@ sudo apt install gir1.2-notify-0.7
 19. Patch desktok sharing (see also https://www.hackster.io/news/getting-started-with-the-nvidia-jetson-nano-developer-kit-43aa7c298797).
 <pre><code>sudo vim /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
     <i>Add the following key</i>
-        \<key name='enabled' type='b'\>
-	    <summary>
+        &lt;key name='enabled' type='b'&gt;
+	    &lt;summary&gt;
 	        Enable remote access to the desktop
-	    </summary>
-            <description>
+	    &lt;/summary&gt;
+            &lt;description&gt;
                 If true, allows remote access to the desktop via the RFB
                 protocol. Users on remote machines may then connect to the
                 desktop using a VNC viewer.
-            </description>
-            <default>
+            &lt;/description&gt;
+            &lt;default&gt;
 	        false
-	    </default>
-	</key>
+	    &lt;/default&gt;
+	&lt;/key&gt;
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas</code></pre>
 
 20. Use the Nano's System Settings application to customer desktop sharing.
