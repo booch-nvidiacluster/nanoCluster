@@ -23,6 +23,7 @@ sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
 5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form nanoCluster#SSD, where # is the node ID from 0 to 3), format, and mount the SSD.
 
   Disks -> Format -> Compatible with modern systems and hard drives
+  
   Disks -> Add Partition -> 500GB | nanoCluster#SSD | internal disk
 
 6. Copy the root file system to the SSD.
