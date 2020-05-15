@@ -85,7 +85,7 @@ sudo apt unminimize
 sudo apt autoremove
 ```
 
-14. If you want to run a headless node, disable the GUI then proceed to step 23; otherwise proceed to the next step.
+14. If you want to run a headless node, disable the GUI then proceed to step 23; otherwise proceed to the step 15.
 ```
 sudo systemctl set-default multi-user.target
 ```
