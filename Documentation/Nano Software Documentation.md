@@ -9,15 +9,13 @@ Several bits of code, needed in support of this provisioning, reside <a href="..
 
  ## Ubuntu
  
- 1.	Download the Jetson Nano Developer Kit SD Card Image to a host computer from https://developer.nvidia.com/embedded/jetpack.
+ 1.	Download the Jetson Nano Developer Kit SD Card Image from https://developer.nvidia.com/embedded/jetpack to a host computer.
  
  2.	Write the image from the host computer to the memory card using https://www.balena.io/etcher/.
  
- 3. Install the memory card in the Nano.
+ 3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot it, then follow the start up instructions to configure the user account and wireless connection as described here https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot.
  
- 4. Attach the Nano to a monitor, keyboard, and mouse, boot it, then follow the start up instructions to configure the user account and wireless connection (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
- 
- 5. 
+ 4.
  
  ```
  sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
