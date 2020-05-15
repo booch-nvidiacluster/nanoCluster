@@ -13,14 +13,14 @@ Several bits of code needed in support of this provisioning reside <a href="../n
  
 2.	Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
  
-3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano, then follow the on screen start up instructions to configure the computer name (in the form nanoCluster#, where # is the node ID from 0 to 3), user account, and wireless connection (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
+3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano, then follow the on screen start up instructions to configure the computer's name (in the form *nanoCluster#*, where # is the node ID from 0 to 3), user account, and wireless connection (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
  
 4. Use the Nano's Terminal application to clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
 ```
 sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
 ```
 
-5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form nanoCluster#SSD, where # is the node ID from 0 to 3), format, and mount the SSD.
+5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
 
       Disks -> Format -> Compatible with modern systems and hard drives
   
@@ -83,6 +83,32 @@ sudo apt update
 sudo apt upgrade
 sudo apt unminimize
 sudo apt autoremove
+```
+
+14. If you want to run a headless node, disable the GUI then proceed to step 23; otherwise proceed to the next step.
+```
+sudo systemctl set-default multi-user.target
+```
+
+15.
+
+16.
+
+17.
+
+18.
+
+19.
+
+20.
+
+21.
+
+22.
+
+23. Reboot the Nano.
+```
+sudo reboot now
 ```
 
 ## Python
