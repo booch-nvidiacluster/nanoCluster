@@ -262,8 +262,35 @@ sudo wget <i>URL for nanoCluster#.jpg</i> -O nanoCluster#.jpg</code></pre>
 
 3. Confirm that these changes are properly installed by going to a host computer and entering the Nano's IP address in a browser.
  
-## MySql
+## MySQL
+
+1. Install MySQL (see also https://ubuntu.com/server/docs/databases-mysql)
+```
+sudo apt install mysql-server
+```
+
+2. Confirm that MySQL is running correctly.
+```
+sudo ss -tap | grep mysql
+```
  
+## Tools
+
+1. Install cmake (see also https://cmake.org)
+```
+sudo apt install cmake
+```
+
+2. Install curl (see also https://curl.haxx.se)
+```
+sudo apt install curl
+```
+
+3. Install gfortran (see also https://gcc.gnu.org/wiki/GFortran)
+```
+sudo apt install gfortran
+```
+
 ## Libraries
  
 ## Frameworks
