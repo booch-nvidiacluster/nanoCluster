@@ -214,6 +214,17 @@ sudo reboot now
 ```
 
 ## Python
+
+1. Install the latest Python installers (see also https://pypi.org/project/pip/)
+```
+sudo apt install python-pip
+sudo apt install python3-pip
+```
+
+2. Install Cython, a Python superset (see also https://cython.org)
+```
+sudo apt cython
+```
  
 ## Apache
  
