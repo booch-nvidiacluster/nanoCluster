@@ -277,29 +277,34 @@ sudo ss -tap | grep mysql
  
 ## Tools
 
-1. Install cmake, tools designed for building, testing, and packaging software (see also https://cmake.org)
+1. Install tools for building, testing, and packaging software (see also https://cmake.org)
 ```
 sudo apt install cmake
 ```
 
-2. Install curl, tools designed for transferring data (see also https://curl.haxx.se)
+2. Install tools for transferring data (see also https://curl.haxx.se)
 ```
 sudo apt install curl
 ```
 
-3. Install gfortran, tools designed for Fortran (see also https://gcc.gnu.org/wiki/GFortran)
+3. Install tools for Fortran (see also https://gcc.gnu.org/wiki/GFortran)
 ```
 sudo apt install gfortran
 ```
 
-4. Install sar, tools designed for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
+4. Install tools for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
 ```
 sudo apt install sysstat
 ```
 
 ## Libraries (Hardware)
 
-1. Install GPIO libraries, designed to support the Nano's general purpose input/output pins (see also https://github.com/NVIDIA/jetson-gpio)
+1. Install libraries for querying CPU information (see also https://pypi.org/project/grpcio/)
+```
+sudo pip3 install py-cpuinfo
+```
+
+2. Install libraries for manipulating the Nano's general purpose input/output pins (see also https://github.com/NVIDIA/jetson-gpio)
 ```
 sudo pip3 install Jetson.GPIO
 sudo groupadd -f -r gpio
@@ -310,14 +315,92 @@ sudo reboot now
 
 ## Libraries (Networking)
 
-1. Install portpicker libraries, designed for finding available network ports (see also https://github.com/google/python_portpicker)
+1. Install libraries for finding available network ports (see also https://pypi.org/project/portpicker/)
 ```
 sudo pip3 install portpicker
 ```
 
+## Lbraries (Python)
+
+1. Install libraries for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/)
+```
+sudo pip3 install gast
+```
+
+2. Install libraries for manipulating Python’s abstract syntax trees (see also https://pypi.org/project/astor/)
+```
+sudo pip3 install astor
+```
+
+3. Install libraries for declaring Python enumerations (see also https://pypi.org/project/enum34/)
+```
+sudo pip3 install enum34
+```
+
+4. Install libraries for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/)
+```
+sudo pip3 install wrapt
+```
+
+5. Install libraries for concurrency (see also https://pypi.org/project/futures3/)
+```
+sudo pipe install futures3
+```
+
+6. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
+```
+sudo pip3 install future
+```
+
+7. Install libraries for building Python applications (see also https://pypi.org/project/grpcio/).
+```
+sudo pip3 install absl-py
+```
+
+8. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/)
+```
+sudo pip3 install testresources
+```
+
+## Libraries (Data)
+
+1. Install libraries for storing hierarchical data  (see also https://www.hdfgroup.org/solutions/hdf5/)
+```
+sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev
+```
+
+2. Install libraries for manipulating HDF data (see also https://www.h5py.org)
+```
+sudo pip3 install p5py
+```
+
+## Libraries (Numeric)
+
+1. Instal libraries for scientific computing (see also https://numpy.org)
+```
+sudo pip3 install NumPy
+```
+
+2. Install libraries for linear algebra (see also http://math-atlas.sourceforge.net)
+```
+sudo apt install libatlas-base-div
+```
+
+## Libraries (Visualization)
+
+1. Install libraries for formatting terminal output (see also https://pypi.org/project/termcolor/)
+```
+sudo pip3 install termcolor
+```
+
+2. Install libraries for imaging (see also https://pypi.org/project/Pillow/)
+```
+sudo pip3 install pillow
+```
+
 ## Frameworks (Networking)
 
-1. Install grpcio frameworks, designed for remote procedure calls (see also https://grpc.io)
+1. Install frameworks for remote procedure calls (see also https://grpc.io)
 ```
 sudo pip install grpcio
 ```
