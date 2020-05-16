@@ -174,9 +174,9 @@ sudo apt install gir1.2-notify-0.7
       Launch the Terminal application and lock it to the launcher.      
       Launch the Chromium Web Browser and lock it to the launcher.
       
-19. Patch desktok sharing (see also https://www.hackster.io/news/getting-started-with-the-nvidia-jetson-nano-developer-kit-43aa7c298797).
+19. Patch desktop sharing (see also https://www.hackster.io/news/getting-started-with-the-nvidia-jetson-nano-developer-kit-43aa7c298797).
 <pre><code>sudo vim /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
-    <i>Add the following key</i>
+    <i>Add the following key.</i>
         &lt;key name='enabled' type='b'&gt;
 	    &lt;summary&gt;
 	        Enable remote access to the desktop
@@ -192,7 +192,7 @@ sudo apt install gir1.2-notify-0.7
 	&lt;/key&gt;
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas</code></pre>
 
-20. Use the Nano's System Settings application to customer desktop sharing.
+20. Use the Nano's System Settings application to customize desktop sharing.
 
       System Settings -> Desktop Sharing -> Allow others to view your desktop      
       System Settings -> Desktop Sharing -> Allow others to control your desktop      
@@ -215,10 +215,29 @@ sudo reboot now
 
 ## Python
 
-1. Install the latest Python installers (see also https://pypi.org/project/pip/)
+1. Install the latest Python package installers (see also https://pypi.org/project/pip/)
 ```
 sudo apt install python-pip
 sudo apt install python3-pip
+```
+
+2. Install the latest versions of Python (see also https://docs.python.org/3/)
+```
+sudo apt install python3.7
+sudo apt install python3.8
+```
+
+3. Direct Python3 to use Python3.8
+```
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 3
+```
+
+4. Confirm that Python3 directs to Python3.8
+```
+sudo update-alternatives --config python3
+python3 -V
 ```
 
 2. Install Cython, a Python superset (see also https://cython.org)
@@ -227,6 +246,21 @@ sudo apt cython
 ```
  
 ## Apache
+
+1. Install Apache (see also https://ubuntu.com/tutorials/install-and-configure-apache
+```
+sudo apt install apache2
+```
+
+2. Confirm that Apache is properly installed by going to a host computer and entering the Nano's IP address in a browser.
+
+3. Create an images directory for the Nano's web site and then download the appropriate jpeg from <a href="../nano/images">here</a>.
+```
+sudo mkdir /var/www/images
+```
+
+4. Upload the
+
  
 ## MySql
  
