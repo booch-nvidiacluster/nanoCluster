@@ -36,7 +36,7 @@ cd rootOnUSB
 7. Redirect the root file system.
 <pre><code>cd /boot/extlinux
 sudo vim extlinux.conf
-    <i>Change the INITRD line.</i>
+    <i>Change the INITRD line to the following.</i>
         INTRD /boot/initrd-xusb.img
     <i>Change the APPEND line to reflect the UUID for sda1.</i>
         APPEND ${cbootargs} root=UUID=<UUID for sda1> rootwait rootfstype=ext4</code></pre>
