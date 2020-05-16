@@ -276,27 +276,27 @@ sudo ss -tap | grep mysql
  
 ## Tools
 
-1. Install cmake, designed for building, testing, and packaging software (see also https://cmake.org)
+1. Install cmake, tools designed for building, testing, and packaging software (see also https://cmake.org)
 ```
 sudo apt install cmake
 ```
 
-2. Install curl, designed for transferring data (see also https://curl.haxx.se)
+2. Install curl, tools designed for transferring data (see also https://curl.haxx.se)
 ```
 sudo apt install curl
 ```
 
-3. Install gfortran, designed for Fortran (see also https://gcc.gnu.org/wiki/GFortran)
+3. Install gfortran, tools designed for Fortran (see also https://gcc.gnu.org/wiki/GFortran)
 ```
 sudo apt install gfortran
 ```
 
-4. Install sar, designed for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
+4. Install sar, tools designed for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
 ```
 sudo apt install sysstat
 ```
 
-## Libraries
+## Libraries (Hardware)
 
 1. Install GPIO libraries, designed to support the Nano's general purpose input/output pins (see also https://github.com/NVIDIA/jetson-gpio)
 ```
@@ -305,6 +305,13 @@ sudo groupadd -f -r gpio
 sudo usermod -a -G gpio nano
 sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d
 sudo reboot now
+```
+
+## Libraries (Networking)
+
+2. Install portpicker libraries, designed for finding available network ports (see also https://github.com/google/python_portpicker)
+```
+sudo pip3 install portpicker
 ```
 
 ## Frameworks
