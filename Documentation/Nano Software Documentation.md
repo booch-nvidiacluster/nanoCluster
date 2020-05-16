@@ -219,6 +219,7 @@ sudo reboot now
 ```
 sudo apt install python-pip
 sudo apt install python3-pip
+python3 -m pip install --upgrade pip
 ```
 
 2. Install the latest versions of Python (see also https://docs.python.org/3/)
@@ -240,11 +241,11 @@ sudo update-alternatives --config python3
 python3 -V
 ```
 
-2. Install Cython, a Python superset (see also https://cython.org)
+5. Install Cython, a Python superset (see also https://cython.org)
 ```
 sudo apt cython
 ```
- 
+
 ## Apache
 
 1. Install Apache (see also https://ubuntu.com/tutorials/install-and-configure-apache
@@ -314,11 +315,11 @@ sudo reboot now
 sudo pip3 install portpicker
 ```
 
-2. Install grpcio libraries, designed for remote procedure calls (see also https://pypi.org/project/grpcio/)
-```
-sudo pip3 install graciously
-```
+## Frameworks (Networking)
 
-## Frameworks
+1. Install grpcio frameworks, designed for remote procedure calls (see also https://grpc.io)
+```
+sudo pip install grpcio
+```
  
 ## Microservices
