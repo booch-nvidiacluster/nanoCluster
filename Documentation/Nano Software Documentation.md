@@ -254,14 +254,11 @@ sudo apt install apache2
 
 2. Confirm that Apache is properly installed by going to a host computer and entering the Nano's IP address in a browser.
 
-3. Replace the Nano's default web page using files from <a href="../nano">here</a> To find the proper URL for download for the html file, locate the appropriate file, select Raw, then use that URL. To find the proper URL for downloading the image, locate the appropriate file, select Download, then use that URL
-(in the form *index#.html* and *nanoCluster#.jpg*, where # is the node ID from 0 to 3). 
-```
-cd /var/www
+3. Replace the Nano's default web page using files from <a href="../nano">here</a> To get the URL for the html, find the appropriate html (in the form *index#.html* where # is the node ID from 0 to 3) then select Raw. To get the URL for the image (in the form *nanoCluster#.jpg* where # is the node ID from 0 to 3), find the appropriate file then select Download.
+<pre><code>cd /var/www
 sudo rm index.html
-sudo wget index#.html -O index.html
-sudo wget nanoCluster#.jpg -O nanoCluster#.jpg
-```
+sudo wget <i>URL for index#.html</i> -O index.html
+sudo wget <i>URL for nanoCluster#.jpg</i> -O nanoCluster#.jpg</code></pre>
 
 3. Confirm that these changes are properly installed by going to a host computer and entering the Nano's IP address in a browser.
  
