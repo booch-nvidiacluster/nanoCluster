@@ -309,9 +309,14 @@ sudo reboot now
 
 ## Libraries (Networking)
 
-2. Install portpicker libraries, designed for finding available network ports (see also https://github.com/google/python_portpicker)
+1. Install portpicker libraries, designed for finding available network ports (see also https://github.com/google/python_portpicker)
 ```
 sudo pip3 install portpicker
+```
+
+2. Install grpcio libraries, designed for remote procedure calls (see also https://pypi.org/project/grpcio/)
+```
+sudo pip3 install graciously
 ```
 
 ## Frameworks
