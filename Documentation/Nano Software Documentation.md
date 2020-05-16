@@ -254,13 +254,21 @@ sudo apt install apache2
 
 2. Confirm that Apache is properly installed by going to a host computer and entering the Nano's IP address in a browser.
 
-3. Create an images directory for the Nano's web site and then download the appropriate jpeg from <a href="../nano/images">here</a>.
+3. Create an images directory for the Nano's web site and then download the appropriate jpg from <a href="../nano/images">here</a> (from a file in the form *nanoCluster#.jpg*, where # is the node ID from 0 to 3).
 ```
 sudo mkdir /var/www/images
+cd /var/www/images
+sudo wget https://raw.githubusercontent.com/booch-nanocluster/nanoCluster/master/nano/images/nanoCluster#.jpg?token=AB2TPXJPEOUK3RXDO6NHBHC6X5J2I -O nanoCluster#.jpg
 ```
 
-4. Upload the
+4. Replace the Nano's web page (from a file in the form *index#.html*, where # is the node ID from 0 to 3).
+```
+cd ../html
+sudo rm index.html
+sudo wget https://raw.githubusercontent.com/booch-nanocluster/nanoCluster/master/nano/index#.html?token=AB2TPXM2BD7SJ7KFBV4XRIK6X5NT2 -O index.html
+```
 
+3. Confirm that these changes are properly installed by going to a host computer and entering the Nano's IP address in a browser.
  
 ## MySql
  
