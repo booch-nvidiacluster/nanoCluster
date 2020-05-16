@@ -9,9 +9,9 @@ Several bits of code needed in support of this provisioning reside <a href="../n
 
 ## Ubuntu
  
-1.	Download the Jetson Nano Developer Kit SD Card Image from https://developer.nvidia.com/embedded/jetpack to a host computer.
+1. Download the Jetson Nano Developer Kit SD Card Image from https://developer.nvidia.com/embedded/jetpack to a host computer.
  
-2.	Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
+2. Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
  
 3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano (but first ensure that the SSD is NOT yet connected to the Nano), then follow the on screen start up instructions to configure the computer's name (in the form *nanoCluster#*, where # is the node ID from 0 to 3), user account, and wireless connection (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
  
@@ -276,23 +276,37 @@ sudo ss -tap | grep mysql
  
 ## Tools
 
-1. Install cmake (see also https://cmake.org)
+1. Install cmake, designed for building, testing, and packaging software (see also https://cmake.org)
 ```
 sudo apt install cmake
 ```
 
-2. Install curl (see also https://curl.haxx.se)
+2. Install curl, designed for transferring data (see also https://curl.haxx.se)
 ```
 sudo apt install curl
 ```
 
-3. Install gfortran (see also https://gcc.gnu.org/wiki/GFortran)
+3. Install gfortran, designed for Fortran (see also https://gcc.gnu.org/wiki/GFortran)
 ```
 sudo apt install gfortran
 ```
 
+4. Install sar, designed for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
+```
+sudo apt install sysstat
+```
+
 ## Libraries
- 
+
+1. Install GPIO libraries, designed to support the Nano's general purpose input/output pins (see also https://github.com/NVIDIA/jetson-gpio)
+```
+sudo pip3 install Jetson.GPIO
+sudo groupadd -f -r gpio
+sudo usermod -a -G gpio nano
+sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d
+sudo reboot now
+```
+
 ## Frameworks
  
 ## Microservices
