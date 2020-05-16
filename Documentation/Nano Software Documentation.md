@@ -376,14 +376,19 @@ sudo pip3 install p5py
 
 ## Libraries (Numeric)
 
-1. Instal libraries for scientific computing (see also https://numpy.org)
+1. Install libraries for linear algebra (see also http://math-atlas.sourceforge.net)
+```
+sudo apt install libatlas-base-div
+```
+
+2. Install libraries for scientific computing (see also https://numpy.org)
 ```
 sudo pip3 install NumPy
 ```
 
-2. Install libraries for linear algebra (see also http://math-atlas.sourceforge.net)
+3. Install libraries for mathematical, scientific, and engineering computing (see also https://www.scipy.org)
 ```
-sudo apt install libatlas-base-div
+sudo apt install python3-scipy
 ```
 
 ## Libraries (Visualization)
