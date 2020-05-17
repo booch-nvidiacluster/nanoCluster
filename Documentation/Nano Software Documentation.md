@@ -3,7 +3,7 @@ The cluster's essential computational resource.
 
 <img src="/Documentation/Images/Jetson Nano.jpg" alt="Jetson Nano">
 
-Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Apache, and MySQL - together with various tools and libraries for general development, frameworks for artificial intelligence, and an infrastructure for hosting microservices.
+Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Apache, and MySQL - together with various tools and libraries for general development, frameworks for artificial intelligence and networking, and an infrastructure for hosting microservices.
 
 Several bits of code needed in support of this provisioning reside <a href="../nano">here</a>.
 
@@ -403,6 +403,15 @@ sudo pip3 install termcolor
 sudo pip3 install pillow
 ```
 
+## Frameworks (Artificial Intelligence)
+
+1. Install TensorFlow (see also 
+```
+sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 tensorflow
+sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 ‘tensorflow<2’
+```
+
+2. Install keras 
 ## Frameworks (Networking)
 
 1. Install frameworks for remote procedure calls (see also https://grpc.io)
