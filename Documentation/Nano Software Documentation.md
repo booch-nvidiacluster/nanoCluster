@@ -51,7 +51,7 @@ sudo reboot now
 sudo nvpmodel -m 0
 ```
  .
-10. Disable zram swap
+10. Disable zram swap (see also https://www.jetsonhacks.com/2019/11/28/jetson-nano-even-more-swap/).
 ```
 sudo swapoff /dev/zram0
 sudo swapoff /dev/zram1
