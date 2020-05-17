@@ -357,6 +357,11 @@ sudo pip3 install future
 sudo pip3 install absl-py
 ```
 
+8. Install libraries for managing Python packages (see also https://pypi.org/project/setuptools/)
+```
+sudo pip install setuptools
+```
+
 8. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/)
 ```
 sudo pip3 install testresources
