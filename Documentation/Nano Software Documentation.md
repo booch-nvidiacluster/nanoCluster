@@ -9,7 +9,7 @@ Several bits of code needed in support of this provisioning reside <a href="../n
 
 ## Ubuntu
  
-1. Download the Jetson Nano Developer Kit SD Card Image from https://developer.nvidia.com/embedded/jetpack to a host computer.
+1. Download the Jetson Nano Developer Kit SD Card Image from https://developer.nvidia.com/embedded/jetpack to a host computer (see also https://developer.nvidia.com/embedded/jetpack).
  
 2. Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
  
