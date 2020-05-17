@@ -243,7 +243,7 @@ python3 -V
 
 5. Install Cython, a Python superset (see also https://cython.org)
 ```
-sudo apt cython
+sudo apt install cython
 ```
 
 ## Apache
