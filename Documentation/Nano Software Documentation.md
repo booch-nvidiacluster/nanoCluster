@@ -25,7 +25,7 @@ sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
       Disks -> Format -> Compatible with modern systems and hard drives<br>
       Disks -> Add Partition -> 500GB | nanoCluster#SSD | internal disk
 
-6. Copy the root file system to the SSD (write down the SSD's UUID for later use).
+6. Copy the root file system to the SSD (you can ignore most of the warnings along the way). Write down the SSD's UUID for later use.
 ```
 cd rootOnUSB
 ./addUSBToInitramfs.sh
