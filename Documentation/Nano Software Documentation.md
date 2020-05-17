@@ -299,7 +299,7 @@ sudo apt install sysstat
 
 ## Libraries (Hardware)
 
-1. Install libraries for querying CPU information (see also https://pypi.org/project/grpcio/)
+1. Install libraries for querying CPU information (see also https://pypi.org/project/py-cpuinfo/)
 ```
 sudo pip3 install py-cpuinfo
 ```
@@ -352,7 +352,7 @@ sudo pipe install futures3
 sudo pip3 install future
 ```
 
-7. Install libraries for building Python applications (see also https://pypi.org/project/grpcio/).
+7. Install libraries for building Python applications (see also https://pypi.org/project/absl-py/).
 ```
 sudo pip3 install absl-py
 ```
