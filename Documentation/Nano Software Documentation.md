@@ -71,9 +71,9 @@ cd installSwapfile
 ./installSwapfile.sh -s 12
 ```
 
-12. Reboot the Nano.
+12. Make the Nano a headless node.
 ```
-sudo reboot now
+sudo systemctl set-default multi-user.target
 ```
 
 13. Refresh the installation.
@@ -83,12 +83,7 @@ sudo apt upgrade
 sudo apt autoremove
 ```
 
-14. Make the Nano a headless node.
-```
-sudo systemctl set-default multi-user.target
-```
-
-15. Reboot the Nano.
+14. Reboot the Nano.
 ```
 sudo reboot now
 ```
