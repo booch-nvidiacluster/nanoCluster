@@ -83,12 +83,10 @@ sudo reboot now
 ```
 sudo apt install python-pip
 sudo apt install python3-pip
-sudo python3 -m pip install --upgrade --force-reinstall pip
 ```
 
 2. Install the latest versions of Python (see also https://docs.python.org/3/)
 ```
-sudo apt install python3.7
 sudo apt install python3.8
 ```
 
