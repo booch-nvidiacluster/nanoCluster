@@ -80,7 +80,6 @@ sudo reboot now
 ```
 sudo apt update
 sudo apt upgrade
-sudo apt unminimize
 sudo apt autoremove
 ```
 
