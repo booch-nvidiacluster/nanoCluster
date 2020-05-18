@@ -59,7 +59,7 @@ cd installSwapfile
 ./installSwapfile.sh -s 12
 ```
 
-11. Make the Nano a headless node.
+11. Make the Nano headless.
 ```
 sudo systemctl set-default multi-user.target
 ```
