@@ -126,22 +126,12 @@ sudo ss -tap | grep mysql
 sudo apt install curl
 ```
 
-2. Install tools for building, testing, and packaging software (see also https://cmake.org)
-```
-sudo apt install cmake
-```
-
-3. Install tools for transferring data (see also https://curl.haxx.se)
-```
-sudo apt install curl
-```
-
-4. Install tools for Fortran (see also https://gcc.gnu.org/wiki/GFortran)
+2. Install tools for Fortran (see also https://gcc.gnu.org/wiki/GFortran)
 ```
 sudo apt install gfortran
 ```
 
-4. Install tools for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
+3. Install tools for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
 ```
 sudo apt install sysstat
 ```
