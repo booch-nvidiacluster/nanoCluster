@@ -17,6 +17,7 @@ Several bits of code needed in support of this provisioning reside <a href="../n
  
 4. Use the Nano's Terminal application to clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
 ```
+cd home/Nano/Downloads
 sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
 ```
 
