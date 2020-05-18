@@ -140,7 +140,7 @@ sudo apt install sysstat
 
 1. Install libraries for querying CPU information (see also https://pypi.org/project/py-cpuinfo/)
 ```
-sudo pip3 install py-cpuinfo
+sudo -H pip3 install py-cpuinfo
 ```
 
 2. Install libraries for manipulating the Nano's general purpose input/output pins (see also https://github.com/NVIDIA/jetson-gpio)
