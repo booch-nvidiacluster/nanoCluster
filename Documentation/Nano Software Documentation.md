@@ -85,25 +85,7 @@ sudo apt install python-pip
 sudo apt install python3-pip
 ```
 
-2. Install the latest versions of Python (see also https://docs.python.org/3/)
-```
-sudo apt install python3.8
-```
-
-3. Direct Python3 to use Python3.8
-```
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 3
-```
-
-4. Confirm that Python3 directs to Python3.8
-```
-sudo update-alternatives --config python3
-python3 -V
-```
-
-5. Install Cython, a Python superset (see also https://cython.org)
+2. Install Cython, a Python superset (see also https://cython.org)
 ```
 sudo apt install cython
 ```
