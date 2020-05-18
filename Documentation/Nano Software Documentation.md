@@ -50,20 +50,8 @@ sudo reboot now
 ```
 sudo nvpmodel -m 0
 ```
- .
-10. Disable zram swap (see also https://www.jetsonhacks.com/2019/11/28/jetson-nano-even-more-swap/).
-```
-sudo swapoff /dev/zram0
-sudo swapoff /dev/zram1
-sudo swapoff /dev/zram2
-sudo swapoff /dev/zram3
-sudo zramctl --reset /dev/zram0
-sudo zramctl --reset /dev/zram1
-sudo zramctl --reset /dev/zram2
-sudo zramctl --reset /dev/zram3
-```
 
-11. Enable SSD swapping (see also https://www.jetsonhacks.com/2019/04/14/jetson-nano-use-more-memory/).
+10. Enable SSD swapping (see also https://www.jetsonhacks.com/2019/04/14/jetson-nano-use-more-memory/).
 ```
 cd /home/nano/Downloads
 sudo git clone https://github.com/JetsonHacksNano/installSwapfile
@@ -71,19 +59,19 @@ cd installSwapfile
 ./installSwapfile.sh -s 12
 ```
 
-12. Make the Nano a headless node.
+11. Make the Nano a headless node.
 ```
 sudo systemctl set-default multi-user.target
 ```
 
-13. Refresh the installation.
+12. Refresh the installation.
 ```
 sudo apt update
 sudo apt upgrade
 sudo apt autoremove
 ```
 
-14. Reboot the Nano.
+13. Reboot the Nano.
 ```
 sudo reboot now
 ```
