@@ -40,7 +40,7 @@ sudo vim extlinux.conf
     <i>Change the INITRD line to the following.</i>
         INTRD /boot/initrd-xusb.img
     <i>Change the APPEND line to reflect the UUID for sda1.</i>
-        APPEND ${cbootargs} root=UUID=<i>&lt;UUID for sda1%rt;</i> rootwait rootfstype=ext4</code></pre>
+        APPEND ${cbootargs} root=UUID=<i>&lt;UUID for sda1%gt;</i> rootwait rootfstype=ext4</code></pre>
 
 8. Reboot the Nano.
 ```
@@ -102,8 +102,8 @@ sudo apt install nginx
 3. Replace the Nano's default web page using files from <a href="../nano">here</a> To get the URL for the html, find the appropriate html (in the form *index#.html* where # is the node ID from 0 to 3) then select Raw. To get the URL for the image (in the form *nanoCluster#.jpg* where # is the node ID from 0 to 3), find the appropriate file then select Download.
 <pre><code>cd /var/www/html
 sudo rm index.nginx-debian.html
-sudo wget <i>URL for index#.html</i> -O index.html
-sudo wget <i>URL for nanoCluster#.jpg</i> -O nanoCluster#.jpg</code></pre>
+sudo wget <i>&rt;URL for index#.html&gt;</i> -O index.html
+sudo wget <i>&rt;URL for nanoCluster#.jpg&gt;</i> -O nanoCluster#.jpg</code></pre>
 
 3. Confirm that these changes are properly installed by going to a host computer and entering the Nano's IP address in a browser.
  
@@ -145,7 +145,7 @@ sudo -H pip3 install py-cpuinfo
 
 2. Install libraries for manipulating the Nano's general purpose input/output pins (see also https://pypi.org/project/Jetson.GPIO/)
 <pre><code>sudo groupadd -f -r gpio
-sudo usermod -a -G gpio <i>&lt;user ID&rt;</i>
+sudo usermod -a -G gpio <i>&lt;user ID&gt;</i>
 sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d
 sudo reboot now</code></pre>
 
