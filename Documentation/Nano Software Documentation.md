@@ -184,7 +184,7 @@ sudo -H pip3 install enum34
 
 4. Install libraries for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/)
 ```
-sudo pip3 install wrapt
+sudo -H pip3 install wrapt
 ```
 
 5. Install libraries for concurrency (see also https://pypi.org/project/futures3/)
