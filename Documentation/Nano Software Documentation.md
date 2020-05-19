@@ -40,7 +40,7 @@ sudo vim extlinux.conf
     <i>Change the INITRD line to the following.</i>
         INTRD /boot/initrd-xusb.img
     <i>Change the APPEND line to reflect the UUID for sda1.</i>
-        APPEND ${cbootargs} root=UUID=<UUID for sda1> rootwait rootfstype=ext4</code></pre>
+        APPEND ${cbootargs} root=UUID=<i>&lt;UUID for sda1%rt;</i> rootwait rootfstype=ext4</code></pre>
 
 8. Reboot the Nano.
 ```
@@ -145,7 +145,7 @@ sudo -H pip3 install py-cpuinfo
 
 2. Install libraries for manipulating the Nano's general purpose input/output pins (see also https://pypi.org/project/Jetson.GPIO/)
 <pre><code>sudo groupadd -f -r gpio
-sudo usermod -a -G gpio <i>user ID</i>
+sudo usermod -a -G gpio <i>&lt;user ID&rt;</i>
 sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d
 sudo reboot now</code></pre>
 
