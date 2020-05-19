@@ -143,7 +143,7 @@ sudo apt install sysstat
 sudo -H pip3 install py-cpuinfo
 ```
 
-2. Install libraries for manipulating the Nano's general purpose input/output pins (see also https://github.com/NVIDIA/jetson-gpio)
+2. Install libraries for manipulating the Nano's general purpose input/output pins (see also https://pypi.org/project/Jetson.GPIO/)
 ```
 sudo groupadd -f -r gpio
 sudo usermod -a -G gpio nano
