@@ -145,7 +145,6 @@ sudo -H pip3 install py-cpuinfo
 
 2. Install libraries for manipulating the Nano's general purpose input/output pins (see also https://github.com/NVIDIA/jetson-gpio)
 ```
-sudo -H pip install Jetson.GPIO
 sudo groupadd -f -r gpio
 sudo usermod -a -G gpio nano
 sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d
