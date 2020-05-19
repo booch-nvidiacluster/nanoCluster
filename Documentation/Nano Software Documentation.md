@@ -189,7 +189,7 @@ sudo -H pip3 install wrapt
 
 5. Install libraries for concurrency (see also https://pypi.org/project/futures3/)
 ```
-sudo -H pip install futures3
+sudo -H pip3 install futures3
 ```
 
 6. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
