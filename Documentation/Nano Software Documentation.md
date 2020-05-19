@@ -13,7 +13,7 @@ Several bits of code needed in support of this provisioning reside <a href="../n
  
 2. Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
  
-3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano (but first ensure that the SSD is NOT yet connected to the Nano), then follow the on screen start up instructions to configure the computer's name (in the form *nanoCluster#*, where # is the node ID from 0 to 3), user account, and wireless connection. The start up process may ask you to update your software (which is harmless to do) and to reboot along the way. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
+3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano (but first ensure that the SSD is NOT yet connected to the Nano), then follow the on screen start up instructions to configure the computer's name (in the form *nanoCluster#*, where # is the node ID from 0 to 3), user account (we use nano as the user ID, and wireless connection. The start up process may ask you to update your software (which is harmless to do) and to reboot along the way. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
  
 4. Use the Nano's Terminal application to clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
 ```
@@ -144,12 +144,10 @@ sudo -H pip3 install py-cpuinfo
 ```
 
 2. Install libraries for manipulating the Nano's general purpose input/output pins (see also https://pypi.org/project/Jetson.GPIO/)
-```
-sudo groupadd -f -r gpio
-sudo usermod -a -G gpio nano
+<pre><code>sudo groupadd -f -r gpio
+sudo usermod -a -G gpio <i>user ID</i>
 sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d
-sudo reboot now
-```
+sudo reboot now</code></pre>
 
 ## Libraries (Networking)
 
