@@ -102,8 +102,8 @@ sudo apt install nginx
 3. Replace the Nano's default web page using files from <a href="../nano">here</a> To get the URL for the html, find the appropriate html (in the form *index#.html* where # is the node ID from 0 to 3) then select Raw. To get the URL for the image (in the form *nanoCluster#.jpg* where # is the node ID from 0 to 3), find the appropriate file then select Download.
 <pre><code>cd /var/www/html
 sudo rm index.nginx-debian.html
-sudo wget <i>&rt;URL for index#.html&gt;</i> -O index.html
-sudo wget <i>&rt;URL for nanoCluster#.jpg&gt;</i> -O nanoCluster#.jpg</code></pre>
+sudo wget <i>&lt;URL for index#.html&gt;</i> -O index.html
+sudo wget <i>&lt;URL for nanoCluster#.jpg&gt;</i> -O nanoCluster#.jpg</code></pre>
 
 3. Confirm that these changes are properly installed by going to a host computer and entering the Nano's IP address in a browser.
  
