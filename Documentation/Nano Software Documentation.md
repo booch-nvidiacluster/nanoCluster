@@ -145,7 +145,7 @@ sudo -H pip3 install py-cpuinfo
 
 2. Install libraries for manipulating the Nano's general purpose input/output pins (see also https://github.com/NVIDIA/jetson-gpio)
 ```
-sudo pip3 install Jetson.GPIO
+sudo -H pip3 install Jetson.GPIO
 sudo groupadd -f -r gpio
 sudo usermod -a -G gpio nano
 sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d
@@ -156,24 +156,24 @@ sudo reboot now
 
 1. Install libraries for finding available network ports (see also https://pypi.org/project/portpicker/)
 ```
-sudo pip3 install portpicker
+sudo -H pip3 install portpicker
 ```
 
 ## Lbraries (Python)
 
 1. Install libraries for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/)
 ```
-sudo pip3 install gast
+sudo -H pip3 install gast
 ```
 
 2. Install libraries for manipulating Python’s abstract syntax trees (see also https://pypi.org/project/astor/)
 ```
-sudo pip3 install astor
+sudo -H pip3 install astor
 ```
 
 3. Install libraries for declaring Python enumerations (see also https://pypi.org/project/enum34/)
 ```
-sudo pip3 install enum34
+sudo -H pip3 install enum34
 ```
 
 4. Install libraries for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/)
@@ -183,27 +183,27 @@ sudo pip3 install wrapt
 
 5. Install libraries for concurrency (see also https://pypi.org/project/futures3/)
 ```
-sudo pipe install futures3
+sudo -H pip install futures3
 ```
 
 6. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
 ```
-sudo pip3 install future
+sudo -H pip3 install future
 ```
 
 7. Install libraries for building Python applications (see also https://pypi.org/project/absl-py/).
 ```
-sudo pip3 install absl-py
+sudo -H pip3 install absl-py
 ```
 
 8. Install libraries for managing Python packages (see also https://pypi.org/project/setuptools/)
 ```
-sudo pip install setuptools
+sudo -H pip install setuptools
 ```
 
 8. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/)
 ```
-sudo pip3 install testresources
+sudo -H pip3 install testresources
 ```
 
 ## Libraries (Data)
@@ -215,7 +215,7 @@ sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpe
 
 2. Install libraries for manipulating HDF data (see also https://www.h5py.org)
 ```
-sudo pip3 install p5py
+sudo -H pip3 install p5py
 ```
 
 ## Libraries (Numeric)
@@ -227,7 +227,7 @@ sudo apt install libatlas-base-div
 
 2. Install libraries for scientific computing (see also https://numpy.org)
 ```
-sudo pip3 install NumPy
+sudo -H pip3 install NumPy
 ```
 
 3. Install libraries for mathematical, scientific, and engineering computing (see also https://www.scipy.org)
@@ -239,20 +239,20 @@ sudo apt install python3-scipy
 
 1. Install libraries for formatting terminal output (see also https://pypi.org/project/termcolor/)
 ```
-sudo pip3 install termcolor
+sudo -H pip3 install termcolor
 ```
 
 2. Install libraries for imaging (see also https://pypi.org/project/Pillow/)
 ```
-sudo pip3 install pillow
+sudo -H pip3 install pillow
 ```
 
 ## Frameworks (Artificial Intelligence)
 
 1. Install TensorFlow (see also 
 ```
-sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 tensorflow
-sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 ‘tensorflow<2’
+sudo -H pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 tensorflow
+sudo -H pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 ‘tensorflow<2’
 ```
 
 2. Install keras 
@@ -260,7 +260,7 @@ sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/
 
 1. Install frameworks for remote procedure calls (see also https://grpc.io)
 ```
-sudo pip install grpcio
+sudo -H pip install grpcio
 ```
  
 ## Microservices
