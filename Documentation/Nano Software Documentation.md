@@ -85,11 +85,6 @@ sudo apt install python-pip
 sudo apt install python3-pip
 ```
 
-2. Install Cython, a Python superset (see also https://cython.org)
-```
-sudo apt install cython
-```
-
 ## Nginx
 
 1. Install Nginx (see also https://www.nginx.com)
@@ -118,7 +113,32 @@ sudo apt install mysql-server
 ```
 sudo ss -tap | grep mysql
 ```
- 
+
+## Languages
+
+1. Install Cython (see also https://cython.org)
+```
+sudo apt install cython
+```
+
+2. Install Fortran (see also https://gcc.gnu.org/wiki/GFortran)
+```
+sudo apt install gfortran
+```
+
+## Runtimes
+
+1. Install Node.js (see also https://nodejs.org/en/about/).
+```
+sudo apt install nodejs
+sudo apt install npm
+```
+
+2. Install the Java Runtime Environment (see also https://www.java.com/en/)
+```
+sudo apt install default-jre default-jre-headless
+```
+
 ## Tools
 
 1. Install tools for transferring data with URLS (see also https://curl.haxx.se).
@@ -126,18 +146,7 @@ sudo ss -tap | grep mysql
 sudo apt install curl
 ```
 
-2. Install tools for Fortran (see also https://gcc.gnu.org/wiki/GFortran)
-```
-sudo apt install gfortran
-```
-
-3. Install tools for JavaScript (see also https://nodejs.org/en/about/).
-```
-sudo apt install nodejs
-sudo apt install npm
-```
-
-4. Install tools for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
+2. Install tools for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
 ```
 sudo apt install sysstat
 ```
