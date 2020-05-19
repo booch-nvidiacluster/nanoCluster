@@ -131,7 +131,13 @@ sudo apt install curl
 sudo apt install gfortran
 ```
 
-3. Install tools for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
+3. Install tools for JavaScript (see also https://nodejs.org/en/about/).
+```
+sudo apt install nodejs
+sudo apt install npm
+```
+
+4. Install tools for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
 ```
 sudo apt install sysstat
 ```
