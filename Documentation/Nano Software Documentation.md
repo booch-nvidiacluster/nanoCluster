@@ -238,7 +238,7 @@ sudo -H pip3 install p5py
 
 1. Install libraries for linear algebra (see also http://math-atlas.sourceforge.net)
 ```
-sudo apt install libatlas-base-div
+sudo apt install libatlas-base-dev
 ```
 
 2. Install libraries for scientific computing (see also https://numpy.org)
