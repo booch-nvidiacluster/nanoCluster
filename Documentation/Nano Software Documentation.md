@@ -265,13 +265,17 @@ sudo -H pip3 install pillow
 
 ## Frameworks (Artificial Intelligence)
 
-1. Install TensorFlow (see also 
+1. Install keras (see also https://keras.io)
 ```
-sudo -H pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 tensorflow
-sudo -H pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 ‘tensorflow<2’
+sudo -H pip3 install keras-applications
+sudo -H pip3 install keras-preprocessing
 ```
 
-2. Install keras 
+2. Install TensorFlow (see also https://www.tensorflow.org and https://docs.nvidia.com/deeplearning/frameworks/pdf/Install-TensorFlow-Jetson-Platform.pdf)
+```
+sudo -H pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v43 tensorflow
+```
+
 ## Frameworks (Networking)
 
 1. Install frameworks for remote procedure calls (see also https://grpc.io)
