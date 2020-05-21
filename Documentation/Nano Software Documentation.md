@@ -126,7 +126,7 @@ sudo apt install cython
 sudo apt install gfortran
 ```
 
-## Runtimes
+## Java Runtimes
 
 1. Install Node.js (see also https://nodejs.org/en/about/).
 ```
@@ -137,6 +137,16 @@ sudo apt install npm
 2. Install the Java Runtime Environment (see also https://www.java.com/en/)
 ```
 sudo apt install default-jre default-jre-headless
+```
+
+## Graph Database
+
+1. Install Neo4j (see also https://neo4j.com)
+```
+wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
+echo 'deb https://debian.neo4j.com stable latest' | sudo tee /etc/apt/sources.list.d/neo4j.list
+sudo apt-get update
+sudo apt-get install neo4j
 ```
 
 ## Tools
