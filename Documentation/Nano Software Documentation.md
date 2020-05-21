@@ -231,7 +231,7 @@ sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpe
 
 2. Install libraries for manipulating HDF data (see also https://www.h5py.org)
 ```
-sudo -H pip3 install h5py
+sudo -H pip install h5py
 ```
 
 ## Libraries (Numeric)
