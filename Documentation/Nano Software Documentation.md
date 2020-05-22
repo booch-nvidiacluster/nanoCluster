@@ -165,6 +165,7 @@ sudo apt install sysstat
 
 1. Install libraries for querying CPU information (see also https://pypi.org/project/py-cpuinfo/)
 ```
+sudo -H pip install py-cpuinfo
 sudo -H pip3 install py-cpuinfo
 ```
 
@@ -172,6 +173,7 @@ sudo -H pip3 install py-cpuinfo
 
 1. Install libraries for finding available network ports (see also https://pypi.org/project/portpicker/)
 ```
+sudo -H pip install portpicker
 sudo -H pip3 install portpicker
 ```
 
@@ -179,21 +181,25 @@ sudo -H pip3 install portpicker
 
 1. Install libraries for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/)
 ```
+sudo -H pip install gast
 sudo -H pip3 install gast
 ```
 
 2. Install libraries for manipulating Python’s abstract syntax trees (see also https://pypi.org/project/astor/)
 ```
+sudo -H pip install astor
 sudo -H pip3 install astor
 ```
 
 3. Install libraries for declaring Python enumerations (see also https://pypi.org/project/enum34/)
 ```
+sudo -H pip install enum34
 sudo -H pip3 install enum34
 ```
 
 4. Install libraries for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/)
 ```
+sudo -H pip install wrapt
 sudo -H pip3 install wrapt
 ```
 
@@ -204,21 +210,25 @@ sudo -H pip3 install futures3
 
 6. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
 ```
+sudo -H pip install future
 sudo -H pip3 install future
 ```
 
 7. Install libraries for building Python applications (see also https://pypi.org/project/absl-py/).
 ```
+sudo -H pip install absl-py
 sudo -H pip3 install absl-py
 ```
 
 8. Install libraries for managing Python packages (see also https://pypi.org/project/setuptools/)
 ```
 sudo -H pip install setuptools
+sudo -H pip3 install setuptools
 ```
 
 8. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/)
 ```
+sudo -H pip install testresources
 sudo -H pip3 install testresources
 ```
 
@@ -231,6 +241,7 @@ sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpe
 
 2. Install libraries for manipulating HDF data (see also https://www.h5py.org)
 ```
+sudo -H pip install h5py
 sudo -H pip3 install h5py
 ```
 
@@ -243,7 +254,8 @@ sudo apt install libatlas-base-dev
 
 2. Install libraries for scientific computing (see also https://numpy.org)
 ```
-sudo -H pip3 install numpy==1.16.1
+sudo -H pip install numpy
+sudo -H pip3 install numpy
 ```
 
 3. Install libraries for mathematical, scientific, and engineering computing (see also https://www.scipy.org)
@@ -255,11 +267,13 @@ sudo apt install python3-scipy
 
 1. Install libraries for formatting terminal output (see also https://pypi.org/project/termcolor/)
 ```
+sudo -H pip install termcolor
 sudo -H pip3 install termcolor
 ```
 
 2. Install libraries for imaging (see also https://pypi.org/project/Pillow/)
 ```
+sudo -H pip install pillow
 sudo -H pip3 install pillow
 ```
 
@@ -267,7 +281,7 @@ sudo -H pip3 install pillow
 
 1. Install TensorFlow (see also https://www.tensorflow.org and https://docs.nvidia.com/deeplearning/frameworks/pdf/Install-TensorFlow-Jetson-Platform.pdf)
 ```
-sudo -H pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v43 tensorflow
+TBD
 ```
 
 ## Frameworks (Networking)
