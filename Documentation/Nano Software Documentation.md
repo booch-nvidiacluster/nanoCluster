@@ -232,19 +232,6 @@ sudo -H pip install testresources
 sudo -H pip3 install testresources
 ```
 
-## Libraries (Data)
-
-1. Install libraries for storing hierarchical data  (see also https://www.hdfgroup.org/solutions/hdf5/)
-```
-sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev
-```
-
-2. Install libraries for manipulating HDF data (see also https://www.h5py.org)
-```
-sudo -H pip install h5py
-sudo -H pip3 install h5py
-```
-
 ## Libraries (Numeric)
 
 1. Install libraries for linear algebra (see also http://math-atlas.sourceforge.net)
@@ -261,6 +248,19 @@ sudo -H pip3 install numpy
 3. Install libraries for mathematical, scientific, and engineering computing (see also https://www.scipy.org)
 ```
 sudo apt install python3-scipy
+```
+
+## Libraries (Data)
+
+1. Install libraries for storing hierarchical data  (see also https://www.hdfgroup.org/solutions/hdf5/)
+```
+sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev
+```
+
+2. Install libraries for manipulating HDF data (see also https://www.h5py.org)
+```
+sudo -H pip install h5py
+sudo -H pip3 install h5py
 ```
 
 ## Libraries (Visualization)
