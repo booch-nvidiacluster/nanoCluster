@@ -289,6 +289,7 @@ TBD
 1. Install frameworks for remote procedure calls (see also https://grpc.io)
 ```
 sudo -H pip install grpcio
+sudo -H pip3 install grpcio
 ```
  
 ## Microservices
