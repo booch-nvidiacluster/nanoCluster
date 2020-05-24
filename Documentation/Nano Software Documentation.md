@@ -61,9 +61,10 @@ cd installSwapfile
 ./installSwapfile.sh -s 12
 ```
 
-11. Make the Nano headless.
+11. Make the Nano headless and remove unnecessary applications.
 ```
 sudo systemctl set-default multi-user.target
+sudo apt-get purge libreoffice*
 ```
 
 12. Refresh the installation.
