@@ -232,10 +232,22 @@ sudo -H pip install testresources
 sudo -H pip3 install testresources
 ```
 
-9. Install libraries for unit testing Python applications (see https://pypi.org/project/unittest2/)
+9. Install libraries for unit testing Python applications (see also https://pypi.org/project/unittest2/)
 ```
 sudo -H pip install unittest2
 sudo -H pip3 install unittest2
+```
+
+10. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
+```
+sudo -H pip install mock
+sudo -H pip3 install mock
+```
+
+11. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
+```
+sudo -H pip install pyind11
+sudo -H pip3 inststal pybind11
 ```
 
 ## Libraries (Numeric)
@@ -267,6 +279,12 @@ sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpe
 ```
 sudo -H pip install h5py
 sudo -H pip3 install h5py
+```
+
+3. Install libraries for protocol buffers (see also https://pypi.org/project/protobuf/).
+```
+sudo -H pip install protobuf
+sudo -H pip3 install protbuf
 ```
 
 ## Libraries (Visualization)
