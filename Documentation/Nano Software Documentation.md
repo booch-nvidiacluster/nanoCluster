@@ -252,18 +252,18 @@ sudo -H pip3 inststal pybind11
 
 ## Libraries (Numeric)
 
-1. Install libraries for linear algebra (see also http://math-atlas.sourceforge.net)
+1. Install libraries for linear algebra (see also http://math-atlas.sourceforge.net).
 ```
 sudo apt install libatlas-base-dev
 ```
 
-2. Install libraries for scientific computing (see also https://numpy.org)
+2. Install libraries for scientific computing (see also https://numpy.org).
 ```
 sudo -H pip install numpy
 sudo -H pip3 install numpy
 ```
 
-3. Install libraries for mathematical, scientific, and engineering computing (see also https://www.scipy.org)
+3. Install libraries for mathematical, scientific, and engineering computing (see also https://pypi.org/project/scipy/).
 ```
 sudo -H pip install scipy
 sudo -H pip3 install scipy
