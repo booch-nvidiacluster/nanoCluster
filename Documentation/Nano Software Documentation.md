@@ -302,13 +302,6 @@ sudo -H pip install pillow
 sudo -H pip3 install pillow
 ```
 
-## Frameworks (Artificial Intelligence)
-
-1. Install TensorFlow (see also https://www.tensorflow.org and https://docs.nvidia.com/deeplearning/frameworks/pdf/Install-TensorFlow-Jetson-Platform.pdf).
-```
-TBD
-```
-
 ## Frameworks (Networking)
 
 1. Install frameworks for remote procedure calls (see also https://pypi.org/project/grpc/).
@@ -317,6 +310,13 @@ sudo -H pip install grpcio
 sudo -H pip3 install grpcio
 ```
  
+## Frameworks (Artificial Intelligence)
+
+1. Install TensorFlow (see also https://www.tensorflow.org and https://docs.nvidia.com/deeplearning/frameworks/pdf/Install-TensorFlow-Jetson-Platform.pdf).
+```
+TBD
+```
+
 ## Microservices
 
 ## Console Integration
