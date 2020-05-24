@@ -265,7 +265,8 @@ sudo -H pip3 install numpy
 
 3. Install libraries for mathematical, scientific, and engineering computing (see also https://www.scipy.org)
 ```
-sudo apt install python3-scipy
+sudo -H pip install scipy
+sudo -H pip3 install scipy
 ```
 
 ## Libraries (Data)
