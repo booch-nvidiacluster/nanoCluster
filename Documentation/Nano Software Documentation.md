@@ -315,9 +315,24 @@ sudo -H pip3 install grpcio
  
 ## Frameworks (Artificial Intelligence)
 
-1. Install TensorFlow (see also https://www.tensorflow.org and https://docs.nvidia.com/deeplearning/frameworks/pdf/Install-TensorFlow-Jetson-Platform.pdf).
+1. Install TensorFlow (see also https://pypi.org/project/tensorflow/).
 ```
-TBD
+sudo -H pip3 install --no-cache-dir --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 tensorflow
+```
+
+2. Install Keras (see also https://pypi.org/project/Keras/).
+```
+sudo -H pip3 install keras
+```
+
+3. Install Keras preprocessing (https://pypi.org/project/Keras-Preprocessing/).
+```
+sudo -H pip3 install keras-preprocessing
+```
+
+4. Install Keras applications (https://pypi.org/project/Keras-Applications/).
+```
+sudo -H pip3 install keras-applications
 ```
 
 ## Microservices
