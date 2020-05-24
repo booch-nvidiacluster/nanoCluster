@@ -79,7 +79,7 @@ sudo reboot now
 
 ## Python
 
-1. Install the latest Python package installers (see also https://pypi.org/project/pip/)
+1. Install the latest Python package installers (see also https://pypi.org/project/pip/).
 ```
 sudo apt install python-pip
 sudo apt install python3-pip
@@ -87,7 +87,7 @@ sudo apt install python3-pip
 
 ## Nginx
 
-1. Install Nginx (see also https://www.nginx.com)
+1. Install Nginx (see also https://www.nginx.com).
 ```
 sudo apt install nginx
 ```
@@ -104,7 +104,7 @@ sudo wget <i>&lt;URL for nanoCluster#.jpg&gt;</i> -O nanoCluster#.jpg</code></pr
  
 ## MySQL
 
-1. Install MySQL (see also https://ubuntu.com/server/docs/databases-mysql)
+1. Install MySQL (see also https://ubuntu.com/server/docs/databases-mysql).
 ```
 sudo apt install mysql-server
 ```
@@ -116,12 +116,12 @@ sudo ss -tap | grep mysql
 
 ## Languages
 
-1. Install Cython (see also https://cython.org)
+1. Install Cython (see also https://cython.org).
 ```
 sudo apt install cython
 ```
 
-2. Install Fortran (see also https://gcc.gnu.org/wiki/GFortran)
+2. Install Fortran (see also https://gcc.gnu.org/wiki/GFortran).
 ```
 sudo apt install gfortran
 ```
@@ -134,14 +134,14 @@ sudo apt install nodejs
 sudo apt install npm
 ```
 
-2. Install the Java Runtime Environment (see also https://www.java.com/en/)
+2. Install the Java Runtime Environment (see also https://www.java.com/en/).
 ```
 sudo apt install default-jre default-jre-headless
 ```
 
 ## Graph Database
 
-1. Install Neo4j (see also https://neo4j.com)
+1. Install Neo4j (see also https://neo4j.com).
 ```
 wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
 echo 'deb https://debian.neo4j.com stable latest' | sudo tee /etc/apt/sources.list.d/neo4j.list
@@ -156,14 +156,14 @@ sudo apt-get install neo4j
 sudo apt install curl
 ```
 
-2. Install tools for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr)
+2. Install tools for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr).
 ```
 sudo apt install sysstat
 ```
 
 ## Libraries (Hardware)
 
-1. Install libraries for querying CPU information (see also https://pypi.org/project/py-cpuinfo/)
+1. Install libraries for querying CPU information (see also https://pypi.org/project/py-cpuinfo/).
 ```
 sudo -H pip install py-cpuinfo
 sudo -H pip3 install py-cpuinfo
@@ -171,7 +171,7 @@ sudo -H pip3 install py-cpuinfo
 
 ## Libraries (Networking)
 
-1. Install libraries for finding available network ports (see also https://pypi.org/project/portpicker/)
+1. Install libraries for finding available network ports (see also https://pypi.org/project/portpicker/).
 ```
 sudo -H pip install portpicker
 sudo -H pip3 install portpicker
@@ -179,31 +179,31 @@ sudo -H pip3 install portpicker
 
 ## Lbraries (Python)
 
-1. Install libraries for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/)
+1. Install libraries for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/).
 ```
 sudo -H pip install gast
 sudo -H pip3 install gast
 ```
 
-2. Install libraries for manipulating Python’s abstract syntax trees (see also https://pypi.org/project/astor/)
+2. Install libraries for manipulating Python’s abstract syntax trees (see also https://pypi.org/project/astor/).
 ```
 sudo -H pip install astor
 sudo -H pip3 install astor
 ```
 
-3. Install libraries for declaring Python enumerations (see also https://pypi.org/project/enum34/)
+3. Install libraries for declaring Python enumerations (see also https://pypi.org/project/enum34/).
 ```
 sudo -H pip install enum34
 sudo -H pip3 install enum34
 ```
 
-4. Install libraries for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/)
+4. Install libraries for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/).
 ```
 sudo -H pip install wrapt
 sudo -H pip3 install wrapt
 ```
 
-5. Install libraries for concurrency (see also https://pypi.org/project/futures3/)
+5. Install libraries for concurrency (see also https://pypi.org/project/futures3/).
 ```
 sudo -H pip3 install futures3
 ```
@@ -220,16 +220,22 @@ sudo -H pip install absl-py
 sudo -H pip3 install absl-py
 ```
 
-8. Install libraries for managing Python packages (see also https://pypi.org/project/setuptools/)
+8. Install libraries for managing Python packages (see also https://pypi.org/project/setuptools/).
 ```
 sudo -H pip install setuptools
 sudo -H pip3 install setuptools
 ```
 
-8. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/)
+8. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/).
 ```
 sudo -H pip install testresources
 sudo -H pip3 install testresources
+```
+
+9. Install libraries for unit testing Python applications (see https://pypi.org/project/unittest2/)
+```
+sudo -H pip install unittest2
+sudo -H pip3 install unittest2
 ```
 
 ## Libraries (Numeric)
@@ -252,12 +258,12 @@ sudo apt install python3-scipy
 
 ## Libraries (Data)
 
-1. Install libraries for storing hierarchical data  (see also https://www.hdfgroup.org/solutions/hdf5/)
+1. Install libraries for storing hierarchical data  (see also https://www.hdfgroup.org/solutions/hdf5/).
 ```
 sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev
 ```
 
-2. Install libraries for manipulating HDF data (see also https://www.h5py.org)
+2. Install libraries for manipulating HDF data (see also https://www.h5py.org).
 ```
 sudo -H pip install h5py
 sudo -H pip3 install h5py
@@ -265,13 +271,13 @@ sudo -H pip3 install h5py
 
 ## Libraries (Visualization)
 
-1. Install libraries for formatting terminal output (see also https://pypi.org/project/termcolor/)
+1. Install libraries for formatting terminal output (see also https://pypi.org/project/termcolor/).
 ```
 sudo -H pip install termcolor
 sudo -H pip3 install termcolor
 ```
 
-2. Install libraries for imaging (see also https://pypi.org/project/Pillow/)
+2. Install libraries for imaging (see also https://pypi.org/project/Pillow/).
 ```
 sudo -H pip install pillow
 sudo -H pip3 install pillow
@@ -279,14 +285,14 @@ sudo -H pip3 install pillow
 
 ## Frameworks (Artificial Intelligence)
 
-1. Install TensorFlow (see also https://www.tensorflow.org and https://docs.nvidia.com/deeplearning/frameworks/pdf/Install-TensorFlow-Jetson-Platform.pdf)
+1. Install TensorFlow (see also https://www.tensorflow.org and https://docs.nvidia.com/deeplearning/frameworks/pdf/Install-TensorFlow-Jetson-Platform.pdf).
 ```
 TBD
 ```
 
 ## Frameworks (Networking)
 
-1. Install frameworks for remote procedure calls (see also https://grpc.io)
+1. Install frameworks for remote procedure calls (see also https://grpc.io).
 ```
 sudo -H pip install grpcio
 sudo -H pip3 install grpcio
