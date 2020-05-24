@@ -121,6 +121,7 @@ sudo ss -tap | grep mysql
 1. Install Cython (see also https://cython.org).
 ```
 sudo apt install cython
+sudo apt install cython3
 ```
 
 2. Install Fortran (see also https://gcc.gnu.org/wiki/GFortran).
