@@ -257,7 +257,7 @@ sudo -H pip3 inststal pybind11
 sudo apt install libatlas-base-dev
 ```
 
-2. Install libraries for scientific computing (see also https://numpy.org).
+2. Install libraries for scientific computing (see also https://pypi.org/project/numpy/).
 ```
 sudo -H pip install numpy
 sudo -H pip3 install numpy
@@ -276,7 +276,7 @@ sudo -H pip3 install scipy
 sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev
 ```
 
-2. Install libraries for manipulating HDF data (see also https://www.h5py.org).
+2. Install libraries for manipulating HDF data (see also https://pypi.org/project/h5py/).
 ```
 sudo -H pip install h5py
 sudo -H pip3 install h5py
@@ -311,7 +311,7 @@ TBD
 
 ## Frameworks (Networking)
 
-1. Install frameworks for remote procedure calls (see also https://grpc.io).
+1. Install frameworks for remote procedure calls (see also https://pypi.org/project/grpc/).
 ```
 sudo -H pip install grpcio
 sudo -H pip3 install grpcio
