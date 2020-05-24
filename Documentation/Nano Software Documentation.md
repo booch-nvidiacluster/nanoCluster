@@ -50,6 +50,7 @@ sudo reboot now
 9. Configure the Nano for high power mode.
 ```
 sudo nvpmodel -m 0
+sudo jetson_clocks
 ```
 
 10. Enable SSD swapping (see also https://www.jetsonhacks.com/2019/04/14/jetson-nano-use-more-memory/).
