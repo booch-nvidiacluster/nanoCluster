@@ -353,22 +353,37 @@ sudo reboot now
 
 ## Cluster Hygiene
 
-1. Display the current JetPack version
+1. Display the hostname
+```
+whoami
+```
+
+2. Display the current IP.
+```
+ifconfig
+```
+
+2. Display the current JetPack version
 ```
 sudo apt show nvidia-jetpack
 ```
 
-2. Display the current package version
+3. Display the current package version
 ```
 sudo apt show <package name>
 sudo pip show <package name>
 sudo pip3 show <package name>
 ```
 
-3. Update a package
+4. Update a package
 ```
 sudo apt update <package name>
 sudo apt upgrade <package name>
 sudo -H pip <package name> --upgrade
 sudo -H pip3 <package name> -- upgrade
+```
+
+5. Clean up unusued packages
+```
+sudo apt autoremove
 ```
