@@ -349,6 +349,16 @@ sudo docker run hello-world
 sudo docker run --gpus all jitteam/devicequery ./deviceQuery
 ```
 
+2. Install FastAPI (see also https://pypi.org/project/fastapi/).
+```
+sudo -H pip3 install fastapi
+```
+
+3. Install an ASGI server (see also https://pypi.org/project/uvicorn/).
+```
+sudo -H pip3 install uvicorn
+```
+
 ## Console Integration
 
 1. Start the Nano's hearbeat using the application found <a href="../nano">here</a>. To get the URL for the file, find hearbeat.py then select Raw.
