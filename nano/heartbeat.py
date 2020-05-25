@@ -1,3 +1,6 @@
+# Copyright (C) Grady Booch (2020).
+# Distributed under the MIT License (http://opensource.org/licenses/MIT).
+
 import RPi.GPIO as GPIO
 import time
 
