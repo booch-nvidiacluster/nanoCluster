@@ -87,6 +87,12 @@ sudo apt install python-pip
 sudo apt install python3-pip
 ```
 
+2. Upgrade pip.
+```
+sudo -H pip install --upgrade pip
+sudo -H pip3 install --upgrade pip
+```
+
 ## Nginx
 
 1. Install Nginx (see also https://www.nginx.com).
