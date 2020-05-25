@@ -1,3 +1,6 @@
+// Copyright (C) Grady Booch (2020).
+// Distributed under the MIT License (http://opensource.org/licenses/MIT).
+//
 // This is the software that powers the console in the nanoCluster. It serves
 // two use cases: to display the state of each node in the cluster and to
 // permit the user to power off individual nodes. The software is targeted to
