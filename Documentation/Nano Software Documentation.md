@@ -343,6 +343,12 @@ sudo -H pip3 install keras-applications
 
 ## Microservices
 
+1. Ensure that Docker is properly installed.
+```
+sudo docker run hello-world
+sudo docker run --gpus all jitteam/devicequery ./deviceQuery
+```
+
 ## Console Integration
 
 1. Start the Nano's hearbeat using the application found <a href="../nano">here</a>. To get the URL for the file, find hearbeat.py then select Raw.
