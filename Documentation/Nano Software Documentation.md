@@ -3,7 +3,7 @@ The cluster's essential computational resource.
 
 <img src="/Documentation/Images/Jetson Nano.jpg" alt="Jetson Nano">
 
-Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Nginx, and MySQL - together with support for other languages, runtimes and a graph datase, plus various tools and libraries for general development, frameworks for artificial intelligence and networking, and an infrastructure for hosting microservices.
+Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Nginx, and MySQL - together with support for other languages, runtimes and a graph datase, plus various tools and libraries for general development, frameworks for artificial intelligence and networking, and an infrastructure for hosting microservices and Kubernetes.
 
 Several bits of code needed in support of this provisioning reside <a href="../nano">here</a>.
 
@@ -343,7 +343,7 @@ sudo -H pip3 install keras-applications
 
 ## Microservices
 
-1. Ensure that Docker is properly installed.
+1. Verify that Docker is properly installed.
 ```
 sudo docker run hello-world
 sudo docker run --gpus all jitteam/devicequery ./deviceQuery
@@ -354,9 +354,40 @@ sudo docker run --gpus all jitteam/devicequery ./deviceQuery
 sudo -H pip3 install fastapi
 ```
 
-3. Install an ASGI server (see also https://pypi.org/project/uvicorn/).
+3. Install an asynchronous gateway service interface (see also https://pypi.org/project/uvicorn/).
 ```
 sudo -H pip3 install uvicorn
+```
+
+## Kubernetes
+
+1. Install K3S on nanoCluster0 as the master node (see also https://k3s.io and https://rancher.com/docs/k3s/latest/en/).
+```
+sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--docker" sh -s - --bind-address <nanoCluster0's IP address>
+```
+
+2. Get the master node's token.
+```
+sudo cat /var/lib/rancher/k3s/server/node-token
+```
+
+3. Install K3S on nanoCluster1, nanoCluster2, and nanoCluster3 as worker nodes.
+```
+sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--docker" K3S_URL=https://<nanoCluster0's IP address>:6443 K3S_TOKEN=<nanoCluster0's token> sh -
+```
+
+4. On nanoCluster0, set each worker node's role.
+```
+sudo k3s kubectl label node nanoCluster1 node-role.kubernetes.io/worker=worker
+sudo k3s kubectl label node nanoCluster2 node-role.kubernetes.io/worker=worker
+sudo k3s kubectl label node nanoCluster3 node-role.kubernetes.io/worker=worker
+```
+
+5. On nanoCluster0, install the kubernetes dashboard.
+```
+GITHUB_URL=https://github.com/kubernetes/dashboard/releases
+VERSION_KUBE_DASHBOARD=$(curl -w '%{url_effective}' -I -L -s -S ${GITHUB_URL}/latest -o /dev/null | sed -e 's|.*/||')
+sudo k3s kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/${VERSION_KUBE_DASHBOARD}/aio/deploy/recommended.yaml
 ```
 
 ## Console Integration
@@ -375,29 +406,29 @@ sudo reboot now
 
 ## Cluster Hygiene
 
-1. Display the hostname
+1. Display the node's hostname.
 ```
 whoami
 ```
 
-2. Display the current IP.
+2. Display the node's IP address.
 ```
 ifconfig
 ```
 
-2. Display the current JetPack version
+2. Display the node's JetPack version.
 ```
 sudo apt show nvidia-jetpack
 ```
 
-3. Display the current package version
+3. Display the version of a package on the node.
 ```
 sudo apt show <package name>
 sudo pip show <package name>
 sudo pip3 show <package name>
 ```
 
-4. Update a package
+4. Update a package on the node.
 ```
 sudo apt update <package name>
 sudo apt upgrade <package name>
@@ -405,7 +436,7 @@ sudo -H pip <package name> --upgrade
 sudo -H pip3 <package name> -- upgrade
 ```
 
-5. Clean up unusued packages
+5. Clean up unusued packages on the node.
 ```
 sudo apt autoremove
 ```
