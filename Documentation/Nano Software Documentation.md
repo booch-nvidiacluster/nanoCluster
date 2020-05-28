@@ -437,10 +437,8 @@ cd ~/.kube
 ```
 
 2. Copy the master node's (nanoCluster0) credentials to the remote computer.
-```
 <pre><code>vi config
 <i>Insert the master node's credentials.</i></code></pre>
-```
 
 3. On the master node (nanoCluster0), start a network proxy.
 ```
