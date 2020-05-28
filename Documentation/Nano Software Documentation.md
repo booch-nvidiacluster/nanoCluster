@@ -3,7 +3,7 @@ The cluster's essential computational resource.
 
 <img src="/Documentation/Images/Jetson Nano.jpg" alt="Jetson Nano">
 
-Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Nginx, and MySQL - together with support for other languages, runtimes and a graph datase, plus various tools and libraries for general development, frameworks for artificial intelligence and networking, and an infrastructure for hosting microservices and Kubernetes.
+Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Nginx, and MySQL - together with support for other languages, runtimes and a graph datase, plus various tools and libraries for general development, frameworks for artificial intelligence and networking, and an infrastructure for hosting microservices and Kubernetes. Instructions are given for integrating the cluster's nodes with the console, accessing the cluster from a remote computer on the same network, and for commonly used cluster commands.
 
 Several bits of code needed in support of this provisioning reside <a href="../nano">here</a>.
 
@@ -383,7 +383,7 @@ sudo k3s kubectl label node nanoCluster2 node-role.kubernetes.io/worker=worker
 sudo k3s kubectl label node nanoCluster3 node-role.kubernetes.io/worker=worker
 ```
 
-5. On the master node (nanoCluster0), install the kubernetes dashboard.
+5. On the master node (nanoCluster0), install the Kubernetes Dashboard.
 ```
 GITHUB_URL=https://github.com/kubernetes/dashboard/releases
 VERSION_KUBE_DASHBOARD=$(curl -w '%{url_effective}' -I -L -s -S ${GITHUB_URL}/latest -o /dev/null | sed -e 's|.*/||')
@@ -399,7 +399,8 @@ sudo wget <URL for dashboard.nanocluster-admin-role.yml> -O dashboard.nanocluste
 
 7. On the master node (nanoCluster0), deploy the admin configuration.
 ```
-sudo k3s kubectl create -f dashboard.nanocluster-admin.yml -f dashboard.nanocluster-admin-role.yml
+sudo k3s kubectl apply -f dashboard.nanocluster-admin.yml
+sudo k3s kubectl apply -f dashboard.nanocluster-admin-role.yml
 ```
 
 8. On the master node (nanoCluster0), get the admin's token. Copy the token for later use.
@@ -407,7 +408,12 @@ sudo k3s kubectl create -f dashboard.nanocluster-admin.yml -f dashboard.nanoclus
 sudo k3s kubectl -n kubernetes-dashboard describe secret nanocluster-admin-token | grep ^token
 ```
 
-## Console Integration
+9. On the master node (nanoCluster0), get the node's credentials. Copy the credentials for later use.
+```
+sudo cat /etc/rancher/k3s/k3s.yaml
+```
+
+## Node/Console Integration
 
 1. Start the Nano's hearbeat using the application found <a href="../nano">here</a>. To get the URL for the file, find hearbeat.py then select Raw.
 <pre><code>cd /home/nano/Downloads
@@ -421,7 +427,32 @@ crontab -e
 sudo reboot now
 ```
 
-## Cluster Hygiene
+## Remote Access
+
+1. To access the cluster's Kubernetes Dashboard from another computer on the same local network, first install kubectl on that remote computer (here we are using a Macintosh).
+```
+brew install kubectl
+mkdir ~/.kube
+cd ~/.kube
+```
+
+2. Copy the master node's (nanoCluster0) credentials to the remote computer.
+```
+<pre><code>vi config
+<i>Insert the master node's credentials.</i></code></pre>
+```
+
+3. On the master node (nanoCluster0), start a network proxy.
+```
+sudo k3s kubectl proxy --address='0.0.0.0' --disable-filter=true
+```
+
+4. On the remote computer, open a browser, navigate to the cluster's Kubernetes Dashboard, and use the master node's (nanoCluster0) token to login.
+```
+http://nanocluster0.local:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
+```
+
+## Commonly Used Cluster Commands
 
 1. Display the node's hostname.
 ```
