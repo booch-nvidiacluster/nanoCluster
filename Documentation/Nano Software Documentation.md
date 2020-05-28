@@ -450,6 +450,13 @@ sudo k3s kubectl proxy --address='0.0.0.0' --disable-filter=true
 http://nanocluster0.local:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
 ```
 
+5. On the remote computer, install a Kubernetes package manager (see also https://helm.sh).
+```
+brew install helm
+helm repo add stable https://kubernetes-charts.storage.googleapis.com
+helm repo update
+```
+
 ## Commonly Used Cluster Commands
 
 1. Display the node's hostname.
