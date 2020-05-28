@@ -28,7 +28,7 @@ sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
 
 6. Copy the root file system to the SSD (you can ignore most of the warnings along the way). Copy the SSD's UUID for later use.
 ```
-cd rootOnUSB
+cd /home/nano/Downloads/rootOnUSB
 ./addUSBToInitramfs.sh
 ./copyRootToUSB.sh -p /dev/sda1
 ./diskUUID.sh
