@@ -14,19 +14,35 @@ Several bits of code needed in support of this provisioning reside <a href="../n
 2. Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
  
 3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano (but first ensure that the SSD is NOT yet connected to the Nano), then follow the on screen start up instructions to configure the computer's name (in the form *nanoCluster#*, where # is the node ID from 0 to 3), user account (we use nano as the user ID), and wireless connection. It is important that you establish a static IP address for each node, as a precondition to configuring the Kubernetes infrastructure (and this is more easily done in the Nano's graphical user interface than in the terminal interface). The start up process may ask you to update your software (which is harmless to do) and to reboot along the way. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
+
+4. Using an ssh connection to the node, refresh the installation.
+```
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+```
+
+5. This process may break some symbolic links; fix them with the following commands.
+```
+cd /etc/ld.so.conf.d
+sudo rm aarch64-linux-gnu_EGL.conf
+sudo ln -s /etc/alternatives/aarch64-linux-gnu_egl_conf aarch64-linux-gnu_EGL.conf
+sudo rm aarch64-linux-gnu_GL.conf
+sudo ln -s /etc/alternatives/aarch64-linux-gnu_gl_conf aarch64-linux-gnu_GL.conf
+```
  
-4. Use the Nano's Terminal application to clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
+6. Clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
 ```
 cd /home/nano/Downloads
 sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
 ```
 
-5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
+7. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
 
       Disks -> Format -> Compatible with modern systems and hard drives<br>
       Disks -> Add Partition -> 500GB | nanoCluster#SSD | internal disk
 
-6. Copy the root file system to the SSD (you can ignore most of the warnings along the way). Copy the SSD's UUID for later use.
+8. Copy the root file system to the SSD (you can ignore most of the warnings along the way). Copy the SSD's UUID for later use.
 ```
 cd /home/nano/Downloads/rootOnUSB
 ./addUSBToInitramfs.sh
@@ -34,7 +50,7 @@ cd /home/nano/Downloads/rootOnUSB
 ./diskUUID.sh
 ```
 
-7. Redirect the root file system.
+9. Redirect the root file system.
 <pre><code>cd /boot/extlinux
 sudo vim extlinux.conf
     <i>Change the INITRD line to the following.</i>
@@ -42,18 +58,18 @@ sudo vim extlinux.conf
     <i>Change the APPEND line to reflect the UUID for sda1.</i>
         APPEND ${cbootargs} root=UUID=<i>&lt;UUID for sda1&gt;</i> rootwait rootfstype=ext4</code></pre>
 
-8. Reboot the Nano.
+10. Reboot the Nano.
 ```
 sudo reboot now
 ```
 
-9. Configure the Nano for high power mode.
+11. Configure the Nano for high power mode.
 ```
 sudo nvpmodel -m 0
 sudo jetson_clocks
 ```
 
-10. Enable SSD swapping. Normally, for reasons of performance, one should not enable swapping when using Kubernetes but here we do so to trade off performance for greater working memory (see also https://www.jetsonhacks.com/2019/04/14/jetson-nano-use-more-memory/).
+12. Enable SSD swapping. Normally, for reasons of performance, one should not enable swapping when using Kubernetes but here we do so to trade off performance for greater working memory (see also https://www.jetsonhacks.com/2019/04/14/jetson-nano-use-more-memory/).
 ```
 cd /home/nano/Downloads
 sudo git clone https://github.com/JetsonHacksNano/installSwapfile
@@ -61,20 +77,20 @@ cd installSwapfile
 ./installSwapfile.sh -s 12
 ```
 
-11. Make the Nano headless and remove unnecessary applications.
+13. Make the Nano headless and remove unnecessary applications.
 ```
 sudo systemctl set-default multi-user.target
 sudo apt-get purge libreoffice*
 ```
 
-12. Refresh the installation.
+14. Refresh the installation.
 ```
 sudo apt update
 sudo apt upgrade
 sudo apt autoremove
 ```
 
-13. Reboot the Nano.
+14. Reboot the Nano.
 ```
 sudo reboot now
 ```
