@@ -429,7 +429,7 @@ sudo reboot now
 
 ## Remote Access
 
-1. To access the cluster's Kubernetes Dashboard from another computer on the same local network, first install kubectl on that remote computer (here we are using a Macintosh).
+1. To access the cluster's Kubernetes Dashboard from another computer on the same local network, first install kubectl on that remote computer; here we are using a Macintosh (see also https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/).
 ```
 brew install kubectl
 mkdir ~/.kube
