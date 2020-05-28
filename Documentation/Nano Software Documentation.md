@@ -26,7 +26,7 @@ sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
       Disks -> Format -> Compatible with modern systems and hard drives<br>
       Disks -> Add Partition -> 500GB | nanoCluster#SSD | internal disk
 
-6. Copy the root file system to the SSD (you can ignore most of the warnings along the way). Write down the SSD's UUID for later use.
+6. Copy the root file system to the SSD (you can ignore most of the warnings along the way). Copy the SSD's UUID for later use.
 ```
 cd rootOnUSB
 ./addUSBToInitramfs.sh
@@ -366,7 +366,7 @@ sudo -H pip3 install uvicorn
 sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--docker" sh -s - --bind-address <nanoCluster0's IP address>
 ```
 
-2. Get the master node's token.
+2. On the master node (nanoCluster0) get the node's token. Copy the token for later use.
 ```
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
@@ -376,18 +376,35 @@ sudo cat /var/lib/rancher/k3s/server/node-token
 sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--docker" K3S_URL=https://<nanoCluster0's IP address>:6443 K3S_TOKEN=<nanoCluster0's token> sh -
 ```
 
-4. On nanoCluster0, set each worker node's role.
+4. On the master node (nanoCluster0), set each worker node's role.
 ```
 sudo k3s kubectl label node nanoCluster1 node-role.kubernetes.io/worker=worker
 sudo k3s kubectl label node nanoCluster2 node-role.kubernetes.io/worker=worker
 sudo k3s kubectl label node nanoCluster3 node-role.kubernetes.io/worker=worker
 ```
 
-5. On nanoCluster0, install the kubernetes dashboard.
+5. On the master node (nanoCluster0), install the kubernetes dashboard.
 ```
 GITHUB_URL=https://github.com/kubernetes/dashboard/releases
 VERSION_KUBE_DASHBOARD=$(curl -w '%{url_effective}' -I -L -s -S ${GITHUB_URL}/latest -o /dev/null | sed -e 's|.*/||')
 sudo k3s kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/${VERSION_KUBE_DASHBOARD}/aio/deploy/recommended.yaml
+```
+
+6. On the master node (nanoCluster0), create an admin account and set its role using the files found <a href="../nano">here</a>. To get the URL for each file, choose a file then select Raw.
+```
+cd /home/nano/Downloads
+sudo wget <URL for dashboard.nanocluster-admin.yml> -O dashboard.nanocluster-admin.yml
+sudo wget <URL for dashboard.nanocluster-admin-role.yml> -O dashboard.nanocluster-admin-role.yml
+```
+
+7. On the master node (nanoCluster0), deploy the admin configuration.
+```
+sudo k3s kubectl create -f dashboard.nanocluster-admin.yml -f dashboard.nanocluster-admin-role.yml
+```
+
+8. On the master node (nanoCluster0), get the admin's token. Copy the token for later use.
+```
+sudo k3s kubectl -n kubernetes-dashboard describe secret nanocluster-admin-token | grep ^token
 ```
 
 ## Console Integration
