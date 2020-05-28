@@ -26,9 +26,7 @@ sudo apt autoremove
 ```
 cd /etc/ld.so.conf.d
 sudo rm aarch64-linux-gnu_EGL.conf
-sudo ln -s /etc/alternatives/aarch64-linux-gnu_egl_conf aarch64-linux-gnu_EGL.conf
 sudo rm aarch64-linux-gnu_GL.conf
-sudo ln -s /etc/alternatives/aarch64-linux-gnu_gl_conf aarch64-linux-gnu_GL.conf
 ```
  
 6. Clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
