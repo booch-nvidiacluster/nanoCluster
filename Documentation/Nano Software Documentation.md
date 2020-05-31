@@ -32,7 +32,7 @@ sudo rm aarch64-linux-gnu_GL.conf
 6. Clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
 ```
 cd /home/nano/Downloads
-sudo git clone https://github.com/jetsonHacksNano/rootOnUSB
+sudo git clone https://github.com/JetsonHacksNano/rootOnUSB
 ```
 
 7. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
