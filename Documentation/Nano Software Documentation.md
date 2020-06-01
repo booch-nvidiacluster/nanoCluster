@@ -83,14 +83,18 @@ sudo reboot now
 
 1. Install the latest Python package installers (see also https://pypi.org/project/pip/).
 ```
-sudo apt install python-pip
+* sudo apt install python-pip
 sudo apt install python3-pip
 ```
 
 2. Upgrade pip.
 ```
-sudo -H pip install --upgrade pip
+* sudo -H pip install --upgrade pip
 sudo -H pip3 install --upgrade pip
+```
+3. Make Python3 the default.
+```
+TBD
 ```
 
 ## Nginx
