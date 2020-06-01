@@ -94,7 +94,7 @@ sudo -H pip3 install --upgrade pip
 ```
 3. Make Python3 the default.
 ```
-TBD
+* TBD
 ```
 
 ## Nginx
