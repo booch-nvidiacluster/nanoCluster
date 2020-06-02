@@ -285,8 +285,8 @@ sudo -H pip3 install h5py
 
 3. Install libraries for array manipulation (see also https://pypi.org/project/numpy/)
 ```
-* sudo -H pip install numpy
-sudo -H pip3 install numpy
+* sudo -H pip install numpy=1.16.1
+sudo -H pip3 install numpy==1.16.1
 ```
 
 ## Libraries (Visualization)
