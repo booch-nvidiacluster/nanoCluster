@@ -178,7 +178,7 @@ sudo apt install sysstat
 
 1. Install libraries for querying CPU information (see also https://pypi.org/project/py-cpuinfo/).
 ```
-sudo -H pip install py-cpuinfo
+* sudo -H pip install py-cpuinfo
 sudo -H pip3 install py-cpuinfo
 ```
 
@@ -186,7 +186,7 @@ sudo -H pip3 install py-cpuinfo
 
 1. Install libraries for finding available network ports (see also https://pypi.org/project/portpicker/).
 ```
-sudo -H pip install portpicker
+* sudo -H pip install portpicker
 sudo -H pip3 install portpicker
 ```
 
@@ -194,25 +194,25 @@ sudo -H pip3 install portpicker
 
 1. Install libraries for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/).
 ```
-sudo -H pip install gast
+* sudo -H pip install gast
 sudo -H pip3 install gast
 ```
 
 2. Install libraries for manipulating Python’s abstract syntax trees (see also https://pypi.org/project/astor/).
 ```
-sudo -H pip install astor
+* sudo -H pip install astor
 sudo -H pip3 install astor
 ```
 
 3. Install libraries for declaring Python enumerations (see also https://pypi.org/project/enum34/).
 ```
-sudo -H pip install enum34
+* sudo -H pip install enum34
 sudo -H pip3 install enum34
 ```
 
 4. Install libraries for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/).
 ```
-sudo -H pip install wrapt
+* sudo -H pip install wrapt
 sudo -H pip3 install wrapt
 ```
 
@@ -223,43 +223,43 @@ sudo -H pip3 install futures3
 
 6. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
 ```
-sudo -H pip install future
+* sudo -H pip install future
 sudo -H pip3 install future
 ```
 
 7. Install libraries for building Python applications (see also https://pypi.org/project/absl-py/).
 ```
-sudo -H pip install absl-py
+* sudo -H pip install absl-py
 sudo -H pip3 install absl-py
 ```
 
 8. Install libraries for managing Python packages (see also https://pypi.org/project/setuptools/).
 ```
-sudo -H pip install setuptools
+* sudo -H pip install setuptools
 sudo -H pip3 install setuptools
 ```
 
 8. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/).
 ```
-sudo -H pip install testresources
+* sudo -H pip install testresources
 sudo -H pip3 install testresources
 ```
 
 9. Install libraries for unit testing Python applications (see also https://pypi.org/project/unittest2/)
 ```
-sudo -H pip install unittest2
+* sudo -H pip install unittest2
 sudo -H pip3 install unittest2
 ```
 
 10. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
 ```
-sudo -H pip install mock
+* sudo -H pip install mock
 sudo -H pip3 install mock
 ```
 
 11. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
 ```
-sudo -H pip install pyind11
+* sudo -H pip install pyind11
 sudo -H pip3 inststal pybind11
 ```
 
@@ -272,13 +272,13 @@ sudo apt install libatlas-base-dev
 
 2. Install libraries for scientific computing (see also https://pypi.org/project/numpy/).
 ```
-sudo -H pip install numpy
+* sudo -H pip install numpy
 sudo -H pip3 install numpy
 ```
 
 3. Install libraries for mathematical, scientific, and engineering computing (see also https://pypi.org/project/scipy/).
 ```
-sudo -H pip install scipy
+* sudo -H pip install scipy
 sudo -H pip3 install scipy
 ```
 
@@ -291,13 +291,13 @@ sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpe
 
 2. Install libraries for manipulating HDF data (see also https://pypi.org/project/h5py/).
 ```
-sudo -H pip install h5py
+* sudo -H pip install h5py
 sudo -H pip3 install h5py
 ```
 
 3. Install libraries for protocol buffers (see also https://pypi.org/project/protobuf/).
 ```
-sudo -H pip install protobuf
+* sudo -H pip install protobuf
 sudo -H pip3 install protbuf
 ```
 
@@ -305,13 +305,13 @@ sudo -H pip3 install protbuf
 
 1. Install libraries for formatting terminal output (see also https://pypi.org/project/termcolor/).
 ```
-sudo -H pip install termcolor
+* sudo -H pip install termcolor
 sudo -H pip3 install termcolor
 ```
 
 2. Install libraries for imaging (see also https://pypi.org/project/Pillow/).
 ```
-sudo -H pip install pillow
+* sudo -H pip install pillow
 sudo -H pip3 install pillow
 ```
 
@@ -319,7 +319,7 @@ sudo -H pip3 install pillow
 
 1. Install frameworks for remote procedure calls (see also https://pypi.org/project/grpc/).
 ```
-sudo -H pip install grpcio
+* sudo -H pip install grpcio
 sudo -H pip3 install grpcio
 ```
  
@@ -481,7 +481,7 @@ sudo apt show nvidia-jetpack
 3. Display the version of a package on the node.
 ```
 sudo apt show <package name>
-sudo pip show <package name>
+* sudo pip show <package name>
 sudo pip3 show <package name>
 ```
 
@@ -489,7 +489,7 @@ sudo pip3 show <package name>
 ```
 sudo apt update <package name>
 sudo apt upgrade <package name>
-sudo -H pip <package name> --upgrade
+* sudo -H pip <package name> --upgrade
 sudo -H pip3 <package name> -- upgrade
 ```
 
