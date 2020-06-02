@@ -270,18 +270,6 @@ sudo -H pip3 install pybind11
 sudo apt install libatlas-base-dev
 ```
 
-2. Install libraries for scientific computing (see also https://pypi.org/project/numpy/).
-```
-* sudo -H pip install numpy
-* sudo -H pip3 install numpy
-```
-
-3. Install libraries for mathematical, scientific, and engineering computing (see also https://pypi.org/project/scipy/).
-```
-* sudo -H pip install scipy
-sudo -H pip3 install scipy
-```
-
 ## Libraries (Data)
 
 1. Install libraries for storing hierarchical data  (see also https://www.hdfgroup.org/solutions/hdf5/).
