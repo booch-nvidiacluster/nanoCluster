@@ -130,7 +130,7 @@ sudo ss -tap | grep mysql
 
 1. Install Cython (see also https://cython.org).
 ```
-sudo apt install cython
+* sudo apt install cython
 sudo apt install cython3
 ```
 
