@@ -260,7 +260,7 @@ sudo -H pip3 install mock
 11. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
 ```
 * sudo -H pip install pyind11
-sudo -H pip3 inststal pybind11
+sudo -H pip3 install pybind11
 ```
 
 ## Libraries (Numeric)
