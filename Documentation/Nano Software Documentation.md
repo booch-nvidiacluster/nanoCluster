@@ -223,8 +223,8 @@ sudo -H pip3 install futures3
 
 6. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
 ```
-* sudo -H pip install future
-sudo -H pip3 install future
+* sudo -H pip install future==0.18.2
+sudo -H pip3 install future==0.18.2
 ```
 
 7. Install libraries for building Python applications (see also https://pypi.org/project/absl-py/).
@@ -253,8 +253,8 @@ sudo -H pip3 install unittest2
 
 10. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
 ```
-* sudo -H pip install mock
-sudo -H pip3 install mock
+* sudo -H pip install mock==4.0.2
+sudo -H pip3 install mock==4.0.2
 ```
 
 11. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
@@ -279,8 +279,8 @@ sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpe
 
 2. Install libraries for manipulating HDF data (see also https://pypi.org/project/h5py/).
 ```
-* sudo -H pip install h5py
-sudo -H pip3 install h5py
+* sudo -H pip install h5py==2.10.0
+sudo -H pip3 install h5py==2.10.0
 ```
 
 3. Install libraries for array manipulation (see also https://pypi.org/project/numpy/)
@@ -315,12 +315,12 @@ sudo -H pip3 install grpcio
 
 1. Install Keras preprocessing (https://pypi.org/project/Keras-Preprocessing/).
 ```
-sudo -H pip3 install keras-preprocessing
+sudo -H pip3 install keras-preprocessing==1.1.2
 ```
 
 2. Install Keras applications (https://pypi.org/project/Keras-Applications/).
 ```
-sudo -H pip3 install keras-applications
+sudo -H pip3 install keras-applications==1.0.8
 ```
 
 3. Install TensorFlow (see also https://pypi.org/project/tensorflow/).
