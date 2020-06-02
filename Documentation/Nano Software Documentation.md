@@ -273,7 +273,7 @@ sudo apt install libatlas-base-dev
 2. Install libraries for scientific computing (see also https://pypi.org/project/numpy/).
 ```
 * sudo -H pip install numpy
-sudo -H pip3 install numpy
+* sudo -H pip3 install numpy
 ```
 
 3. Install libraries for mathematical, scientific, and engineering computing (see also https://pypi.org/project/scipy/).
