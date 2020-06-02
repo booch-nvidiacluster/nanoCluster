@@ -283,6 +283,12 @@ sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpe
 sudo -H pip3 install h5py
 ```
 
+3. Install libraries for array manipulation (see also https://pypi.org/project/numpy/)
+```
+* sudo -H pip install numpy
+sudo -H pip3 install numpy
+```
+
 ## Libraries (Visualization)
 
 1. Install libraries for formatting terminal output (see also https://pypi.org/project/termcolor/).
