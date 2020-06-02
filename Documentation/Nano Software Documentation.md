@@ -283,12 +283,6 @@ sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpe
 sudo -H pip3 install h5py
 ```
 
-3. Install libraries for protocol buffers (see also https://pypi.org/project/protobuf/).
-```
-* sudo -H pip install protobuf
-sudo -H pip3 install protbuf
-```
-
 ## Libraries (Visualization)
 
 1. Install libraries for formatting terminal output (see also https://pypi.org/project/termcolor/).
