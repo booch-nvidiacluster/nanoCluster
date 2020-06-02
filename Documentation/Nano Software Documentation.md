@@ -194,8 +194,8 @@ sudo -H pip3 install portpicker
 
 1. Install libraries for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/).
 ```
-* sudo -H pip install gast
-sudo -H pip3 install gast
+* sudo -H pip install gast==0.2.2
+sudo -H pip3 install gast==0.2.2
 ```
 
 2. Install libraries for manipulating Python’s abstract syntax trees (see also https://pypi.org/project/astor/).
