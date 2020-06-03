@@ -204,36 +204,30 @@ sudo -H pip3 install gast==0.2.2
 sudo -H pip3 install astor
 ```
 
-3. Install libraries for declaring Python enumerations (see also https://pypi.org/project/enum34/).
-```
-* sudo -H pip install enum34
-sudo -H pip3 install enum34
-```
-
-4. Install libraries for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/).
+3. Install libraries for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/).
 ```
 * sudo -H pip install wrapt
 sudo -H pip3 install wrapt
 ```
 
-5. Install libraries for concurrency (see also https://pypi.org/project/futures3/).
+4. Install libraries for concurrency (see also https://pypi.org/project/futures3/).
 ```
 sudo -H pip3 install futures3
 ```
 
-6. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
+5. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
 ```
 * sudo -H pip install future==0.18.2
 sudo -H pip3 install future==0.18.2
 ```
 
-7. Install libraries for building Python applications (see also https://pypi.org/project/absl-py/).
+6. Install libraries for building Python applications (see also https://pypi.org/project/absl-py/).
 ```
 * sudo -H pip install absl-py
 sudo -H pip3 install absl-py
 ```
 
-8. Install libraries for managing Python packages (see also https://pypi.org/project/setuptools/).
+7. Install libraries for managing Python packages (see also https://pypi.org/project/setuptools/).
 ```
 * sudo -H pip install setuptools
 sudo -H pip3 install setuptools
