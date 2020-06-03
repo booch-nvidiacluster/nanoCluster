@@ -91,13 +91,11 @@ sudo apt install python3-pip
 sudo -H pip3 install --upgrade pip
 ```
 3. Make Python3 the default.
-```
 <pre><code>cd /etc
 sudo vi bash.bashrc
     <i>Add the following two lines.</i>
         alias python=python3
         alias pip=pip3</code></pre>
-```
 
 ## Nginx
 
