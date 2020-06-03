@@ -334,57 +334,7 @@ sudo -H pip3 install uvicorn
 
 ## Kubernetes
 
-1. Install K3S on nanoCluster0 as the master node (see also https://k3s.io and https://rancher.com/docs/k3s/latest/en/).
-```
-sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--docker" sh -s - --bind-address <nanoCluster0's IP address>
-```
-
-2. On the master node (nanoCluster0) get the node's token. Copy the token for later use.
-```
-sudo cat /var/lib/rancher/k3s/server/node-token
-```
-
-3. Install K3S on nanoCluster1, nanoCluster2, and nanoCluster3 as worker nodes.
-```
-sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--docker" K3S_URL=https://<nanoCluster0's IP address>:6443 K3S_TOKEN=<nanoCluster0's token> sh -
-```
-
-4. On the master node (nanoCluster0), set each worker node's role.
-```
-sudo k3s kubectl label node nanoCluster1 node-role.kubernetes.io/worker=worker
-sudo k3s kubectl label node nanoCluster2 node-role.kubernetes.io/worker=worker
-sudo k3s kubectl label node nanoCluster3 node-role.kubernetes.io/worker=worker
-```
-
-5. On the master node (nanoCluster0), install the Kubernetes Dashboard.
-```
-GITHUB_URL=https://github.com/kubernetes/dashboard/releases
-VERSION_KUBE_DASHBOARD=$(curl -w '%{url_effective}' -I -L -s -S ${GITHUB_URL}/latest -o /dev/null | sed -e 's|.*/||')
-sudo k3s kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/${VERSION_KUBE_DASHBOARD}/aio/deploy/recommended.yaml
-```
-
-6. On the master node (nanoCluster0), create an admin account and set its role using the files found <a href="../nano">here</a>. To get the URL for each file, choose a file then select Raw.
-```
-cd /home/nano/Downloads
-sudo wget <URL for dashboard.nanocluster-admin.yml> -O dashboard.nanocluster-admin.yml
-sudo wget <URL for dashboard.nanocluster-admin-role.yml> -O dashboard.nanocluster-admin-role.yml
-```
-
-7. On the master node (nanoCluster0), deploy the admin configuration.
-```
-sudo k3s kubectl apply -f dashboard.nanocluster-admin.yml
-sudo k3s kubectl apply -f dashboard.nanocluster-admin-role.yml
-```
-
-8. On the master node (nanoCluster0), get the admin's token. Copy the token for later use.
-```
-sudo k3s kubectl -n kubernetes-dashboard describe secret nanocluster-admin-token | grep ^token
-```
-
-9. On the master node (nanoCluster0), get the node's credentials. Copy the credentials for later use.
-```
-sudo cat /etc/rancher/k3s/k3s.yaml
-```
+1. * TBD
 
 ## Node/Console Integration
 
@@ -398,36 +348,6 @@ crontab -e
 2. Reboot the nano.
 ```
 sudo reboot now
-```
-
-## Remote Access
-
-1. To access the cluster's Kubernetes Dashboard from another computer on the same local network, first install kubectl on that remote computer; here we are using a Macintosh (see also https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/).
-```
-brew install kubectl
-mkdir ~/.kube
-cd ~/.kube
-```
-
-2. Copy the master node's (nanoCluster0) credentials to the remote computer.
-<pre><code>vi config
-<i>Insert the master node's credentials.</i></code></pre>
-
-3. On the master node (nanoCluster0), start a network proxy.
-```
-sudo k3s kubectl proxy --address='0.0.0.0' --disable-filter=true
-```
-
-4. On the remote computer, open a browser, navigate to the cluster's Kubernetes Dashboard, and use the master node's (nanoCluster0) token to login.
-```
-http://nanocluster0.local:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
-```
-
-5. On the remote computer, install a Kubernetes package manager (see also https://helm.sh).
-```
-brew install helm
-helm repo add stable https://kubernetes-charts.storage.googleapis.com
-helm repo update
 ```
 
 ## Commonly Used Cluster Commands
