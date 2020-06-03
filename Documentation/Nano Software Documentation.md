@@ -362,12 +362,19 @@ sudo vi bash.bashrc
     microk8s add-node
 <i>On a woker node, join the node to the master.</i>
    microk8s join <i>&lt;directive from the previous command on the master node&gt;</i>
-<i>Repeat these two steps for each worker in the cluster.</i></code></pre>
+<i>Repeat these two commands for each worker node in the cluster.</i></code></pre>
 
 6. On the master node, confirm that all the woker nodes are properly connected.
 ```
 kubectl get nodes
 ```
+
+7. Set each node's role.
+<pre><code><i>On the master node, set the master node's role.</i>
+    kubectl label node nanocluster0 node-role.kubernetes.io/master=master
+<i>On the master node, set each worker node's role.</i>
+    kubectl label node <i>&lt;work node's name&gt;</i> node-role.kubernetes.io/worker=worker
+<i>Repeat the previous command for each worker in the cluster.</i></code></pre>
 
 ## Node/Console Integration
 
@@ -416,4 +423,19 @@ sudo -H pip3 <package name> -- upgrade
 5. Clean up unusued packages on the node.
 ```
 sudo apt autoremove
+```
+
+6. On the master node, check the Kubernetes status.
+```
+microk8s status
+```
+
+7. On the master node, check the Kubernetes nodes.
+```
+kubectl get nodes
+```
+
+8. On the master node, check the Kubernetes services.
+```
+kubectl get services
 ```
