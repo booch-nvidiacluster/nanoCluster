@@ -348,7 +348,25 @@ su - $USER
 
 3. Confirm the initial installation.
 ```
-microk8s status --wait-ready
+microk8s status
+```
+
+4. Make an alias to kubectl.
+<pre><code>cd /etc
+sudo vi bash.bashrc
+    <i>Add the following line.</i>
+        alias kubectl='microk8s kubectl'</code></pre>
+
+5. Connect worker nodes to the master node.
+<pre><code><i>On the master node, get a join token.</i>
+    microk8s add-node
+<i>On a woker node, join the node to the master.</i>
+   microk8s join <i>directive from the previous command on the master node</i>
+<i>Repeat these two steps for each worker in the cluster.</i></code></pre>
+
+6. On the master node, confirm that all the woker nodes are properly connected.
+```
+kubectl get nodes
 ```
 
 ## Node/Console Integration
