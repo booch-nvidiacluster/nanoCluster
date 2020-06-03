@@ -378,7 +378,7 @@ kubectl get nodes
 
 8. On the master node, enable certain services.
 ```
-microk8s enable dashboard dns ingress
+microk8s enable dashboard dns ingress rbac
 ```
 
 ## Node/Console Integration
