@@ -264,6 +264,11 @@ sudo -H pip3 install pybind11
 sudo apt install libatlas-base-dev
 ```
 
+2. Install libraries for scientific processing (see also https://pypi.org/project/scipy/).
+```
+sudo -H pip3 install scipy==1.4.1
+```
+
 ## Libraries (Data)
 
 1. Install libraries for storing hierarchical data  (see also https://www.hdfgroup.org/solutions/hdf5/).
