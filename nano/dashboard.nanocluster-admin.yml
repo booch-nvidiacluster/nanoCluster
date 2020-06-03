@@ -2,4 +2,4 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: nanocluster-admin
-  namespace: kubernetes-dashboard
+  namespace: kube-system
