@@ -361,7 +361,7 @@ sudo vi bash.bashrc
 <pre><code><i>On the master node, get a join token.</i>
     microk8s add-node
 <i>On a woker node, join the node to the master.</i>
-   microk8s join <i>directive from the previous command on the master node</i>
+   microk8s join <i>&lt;directive from the previous command on the master node&gt;</i>
 <i>Repeat these two steps for each worker in the cluster.</i></code></pre>
 
 6. On the master node, confirm that all the woker nodes are properly connected.
