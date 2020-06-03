@@ -369,12 +369,17 @@ sudo vi bash.bashrc
 kubectl get nodes
 ```
 
-7. Set each node's role.
-<pre><code><i>On the master node, set the master node's role.</i>
+7. On the master node, set each node's role.
+<pre><code><i>Set the master node's role.</i>
     kubectl label node nanocluster0 node-role.kubernetes.io/master=master
-<i>On the master node, set each worker node's role.</i>
+<i>Set each worker node's role.</i>
     kubectl label node <i>&lt;work node's name&gt;</i> node-role.kubernetes.io/worker=worker
 <i>Repeat the previous command for each worker in the cluster.</i></code></pre>
+
+8. On the master node, enable certain services.
+```
+microk8s enable dashboard dns ingress
+```
 
 ## Node/Console Integration
 
