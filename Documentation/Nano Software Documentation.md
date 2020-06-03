@@ -357,8 +357,8 @@ sudo vi bash.bashrc
     <i>Add the following line.</i>
         alias kubectl='microk8s kubectl'</code></pre>
 
-5. Connect worker nodes to the master node.
-<pre><code><i>On the master node, get a join token.</i>
+5. Connect each node to the master node.
+<pre><code><i>On the master node (nanoCluster0), get a join token.</i>
     microk8s add-node
 <i>On a woker node, join the node to the master.</i>
    microk8s join <i>&lt;directive from the previous command on the master node&gt;</i>
