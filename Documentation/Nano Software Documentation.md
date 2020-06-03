@@ -334,7 +334,22 @@ sudo -H pip3 install uvicorn
 
 ## Kubernetes
 
-1. * TBD
+1. Install MicroK8s on the node (see also https://microk8s.io/docs).
+```
+sudo snap install microk8s --classic --channel=1.18/stable
+```
+
+2. Join the group.
+```
+sudo usermod -a -G microk8s $USER
+sudo chown -f -R $USER ~/.kube
+su - $USER
+```
+
+3. Confirm the initial installation.
+```
+microk8s status --wait-ready
+```
 
 ## Node/Console Integration
 
