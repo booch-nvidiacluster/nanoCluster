@@ -316,18 +316,27 @@ sudo -H pip3 install keras
 
 ## Microservices
 
-1. Verify that Docker is properly installed.
+1. Configure the firewall using files from <a href="../nano">here</a>. To get the URL for the daemon, find the json then select Raw.
+<pre><code>sudo apt-get install iptables-persistent
+sudo iptables -P FORWARD ACCEPT
+cd /etc/docker
+sudo rm daemon.json
+sudo wget <i>&lt;URL for daemon.json&gt;</i> -O daemon.json
+sudo systemctl daemon-reload
+sudo systemctl restart docker</code></pre>
+
+2. Verify that Docker is properly installed.
 ```
 sudo docker run hello-world
 sudo docker run --gpus all jitteam/devicequery ./deviceQuery
 ```
 
-2. Install FastAPI (see also https://pypi.org/project/fastapi/).
+3. Install FastAPI (see also https://pypi.org/project/fastapi/).
 ```
 sudo -H pip3 install fastapi
 ```
 
-3. Install an asynchronous gateway service interface (see also https://pypi.org/project/uvicorn/).
+4. Install an asynchronous gateway service interface (see also https://pypi.org/project/uvicorn/).
 ```
 sudo -H pip3 install uvicorn
 ```
