@@ -13,7 +13,7 @@ Several bits of code needed in support of this provisioning reside <a href="../n
  
 2. Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
  
-3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano (but first ensure that the SSD is NOT yet connected to the Nano), then follow the on screen start up instructions to configure the computer's name (in the form *nanoCluster#*, where # is the node ID from 0 to 3), user account (we use nano as the user ID), and wireless connection. It is important that you establish a static IP address for each node, as a precondition to configuring the Kubernetes infrastructure (and this is more easily done in the Nano's graphical user interface than in the terminal interface). The start up process may ask you to update your software (which is harmless to do) and to reboot along the way. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
+3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano (but first ensure that the SSD is NOT yet connected to the Nano), then follow the on screen start up instructions to configure the computer's name (in the form *nanoCluster#*, where # is the node ID from 0 to 3), user account (we use nano as the user ID), and wireless connection. It is important that you establish a static IP address for each node, as a precondition to configuring the Kubernetes infrastructure (which is more easily done in the Nano's graphical user interface than in the terminal interface). The start up process may ask you to update your software (which is harmless to do) and to reboot along the way. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
 
 4. Clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
 ```
@@ -343,30 +343,36 @@ sudo -H pip3 install uvicorn
 
 ## Kubernetes
 
-1. Install MicroK8s on the node (see also https://microk8s.io/docs).
+1. As a precondition to configuring the Kubernetes infrastructure, disable Nginx on the each node.
+```
+sudo systemctl stop nginx
+sudo systemctl disable nginx
+```
+
+0. Install MicroK8s on the node (see also https://microk8s.io/docs).
 ```
 sudo snap install microk8s --classic --channel=1.18/stable
 ```
 
-2. Join the group.
+1. Join the group.
 ```
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
 su - $USER
 ```
 
-3. Confirm the initial installation.
+2. Confirm the initial installation.
 ```
 microk8s status
 ```
 
-4. Make an alias to kubectl.
+3. For convenience, make an alias to kubectl.
 <pre><code>cd /etc
 sudo vi bash.bashrc
     <i>Add the following line.</i>
         alias kubectl='microk8s kubectl'</code></pre>
 
-5. Connect each node to the master node.
+5. Designate one node as master; designate the others as workers
 <pre><code><i>On the master node (nanoCluster0), get a join token.</i>
     microk8s add-node
 <i>On a woker node, join the node to the master.</i>
@@ -387,7 +393,7 @@ kubectl get nodes
 
 8. On the master node, enable certain services.
 ```
-microk8s enable dashboard dns ingress rbac
+microk8s enable dashboard dns ingress
 ```
 
 ## Node/Console Integration
