@@ -3,7 +3,7 @@ The cluster's essential computational resource.
 
 <img src="/Documentation/Images/Jetson Nano.jpg" alt="Jetson Nano">
 
-Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Nginx, and MySQL - together with support for other languages, runtimes, and a graph database, plus various tools and libraries for general development, frameworks for artificial intelligence and networking, and an infrastructure for hosting microservices and Kubernetes. Instructions are given for integrating the cluster's nodes with the console, accessing the cluster from a remote computer on the same network, and for commonly used cluster commands.
+Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Nginx, and MySQL - together with support for other languages, runtimes, and a graph database, plus various tools and libraries for general development, frameworks for artificial intelligence and networking, and an infrastructure for hosting microservices and Kubernetes. Instructions are given for accessing the cluster from a remote computer on the same network, integrating the cluster's nodes with the console, and for commonly used cluster commands.
 
 Several bits of code needed in support of this provisioning reside <a href="../nano">here</a>.
 
@@ -343,7 +343,7 @@ sudo -H pip3 install uvicorn
 
 ## Kubernetes
 
-1. As a precondition to configuring the Kubernetes infrastructure, disable Nginx on the each node.
+1. As a precondition to configuring the Kubernetes infrastructure, disable Nginx on the node.
 ```
 sudo systemctl stop nginx
 sudo systemctl disable nginx
@@ -354,7 +354,7 @@ sudo systemctl disable nginx
 sudo snap install microk8s --classic --channel=1.18/stable
 ```
 
-1. Join the group.
+1. Join the microk8s group.
 ```
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
@@ -396,6 +396,51 @@ kubectl get nodes
 microk8s enable dashboard dns ingress
 ```
 
+## Remotely Accessing the Cluster
+
+1. On the master node, get the credentials. Save the results for later.
+```
+microk8s config
+```
+
+2. On another computer on the same local network as the cluster, install kubectl (here we use a Macintosh).
+```
+brew install kubectl
+```
+
+3. On the remote computer, install the cluster's credentials.
+<pre><code>mkdir ~/.kube
+cd ~/.kube
+sudo vi config
+    <i>Insert the cluster's credentials.</i></code></pre>
+
+4. Confirm that the cluster is accessible from the remote computer.
+```
+kubectl get nodes
+```
+
+5. On the master node, create a service account using the files found <a href="../nano">here</a>. To get the URL for each file, find the file then select Raw.
+<pre><code>cd /home/nano/Downloads
+sudo wget <i>&lt;URL for dashboard.nanocluster-admin.yml&gt;</i> -O dashboard.nanocluster-admin.yml
+sudo wget <i>&lt;URL for dashboard.nanocluster-admin-role.yml&gt;</i> -O dashboard.nanocluster-admin-role.yml
+kubectl apply -f dashboard.nanocluster-admin.yml
+kubectl apply -f dashboard.nanocluster-admin-role.yml</code></pre>
+
+6. On the master node, get the service account's token. Copy the token for later use.
+```
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep nanocluster-admin  | awk '{print $1}')
+```
+
+7. On the remote computer, forward the Kubernetes dashboard service port.
+```
+kubectl port-forward service/kubernetes-dashboard 8443:443 -n kube-system
+```
+
+8. On the remote computer, open a browser window to access the Kubernetes dashboard, using the service account's token.
+```
+https://localhost:8443
+```
+
 ## Node/Console Integration
 
 1. Start the Nano's hearbeat using the application found <a href="../nano">here</a>. To get the URL for the file, find hearbeat.py then select Raw.
@@ -412,35 +457,35 @@ sudo reboot now
 
 ## Commonly Used Cluster Commands
 
-1. Display the node's hostname.
+1. On the node, display the hostname.
 ```
 whoami
 ```
 
-2. Display the node's IP address.
+2. On the node, display the IP address.
 ```
 ifconfig
 ```
 
-2. Display the node's JetPack version.
+2. On the node, display the JetPack version.
 ```
 sudo apt show nvidia-jetpack
 ```
 
-3. Display the version of a package on the node.
+3. On the node, display the version of a package.
 ```
 sudo apt show <package name>
 sudo pip3 show <package name>
 ```
 
-4. Update a package on the node.
+4. On the node, update a package.
 ```
 sudo apt update <package name>
 sudo apt upgrade <package name>
 sudo -H pip3 <package name> -- upgrade
 ```
 
-5. Clean up unusued packages on the node.
+5. On the node, clean up unused packages.
 ```
 sudo apt autoremove
 ```
@@ -450,12 +495,12 @@ sudo apt autoremove
 microk8s status
 ```
 
-7. On the master node, check the Kubernetes nodes.
+7. On the master node or the remote computer, check the Kubernetes nodes.
 ```
 kubectl get nodes
 ```
 
-8. On the master node, check the Kubernetes services.
+8. On the master node or the remote computer, check the Kubernetes namespaces.
 ```
-kubectl get services
+kubectl get all --all-namespaces
 ```
