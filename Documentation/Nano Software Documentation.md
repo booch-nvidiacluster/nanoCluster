@@ -5,7 +5,7 @@ The cluster's essential computational resource.
 
 Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Nginx, and MySQL - together with support for other languages, runtimes, and a graph database, plus various tools and libraries for general development, frameworks for artificial intelligence and networking, and an infrastructure for hosting microservices and Kubernetes. Instructions are given for accessing the cluster from a remote computer on the same network, integrating the cluster's nodes with the console, and for commonly used cluster commands.
 
-Several bits of code needed in support of this provisioning reside <a href="../nano">here</a>.
+Several bits of code needed in support of this provisioning reside <a href="../source/nano">here</a>.
 
 ## Ubuntu
  
@@ -106,7 +106,7 @@ sudo apt install nginx
 
 2. Confirm that Nginx is properly installed by going to a host computer and entering the Nano's IP address in a browser.
 
-3. Replace the Nano's default web page using files from <a href="../nano">here</a>. To get the URL for the html, find the appropriate html (in the form *index#.html* where # is the node ID from 0 to 3) then select Raw. To get the URL for the image (in the form *nanoCluster#.jpg* where # is the node ID from 0 to 3), find the appropriate file then select Download.
+3. Replace the Nano's default web page using files from <a href="../source/nano">here</a>. To get the URL for the html, find the appropriate html (in the form *index#.html* where # is the node ID from 0 to 3) then select Raw. To get the URL for the image (in the form *nanoCluster#.jpg* where # is the node ID from 0 to 3), find the appropriate file then select Download.
 <pre><code>cd /var/www/html
 sudo rm index.nginx-debian.html
 sudo wget <i>&lt;URL for index#.html&gt;</i> -O index.html
@@ -316,7 +316,7 @@ sudo -H pip3 install keras
 
 ## Microservices
 
-1. Configure the firewall using files from <a href="../nano">here</a>. To get the URL for the daemon, find the json then select Raw.
+1. Configure the firewall using files from <a href="../source/nano">here</a>. To get the URL for the daemon, find the json then select Raw.
 <pre><code>sudo apt-get install iptables-persistent
 sudo iptables -P FORWARD ACCEPT
 cd /etc/docker
@@ -419,7 +419,7 @@ sudo vi config
 kubectl get nodes
 ```
 
-5. On the master node, create a service account using the files found <a href="../nano">here</a>. To get the URL for each file, find the file then select Raw.
+5. On the master node, create a service account using the files found <a href="../source/nano">here</a>. To get the URL for each file, find the file then select Raw.
 <pre><code>cd /home/nano/Downloads
 sudo wget <i>&lt;URL for dashboard.nanocluster-admin.yml&gt;</i> -O dashboard.nanocluster-admin.yml
 sudo wget <i>&lt;URL for dashboard.nanocluster-admin-role.yml&gt;</i> -O dashboard.nanocluster-admin-role.yml
@@ -443,7 +443,7 @@ https://localhost:8443
 
 ## Node/Console Integration
 
-1. Start the Nano's hearbeat using the application found <a href="../nano">here</a>. To get the URL for the file, find hearbeat.py then select Raw.
+1. Start the Nano's hearbeat using the application found <a href="../source/nano">here</a>. To get the URL for the file, find hearbeat.py then select Raw.
 <pre><code>cd /home/nano/Downloads
 sudo wget <i>&lt;URL for heartbeat.py&gt;</i> -O heartbeat.py
 crontab -e
