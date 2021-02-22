@@ -29,4 +29,4 @@ Source: <a href="https://www.adafruit.com/product/1466">https://www.adafruit.com
 ## Console
 
 **7.9" Touch Screen LCD** (1)<br>
-Source: <a href=""https://www.waveshare.com/wiki/7.9inch_HDMI_LCD</a><br>
+Source: <a href="https://www.waveshare.com/wiki/7.9inch_HDMI_LCD">https://www.waveshare.com/wiki/7.9inch_HDMI_LCD</a><br>
