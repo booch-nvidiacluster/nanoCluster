@@ -1,4 +1,4 @@
-# Construction
+# Hardware
 The nanoCluster has a small footprint, measuring 4" by 6" by 10" (not counting any space taken up by power, USB, and HDMI cables). It is kept open to simplify cooling and to make all header pins easily accessible for experimentation.
 
 <img src="/Documentation/Images/cluster 1.jpg">
