@@ -7,7 +7,7 @@ Each of the four NVIDID Jetson Nanos as well as the touch screen LCD are secured
 
 There is a jumper shunt placed on J48 off each Nano, which directs each Nano to draw its power from the barrel jack rather than the micro-USB port (see also https://www.jetsonhacks.com/2019/04/10/jetson-nano-use-more-power/). The cooling fan, anchored on top of each Nano's heatsink, is connected to J15 (see https://www.jetsonhacks.com/2019/09/08/jetson-nano-add-a-fan/). The wireless card and antenna are placed below each Nano, and are connected to M.2 Key E (see https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/).
 
-The touch screen LCD is connected to one of the Nanos using a USB cable (for power and touch control) and an HDMI cable.
+The touch screen LCD is connected to one of the Nanos using a USB cable (for power and touch control) and an HDMI cable (for display).
 
 <img src="/Documentation/Images/cluster 2.jpg">
 <img src="/Documentation/Images/cluster 3.jpg">
