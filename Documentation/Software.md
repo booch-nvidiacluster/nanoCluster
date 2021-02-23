@@ -1,5 +1,5 @@
 # Software
-The cluster's essential computational provisioning.
+The cluster's setup and provisioning.
 
 <img src="/Documentation/Images/Jetson Nano.jpg">
 
