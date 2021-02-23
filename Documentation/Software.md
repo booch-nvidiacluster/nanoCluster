@@ -5,7 +5,7 @@ The cluster's setup and provisioning.
 
 Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, Nginx, and MySQL - together with support for other languages, runtimes, and a graph database, plus various tools and libraries for general development, frameworks for artificial intelligence and networking, and an infrastructure for hosting microservices and Kubernetes. Instructions are given for accessing the cluster from a remote computer on the same network, integrating the cluster's nodes with the console, and for commonly used cluster commands.
 
-Several bits of code needed in support of this provisioning reside <a href="../source/nano">here</a>.
+Several bits of code needed in support of this provisioning reside <a href="../source">here</a>.
 
 ## Ubuntu
  
