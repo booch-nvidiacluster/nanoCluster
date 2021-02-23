@@ -7,6 +7,6 @@ This is a simple cluster, composed of four NVIDIA Jetson Nano single board compu
 
 The physical components of the nanoCluster are enumerated in its <a href="/Documentation/Bill%20of%20Materials.md">Bill of Materials</a>; the details of the cluster's physical assembly are described in <a href="/Documentation/Construction.md">Construction</a>.
 
-Documentation for the setup and provisioning of each Nano is found in <a href="/Documentation/Nano%20Software%20Documentation.md">Nano Software Documentation</a>.
+Documentation for the setup and provisioning of each Nano is found in <a href="/Documentation/Software.md">Software</a>.
 
 A Slack channel for this project resides at https://booch-nvidiacluster.slack.com
