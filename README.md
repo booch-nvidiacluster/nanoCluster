@@ -1,5 +1,5 @@
 # nanoCluster
-An edge compute platform.
+An simple compute platform.
 
 <img src="/Documentation/Images/cluster 1.jpg" alt="nanoCluster">
 
