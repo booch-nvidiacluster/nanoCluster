@@ -18,7 +18,7 @@ Several bits of code needed in support of this provisioning reside <a href="../s
       System Settings -> Network -> *connection* -> Settings -> IPV4 Settings -> Method -> Manual<br>
       System Settings -> Network -> *connection* -> Settings -> IPV4 Settings -> Add
       
-      where you will set an appropriate IP address, netmask, and gateway. The start up process may ask you to update your software (which is harmless to do) and to reboot along the way. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
+      where you will set an appropriate IP address, netmask, gateway, and DNS server. The start up process may ask you to update your software (which is harmless to do) and to reboot along the way. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
 
 4. Clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
 ```
