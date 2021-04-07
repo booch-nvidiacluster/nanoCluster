@@ -23,7 +23,7 @@ Several bits of code needed in support of this provisioning reside <a href="../s
 4. Clone this repository (see also https://www.jetsonhacks.com/2021/03/10/jetson-nano-boot-from-usb/).
 ```
 cd /home/nano/Downloads
-sudo git clone https://github.com/JetsonHacksNano/rootOnUSB
+sudo git clone https://github.com/JetsonHacksNano/bootFromUSB
 ```
 
 5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
@@ -33,7 +33,7 @@ sudo git clone https://github.com/JetsonHacksNano/rootOnUSB
 
 6. Copy the root file system to the SSD (you can ignore most of the warnings along the way). Copy the SSD's UUID for later use.
 ```
-cd /home/nano/Downloads/rootOnUSB
+cd /home/nano/Downloads/bootFromUSB
 ./addUSBToInitramfs.sh
 ./copyRootToUSB.sh -p /dev/sda1
 ./diskUUID.sh
