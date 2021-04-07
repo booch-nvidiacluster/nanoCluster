@@ -3,7 +3,7 @@ The cluster's setup and provisioning.
 
 <img src="/Documentation/Images/Jetson Nano.jpg">
 
-Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, MySql, and Nginx - together with support for other languages, runtimes, and a graph database; various tools and libraries for general development; frameworks for artificial intelligence and networking; and an infrastructure for hosting microservices and Kubernetes. Instructions are given for commonly used cluster commands as well as for accessing the cluster from a remote computer on the same network.
+Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, MySql, and Nginx - together with support for other languages, runtimes, and a graph database; various tools, libraries, and frameworks for general development, artificial intelligence, and networking; and infrastructure for hosting microservices and Kubernetes. Instructions are given for commonly used cluster commands as well as for accessing the cluster from a remote computer on the same network.
 
 Several bits of code needed in support of this provisioning reside <a href="../source">here</a>.
 
