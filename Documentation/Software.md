@@ -20,7 +20,7 @@ Several bits of code needed in support of this provisioning reside <a href="../s
       
       where you will set an appropriate IP address, netmask, gateway, and DNS server. Along the way, the Nano's start up process may ask you to update your software and to reboot. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
 
-4. Clone this repository (see also https://www.jetsonhacks.com/2019/09/17/jetson-nano-run-from-usb-drive/).
+4. Clone this repository (see also https://www.jetsonhacks.com/2021/03/10/jetson-nano-boot-from-usb/).
 ```
 cd /home/nano/Downloads
 sudo git clone https://github.com/JetsonHacksNano/rootOnUSB
