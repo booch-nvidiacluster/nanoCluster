@@ -29,25 +29,24 @@ sudo git clone https://github.com/JetsonHacksNano/bootFromUSB
 5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
 
       Disks -> Format -> Compatible with modern systems and hard drives > 2TB (GPT)<br>
-      Disks -> Add Partition -> 500GB | nanoCluster#SSD | Internal disk for use with Linux only (Ext4)
+      Disks -> Add Partition -> 499GB | nanoCluster#SSD | Internal disk for use with Linux only (Ext4)<br>
+      Disks -> Mount
 
-6. Copy the root file system to the SSD (you can ignore most of the warnings along the way). Copy the SSD's UUID for later use.
+6. Copy the root file system to the SSD (you can ignore most of the warnings along the way). Copy the SSD's PARTUUID for later use.
 ```
 cd /home/nano/Downloads/bootFromUSB
-./addUSBToInitramfs.sh
 ./copyRootToUSB.sh -p /dev/sda1
-./diskUUID.sh
+./partUUID.sh
 ```
 
 7. Redirect the root file system.
 <pre><code>cd /boot/extlinux
 sudo vi extlinux.conf
-    <i>Change the INITRD line to the following.</i>
-        INTRD /boot/initrd-xusb.img
-    <i>Change the APPEND line to reflect the UUID for sda1.</i>
-        APPEND ${cbootargs} root=UUID=<i>&lt;UUID for sda1&gt;</i> rootwait rootfstype=ext4</code></pre>
+    <i>Copy the PRIMARY entry and rename it to sdcard.</i>
+    <i>Change the APPEND line of the PRIMARY entry to reflect the PARTUUID for sda1.</i>
+        APPEND ${cbootargs} root=PARTUUID=<i>&lt;UUID for sda1&gt;</i> rootwait rootfstype=ext4</code></pre>
 
-8. Reboot the Nano.
+8. Remove the SD card then reboot the Nano.
 ```
 sudo reboot now
 ```
