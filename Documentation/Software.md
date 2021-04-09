@@ -30,7 +30,7 @@ sudo git clone https://github.com/JetsonHacksNano/bootFromUSB
           Disks -> Add Partition -> 499GB | nanoCluster#SSD | Internal disk for use with Linux only (Ext4)<br>
           Disks -> Mount
 
-6. Copy the root file system to the SSD (you can ignore most of the warnings along the way). Copy the SSD's PARTUUID for later use.
+6. Copy the root file system to the SSD. Copy the SSD's PARTUUID for later use.
 ```
 cd /home/nano/Downloads/bootFromUSB
 ./copyRootToUSB.sh -p /dev/sda1
