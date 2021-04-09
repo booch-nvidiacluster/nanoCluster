@@ -40,18 +40,20 @@ cd /home/nano/Downloads/bootFromUSB
 ```
 
 7. Redirect the root file system.
-<pre><code>cd /boot/extlinux
+<pre><code>cd /media/nano/nanoCluster#SSD/boot/extlinux
 sudo vi extlinux.conf
     <i>Copy the PRIMARY entry and rename it to sdcard.</i>
     <i>Change the APPEND line of the PRIMARY entry to reflect the PARTUUID for sda1.</i>
         APPEND ${cbootargs} root=PARTUUID=<i>&lt;UUID for sda1&gt;</i> rootwait rootfstype=ext4</code></pre>
 
-8. Remove the SD card then reboot the Nano.
+8. Shut down the Nano.
 ```
-sudo reboot now
+sudo shutdown now
 ```
 
-9. Configure the Nano for high power mode.
+9. Remove the memory card then power up the Nano.
+
+10. Configure the Nano for high power mode.
 ```
 sudo nvpmodel -m 0
 sudo jetson_clocks
