@@ -187,11 +187,6 @@ sudo apt-get install neo4j
 sudo apt install curl
 ```
 
-2. Install tools for reporting on system loads (see also http://sebastien.godard.pagesperso-orange.fr).
-```
-sudo apt install sysstat
-```
-
 ## Libraries (Hardware)
 
 1. Install libraries for querying CPU information (see also https://pypi.org/project/py-cpuinfo/).
