@@ -90,7 +90,7 @@ sudo reboot now
 sudo apt install python3-pip
 ```
 
-2. Upgrade pip.
+2. Upgrade pip3.
 ```
 sudo -H pip3 install --upgrade pip
 ```
