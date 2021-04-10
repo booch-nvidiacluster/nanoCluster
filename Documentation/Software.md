@@ -182,16 +182,9 @@ sudo apt-get install neo4j
 
 ## Tools
 
-1. Install tools for transferring data with URLS (see also https://curl.haxx.se).
+1. Install tools for transferring data with URLs (see also https://curl.haxx.se).
 ```
 sudo apt install curl
-```
-
-## Libraries (Hardware)
-
-1. Install libraries for querying CPU information (see also https://pypi.org/project/py-cpuinfo/).
-```
-sudo -H pip3 install py-cpuinfo
 ```
 
 ## Libraries (Networking)
