@@ -221,32 +221,22 @@ sudo -H pip3 install futures3
 sudo -H pip3 install future
 ```
 
-6. Install libraries for building Python applications (see also https://pypi.org/project/absl-py/).
-```
-sudo -H pip3 install absl-py
-```
-
-7. Install libraries for managing Python packages (see also https://pypi.org/project/setuptools/).
-```
-sudo -H pip3 install setuptools
-```
-
-8. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/).
+6. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/).
 ```
 sudo -H pip3 install testresources
 ```
 
-9. Install libraries for unit testing Python applications (see also https://pypi.org/project/unittest2/)
+7. Install libraries for unit testing Python applications (see also https://pypi.org/project/unittest2/)
 ```
 sudo -H pip3 install unittest2
 ```
 
-10. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
+8. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
 ```
 sudo -H pip3 install mock
 ```
 
-11. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
+9. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
 ```
 sudo -H pip3 install pybind11
 ```
