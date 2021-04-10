@@ -98,7 +98,8 @@ sudo -H pip3 install --upgrade pip
 <pre><code>cd /etc
 sudo vi bash.bashrc
     <i>Add the following line.</i>
-        alias pip=pip3</code></pre>
+        alias pip=pip3
+source bash.bashrc</code></pre>
 
 4. Foobar
 
