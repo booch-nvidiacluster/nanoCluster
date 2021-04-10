@@ -226,17 +226,12 @@ sudo -H pip3 install future
 sudo -H pip3 install testresources
 ```
 
-7. Install libraries for unit testing Python applications (see also https://pypi.org/project/unittest2/)
-```
-sudo -H pip3 install unittest2
-```
-
-8. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
+7. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
 ```
 sudo -H pip3 install mock
 ```
 
-9. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
+8. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
 ```
 sudo -H pip3 install pybind11
 ```
