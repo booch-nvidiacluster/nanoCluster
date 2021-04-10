@@ -245,7 +245,7 @@ sudo apt install libatlas-base-dev
 
 2. Install libraries for scientific processing (see also https://pypi.org/project/scipy/).
 ```
-sudo -H pip3 install scipy==1.4.1
+sudo -H pip3 install scipy
 ```
 
 ## Libraries (Data)
