@@ -198,7 +198,7 @@ sudo -H pip3 install portpicker
 
 1. Install libraries for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/).
 ```
-sudo -H pip3 install gast==0.2.2
+sudo -H pip3 install gast
 ```
 
 2. Install libraries for manipulating Python’s abstract syntax trees (see also https://pypi.org/project/astor/).
@@ -218,7 +218,7 @@ sudo -H pip3 install futures3
 
 5. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
 ```
-sudo -H pip3 install future==0.18.2
+sudo -H pip3 install future
 ```
 
 6. Install libraries for building Python applications (see also https://pypi.org/project/absl-py/).
@@ -243,7 +243,7 @@ sudo -H pip3 install unittest2
 
 10. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
 ```
-sudo -H pip3 install mock==4.0.2
+sudo -H pip3 install mock
 ```
 
 11. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
