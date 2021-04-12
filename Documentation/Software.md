@@ -261,12 +261,12 @@ sudo apt install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpe
 
 2. Install libraries for manipulating HDF data (see also https://pypi.org/project/h5py/).
 ```
-sudo -H pip3 install h5py==2.10.0
+sudo -H pip3 install h5py
 ```
 
 3. Install libraries for array manipulation (see also https://pypi.org/project/numpy/)
 ```
-sudo -H pip3 install numpy==1.16.1
+sudo -H pip3 install numpy
 ```
 
 ## Libraries (Visualization)
