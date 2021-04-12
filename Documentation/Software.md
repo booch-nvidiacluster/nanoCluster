@@ -83,6 +83,15 @@ sudo apt autoremove
 sudo reboot now
 ```
 
+## Bash
+
+1. If you'd like a custom bash prompt, do the following.
+<pre><code>cd ~
+sudo vi bash.bashrc
+    <i>Add the following line.</i>
+        export PS1="\e[0;34m\u@\h (\t) [\w]:\e[0m"
+source bash.bashrc</code></pre>
+
 ## Python
 
 1. Install the latest Python package installers (see also https://pypi.org/project/pip/).
