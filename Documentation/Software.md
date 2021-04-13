@@ -203,6 +203,12 @@ sudo apt install curl
 sudo -H pip3 install portpicker
 ```
 
+## Libraries (Hardware)
+
+1. Configure libraries for controlling the Nano's GPIO pins (see also https://github.com/NVIDIA/jetson-gpio).
+<pre><code>sudo groupadd -f -f GPIO
+sudo usermod -a -G GPIO <i>&lt;user name</i>
+
 ## Lbraries (Python)
 
 1. Install libraries for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/).
