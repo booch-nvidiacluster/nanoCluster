@@ -271,9 +271,9 @@ sudo -H pip3 install h5py
 
 ## Libraries (Visualization)
 
-1. Install libraries for formatting terminal output (see also https://pypi.org/project/termcolor/).
+1. Install libraries for formatting terminal output (see also https://pypi.org/project/colorama/).
 ```
-sudo -H pip3 install termcolor
+sudo -H pip3 install colorama
 ```
 
 2. Install libraries for imaging (see also https://pypi.org/project/Pillow/).
