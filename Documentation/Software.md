@@ -259,17 +259,12 @@ sudo apt install libatlas-base-dev
 sudo apt install hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev
 ```
 
-2. Install libraries for protocol buffers (see also https://pypi.org/project/protobuf/)
-```
-sudo -H pip3 install protobuf
-```
-
-3. Install libraries for array manipulation (see also https://pypi.org/project/numpy/)
+2. Install libraries for array manipulation (see also https://pypi.org/project/numpy/)
 ```
 sudo -H pip3 install numpy
 ```
 
-4. Install libraries for manipulating HDF data (see also https://pypi.org/project/h5py/).
+3. Install libraries for manipulating HDF data (see also https://pypi.org/project/h5py/).
 ```
 sudo -H pip3 install h5py
 ```
