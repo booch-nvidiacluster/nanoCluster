@@ -437,20 +437,6 @@ kubectl port-forward service/kubernetes-dashboard 8443:443 -n kube-system
 https://localhost:8443
 ```
 
-## Node/Console Integration
-
-1. Start the Nano's hearbeat using the application found <a href="../source/nano">here</a>. To get the URL for the file, find hearbeat.py then select Raw.
-<pre><code>cd /home/nano/Downloads
-sudo wget <i>&lt;URL for heartbeat.py&gt;</i> -O heartbeat.py
-crontab -e
-    <i>Add the following line.</i>
-        @reboot python /home/nano/Downloads/heartbeat.py</code></pre>
-
-2. Reboot the nano.
-```
-sudo reboot now
-```
-
 ## Commonly Used Cluster Commands
 
 1. On the node, display the hostname.
