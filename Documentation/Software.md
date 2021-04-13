@@ -196,18 +196,18 @@ sudo apt-get install neo4j
 sudo apt install curl
 ```
 
+## Libraries (Hardware)
+
+1. Configure libraries for controlling the Nano's GPIO pins (see also https://github.com/NVIDIA/jetson-gpio).
+<pre><code>sudo groupadd -f -f GPIO
+sudo usermod -a -G GPIO <i>&lt;user name</i></code></pre>
+
 ## Libraries (Networking)
 
 1. Install libraries for finding available network ports (see also https://pypi.org/project/portpicker/).
 ```
 sudo -H pip3 install portpicker
 ```
-
-## Libraries (Hardware)
-
-1. Configure libraries for controlling the Nano's GPIO pins (see also https://github.com/NVIDIA/jetson-gpio).
-<pre><code>sudo groupadd -f -f GPIO
-sudo usermod -a -G GPIO <i>&lt;user name</i>
 
 ## Lbraries (Python)
 
