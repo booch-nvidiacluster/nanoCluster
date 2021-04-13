@@ -264,7 +264,7 @@ sudo apt install hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-de
 sudo -H pip3 install numpy
 ```
 
-3. Install libraries for manipulating HDF data (see also https://pypi.org/project/h5py/).
+3. Install libraries for manipulating HDF data (see also https://pypi.org/project/h5py/). Don't be alarmed by error messages you may see along the way.
 ```
 sudo -H pip3 install h5py
 ```
