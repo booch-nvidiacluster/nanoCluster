@@ -105,7 +105,8 @@ sudo apt install python3.9
 sudo vi bash.bashrc
     <i>Add the following two lines.</i>
         alias python=python3.9
-        alias python3=python3.9</code></pre>
+        alias python3=python3.9
+source bash.bashrc</code></pre>
 
 3. Install the latest Python package installers (see also https://pypi.org/project/pip/).
 ```
