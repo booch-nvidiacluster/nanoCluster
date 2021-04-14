@@ -13,7 +13,7 @@ Here are instructions for provisioning each Nano in the cluster with a basic sta
  
 3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano (but first ensure that its SSD is NOT yet connected to the Nano), then follow the on screen start up instructions to configure the computer. We use a computer name in the form *nanoCluster#* (where # is the node ID from 0 to 3) and the user ID *nano* (with a password of your choice). Along the way, you'll be asked for the computer's location, APP partition size (use 0 to set the maximum size), NVPModel (use the default settings), and wireless connection. It is important that you establish a static IP address for each node as a precondition to configuring Kubernetes, which is more easily done in the Nano's graphical user interface than in the terminal interface. To do so, go to
 
-          System Settings -> Network -> *connection* -> Settings -> IPV4 Settings -> Method -> Manual<br>
+          System Settings -> Network -> *connection* -> Settings -> IPV4 Settings -> Method -> Manual
           System Settings -> Network -> *connection* -> Settings -> IPV4 Settings -> Add
       
       where you will set an appropriate IP address, netmask, gateway, and DNS server. Along the way, the Nano's start up process may ask you to update your software and to reboot. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
