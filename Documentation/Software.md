@@ -26,8 +26,8 @@ sudo git clone https://github.com/JetsonHacksNano/bootFromUSB
 
 5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
 
-          Disks -> Format -> Compatible with modern systems and hard drives > 2TB (GPT)<br>
-          Disks -> Add Partition -> 499GB | nanoCluster#SSD | Internal disk for use with Linux only (Ext4)<br>
+          Disks -> Format -> Compatible with modern systems and hard drives > 2TB (GPT)
+          Disks -> Add Partition -> 499GB | nanoCluster#SSD | Internal disk for use with Linux only (Ext4)
           Disks -> Mount
 
 6. Copy the root file system to the SSD. Copy the SSD's PARTUUID for later use.
