@@ -104,8 +104,8 @@ sudo apt install python3.9
 <pre><code>cd /etc
 sudo vi bash.bashrc
     <i>Add the following two lines.</i>
-        alias python=python3.9
-        alias python3=python3.9
+        alias python="python3.9"
+        alias python3="python3.9"
 source bash.bashrc</code></pre>
 
 3. Install the latest Python package installers (see also https://pypi.org/project/pip/).
@@ -121,7 +121,7 @@ sudo -H pip3 install --upgrade pip
 <pre><code>cd /etc
 sudo vi bash.bashrc
     <i>Add the following line.</i>
-        alias pip=pip3
+        alias pip="pip3"
 source bash.bashrc</code></pre>
 
 ## Nginx
