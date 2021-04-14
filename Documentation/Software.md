@@ -57,7 +57,7 @@ sudo nvpmodel -m 0
 sudo jetson_clocks
 ```
 
-10. Enable SSD swapping. Normally, for reasons of performance, one should not enable swapping when using Kubernetes but here we do so to trade off performance for greater working memory (see also https://www.jetsonhacks.com/2019/04/14/jetson-nano-use-more-memory/).
+10. Enable SSD swapping. Normally, for reasons of performance, one should not enable swapping when using Kubernetes but here we do so to trade off performance for greater working memory. There's no need to reboot at the end of this steps (see also https://www.jetsonhacks.com/2019/04/14/jetson-nano-use-more-memory/).
 ```
 cd /home/nano/Downloads
 sudo git clone https://github.com/JetsonHacksNano/installSwapfile
