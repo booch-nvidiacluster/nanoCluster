@@ -119,7 +119,7 @@ sudo -H pip3 install --upgrade pip
 ```
 3. Make pip3 the default.
 <pre><code>cd ~
-sudo vi bash.bashrc
+sudo vi .bashrc
     <i>Add the following line.</i>
         alias pip="pip3"
 source .bashrc</code></pre>
