@@ -97,7 +97,6 @@ source bash.bashrc</code></pre>
 1. Install the latest Python (see also https://tecadmin.net/how-to-install-python-3-9-on-ubuntu-18-04/).
 ```
 sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
 sudo apt install python3.9
 ```
 
