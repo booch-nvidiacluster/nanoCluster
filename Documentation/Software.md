@@ -120,7 +120,7 @@ sudo vi .bashrc
         alias pip="pip3"
 source .bashrc</code></pre>
 
-5. Upgrade pip3.
+5. Upgrade pip.
 ```
 sudo -H pip3 install --upgrade pip
 ```
