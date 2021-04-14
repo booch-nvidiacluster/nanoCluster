@@ -113,17 +113,17 @@ source .bashrc</code></pre>
 sudo apt install python3-pip
 ```
 
-4. Upgrade pip3.
-```
-sudo -H pip3 install --upgrade pip
-```
-3. Make pip3 the default.
+4. Make pip3 the default.
 <pre><code>cd ~
 sudo vi .bashrc
     <i>Add the following line.</i>
         alias pip="pip3"
 source .bashrc</code></pre>
 
+5. Upgrade pip3.
+```
+sudo -H pip3 install --upgrade pip
+```
 ## Nginx
 
 1. Install Nginx (see also https://www.nginx.com).
