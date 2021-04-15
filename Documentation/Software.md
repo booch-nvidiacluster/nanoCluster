@@ -92,6 +92,13 @@ sudo vi .bashrc
         export PS1="\e[0;34m\u@\h (\t) [\w]:\e[0m"
 source .bashrc</code></pre>
 
+## Tools
+
+1. Install tools for transferring data with URLs (see also https://curl.haxx.se).
+```
+sudo apt install curl
+```
+
 ## Python
 
 1. Install the latest Python (see also https://tecadmin.net/how-to-install-python-3-9-on-ubuntu-18-04/).
@@ -182,13 +189,6 @@ wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
 echo 'deb https://debian.neo4j.com stable latest' | sudo tee /etc/apt/sources.list.d/neo4j.list
 sudo apt-get update
 sudo apt-get install neo4j
-```
-
-## Tools
-
-1. Install tools for transferring data with URLs (see also https://curl.haxx.se).
-```
-sudo apt install curl
 ```
 
 ## Libraries (Hardware)
