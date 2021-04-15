@@ -113,12 +113,7 @@ source .bashrc</code></pre>
 sudo apt install python3-pip
 ```
 
-4. Install pip3.
-```
-sudo -H pip3 install --upgrade pip
-```
-
-5. Make pip3 the default.
+4. Make pip3 the default.
 <pre><code>cd ~
 sudo vi .bashrc
     <i>Add the following line.</i>
