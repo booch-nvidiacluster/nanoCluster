@@ -20,7 +20,7 @@ Here are instructions for provisioning each Nano in the cluster with a basic sta
 
 4. Clone this repository (see also https://www.jetsonhacks.com/2021/03/10/jetson-nano-boot-from-usb/).
 ```
-cd /home/nano/Downloads
+cd ~/Downloads
 sudo git clone https://github.com/JetsonHacksNano/bootFromUSB
 ```
 
@@ -32,7 +32,7 @@ sudo git clone https://github.com/JetsonHacksNano/bootFromUSB
 
 6. Copy the root file system to the SSD. Copy the SSD's PARTUUID for later use.
 ```
-cd /home/nano/Downloads/bootFromUSB
+cd ~/Downloads/bootFromUSB
 ./copyRootToUSB.sh -p /dev/sda1
 ./partUUID.sh
 ```
@@ -59,7 +59,7 @@ sudo jetson_clocks
 
 10. Enable SSD swapping. Normally, for reasons of performance, one should not enable swapping when using Kubernetes but here we do so to trade off performance for greater working memory. There's no need to reboot at the end of this steps (see also https://www.jetsonhacks.com/2019/04/14/jetson-nano-use-more-memory/).
 ```
-cd /home/nano/Downloads
+cd ~/Downloads
 sudo git clone https://github.com/JetsonHacksNano/installSwapfile
 cd installSwapfile
 ./installSwapfile.sh -s 12
