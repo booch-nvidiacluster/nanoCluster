@@ -115,12 +115,14 @@ sudo vi .bashrc
         alias python3="python3.9"
 source .bashrc</code></pre>
 
-3. Install the latest Python package installers (see also https://pypi.org/project/pip/).
+## PIP
+
+1. Install the latest Python package installers (see also https://pypi.org/project/pip/).
 ```
 sudo apt install python3-pip
 ```
 
-4. Make pip3 the default.
+2. Make pip3 the default.
 <pre><code>cd ~
 sudo vi .bashrc
     <i>Add the following line.</i>
