@@ -32,7 +32,7 @@ sudo git clone https://github.com/JetsonHacksNano/bootFromUSB
 
 6. Copy the root file system to the SSD. Copy the SSD's PARTUUID for later use.
 ```
-cd ~/Downloads/bootFromUSB
+cd bootFromUSB
 ./copyRootToUSB.sh -p /dev/sda1
 ./partUUID.sh
 ```
