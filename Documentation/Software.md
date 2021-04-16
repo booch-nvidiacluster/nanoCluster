@@ -18,17 +18,17 @@ Here are instructions for provisioning each Nano in the cluster with a basic sta
       
       where you will set an appropriate IP address, netmask, gateway, and DNS server. Along the way, the Nano's start up process may ask you to update your software and to reboot. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
 
-4. Clone this repository (see also https://www.jetsonhacks.com/2021/03/10/jetson-nano-boot-from-usb/).
-```
-cd ~/Downloads
-sudo git clone https://github.com/JetsonHacksNano/bootFromUSB
-```
-
-5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
+4. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
 
           Disks -> Format -> Compatible with modern systems and hard drives > 2TB (GPT)
           Disks -> Create Partition -> 499GB | nanoCluster#SSD | Internal disk for use with Linux only (Ext4)
           Disks -> Mount
+
+5. Clone this repository (see also https://www.jetsonhacks.com/2021/03/10/jetson-nano-boot-from-usb/).
+```
+cd ~/Downloads
+sudo git clone https://github.com/JetsonHacksNano/bootFromUSB
+```
 
 6. Copy the root file system to the SSD. Copy the SSD's PARTUUID for later use.
 ```
