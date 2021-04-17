@@ -158,7 +158,8 @@ sudo apt install npm
 
 2. Install the Java Runtime Environment (see also https://www.java.com/en/).
 ```
-sudo apt install default-jre default-jre-headless
+sudo apt install default-jre
+sudo apt install default-jre-headless
 ```
 
 ## Graph Database
