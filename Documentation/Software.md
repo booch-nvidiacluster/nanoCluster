@@ -100,7 +100,7 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.9
 ```
 
-2. Make python3 the default.
+2. Make the latest Python the default.
 <pre><code>cd ~
 sudo vi .bashrc
     <i>Add the following two lines.</i>
