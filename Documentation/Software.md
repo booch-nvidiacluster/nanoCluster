@@ -167,8 +167,7 @@ sudo apt install default-jre
 ```
 wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
 echo 'deb https://debian.neo4j.com stable latest' | sudo tee /etc/apt/sources.list.d/neo4j.list
-sudo apt-get update
-sudo apt-get install neo4j
+sudo apt install neo4j
 ```
 
 ## Libraries (Hardware)
