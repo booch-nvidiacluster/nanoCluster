@@ -92,14 +92,7 @@ sudo vi .bashrc
         export PS1="\e[0;34m\u@\h (\t) [\w]:\e[0m"
 source .bashrc</code></pre>
 
-## Tools
-
-1. Install tools for transferring data with URLs (see also https://curl.haxx.se).
-```
-sudo apt install curl
-```
-
-## Python
+# Python
 
 1. Install the latest Python (see also https://tecadmin.net/how-to-install-python-3-9-on-ubuntu-18-04/).
 ```
@@ -115,14 +108,12 @@ sudo vi .bashrc
         alias python3="python3.9"
 source .bashrc</code></pre>
 
-## PIP
-
-1. Install the latest Python package installers (see also https://pypi.org/project/pip/).
+3. Install the latest Python package installers (see also https://pypi.org/project/pip/).
 ```
 sudo apt install python3-pip
 ```
 
-2. Make pip3 the default.
+4. Make pip3 the default.
 <pre><code>cd ~
 sudo vi .bashrc
     <i>Add the following line.</i>
@@ -158,7 +149,14 @@ sudo apt install mysql-server
 sudo ss -tap | grep mysql
 ```
 
-## Languages
+## Tools
+
+1. Install tools for transferring data with URLs (see also https://curl.haxx.se).
+```
+sudo apt install curl
+```
+
+### Languages
 
 1. Install Cython (see also https://cython.org).
 ```
