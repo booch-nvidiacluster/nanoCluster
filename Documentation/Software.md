@@ -96,7 +96,8 @@ source .bashrc</code></pre>
 
 1. Install the latest Python package installers (see also https://pypi.org/project/pip/).
 ```
-sudo apt install python-pip python3-pip
+sudo apt install python-pip
+sudo apt install python3-pip
 ```
 
 ## Nginx
