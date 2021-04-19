@@ -225,13 +225,6 @@ sudo -H pip3 install mock
 sudo -H pip3 install pybind11
 ```
 
-## Libraries (Numeric)
-
-1. Install library for linear algebra (see also http://math-atlas.sourceforge.net).
-```
-sudo apt install libatlas-base-dev
-```
-
 ## Libraries (Data)
 
 1. Install libraries for storing hierarchical data  (see also https://www.hdfgroup.org/solutions/hdf5/).
