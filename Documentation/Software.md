@@ -3,7 +3,7 @@ The cluster's setup and provisioning.
 
 <img src="/Documentation/Images/Jetson Nano.jpg">
 
-Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, MySql, and Nginx - together with support for other languages, runtimes, and a graph database; various tools, libraries, and frameworks for general development, artificial intelligence, and networking; and infrastructure for hosting microservices and Kubernetes. A few of these instructions will direct you to certain actions using the Nano's graphical user interface (for example, step 3); most of the instructions will direct you to certain actions using a host terminal connected to the Nano via ssh (for example, step 4). Several bits of code needed in support of this provisioning reside <a href="../source">here</a>.
+Here are instructions for provisioning each Nano in the cluster with a basic stack - Ubuntu, Python, MySql, and Nginx - together with support for other languages, runtimes, and graph database; various tools, libraries, and frameworks for general development, networking, and artificial intelligence; infrastructure for hosting microservices and Kubernetes. A few of these instructions will direct you to certain actions using the Nano's graphical user interface (for example, step 3); most of the instructions will direct you to certain actions using a host terminal connected to the Nano via ssh (for example, step 4). Several bits of code needed in support of this provisioning reside <a href="../source">here</a>.
 
 ## Ubuntu
  
@@ -11,12 +11,12 @@ Here are instructions for provisioning each Nano in the cluster with a basic sta
  
 2. Write the image from the host computer to the Nano's memory card using https://www.balena.io/etcher/.
  
-3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano (but first ensure that its SSD is NOT yet connected to the Nano), then follow the on screen start up instructions to configure the computer. We use a computer name in the form *nanoCluster#* (where # is the node ID from 0 to 3) and the user ID *nano* (with a password of your choice). Along the way, you'll be asked for the computer's location, APP partition size (use 0 to set the maximum size), NVPModel (use the default settings), and wireless connection. It is important that you establish a static IP address for each node as a precondition to configuring Kubernetes, which is more easily done in the Nano's graphical user interface than in the terminal interface. To do so, go to
+3. Install the memory card in the Nano, attach the Nano to a monitor, keyboard, and mouse, boot the Nano (first ensuring that its SSD is NOT yet connected to the Nano), then follow the on screen start up instructions to configure the computer. We use a computer name in the form *nanoCluster#* (where # is the node ID from 0 to 3) and the user ID *nano* (with a password of your choice). Along the way, you'll be asked for the computer's location, APP partition size (use 0 to set the maximum size), NVPModel (use the default settings), and wireless connection. It is important that you establish a static IP address for each node as a precondition to configuring Kubernetes, which is more easily done in the Nano's graphical user interface than in the terminal interface. To do so, go to
 
           System Settings -> Network -> *connection* -> Settings -> IPV4 Settings -> Method -> Manual
           System Settings -> Network -> *connection* -> Settings -> IPV4 Settings -> Add
       
-      where you will set an appropriate IP address, netmask, gateway, and DNS server. Along the way, the Nano's start up process may ask you to update your software and to reboot. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
+where you will set an appropriate IP address, netmask, gateway, and DNS server. Along the way, the Nano's start up process may ask you to update your software and to reboot. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
 
 4. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
 
@@ -129,6 +129,11 @@ sudo apt install mysql-server
 sudo ss -tap | grep mysql
 ```
 
+3. Install library for MySQL (see also https://pypi.org/project/mysql-connector-python/)
+```
+sudo -H pip3 install mysql-connector-python
+```
+
 ## Tools
 
 1. Install tools for transferring data with URLs (see also https://curl.haxx.se).
@@ -172,57 +177,57 @@ sudo apt install neo4j
 
 ## Libraries (Hardware)
 
-1. Configure libraries for controlling the Nano's GPIO pins (see also https://github.com/NVIDIA/jetson-gpio).
+1. Configure library for controlling the Nano's GPIO pins (see also https://github.com/NVIDIA/jetson-gpio).
 <pre><code>sudo groupadd -f -f GPIO
 sudo usermod -a -G GPIO <i>&lt;user name&gt;</i></code></pre>
 
 ## Libraries (Networking)
 
-1. Install libraries for finding available network ports (see also https://pypi.org/project/portpicker/).
+1. Install library for finding available network ports (see also https://pypi.org/project/portpicker/).
 ```
 sudo -H pip3 install portpicker
 ```
 
 ## Lbraries (Python)
 
-1. Install libraries for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/).
+1. Install library for representing Python’s abstract syntax trees (see also https://pypi.org/project/gast/).
 ```
 sudo -H pip3 install gast
 ```
 
-2. Install libraries for manipulating Python’s abstract syntax trees (see also https://pypi.org/project/astor/).
+2. Install library for manipulating Python’s abstract syntax trees (see also https://pypi.org/project/astor/).
 ```
 sudo -H pip3 install astor
 ```
 
-3. Install libraries for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/).
+3. Install library for constructing Python function wrappers and decorators (see also https://pypi.org/project/wrapt/).
 ```
 sudo -H pip3 install wrapt
 ```
 
-4. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
+4. Install library for supporting cross version Python codebases (see https://pypi.org/project/future/)
 ```
 sudo -H pip3 install future
 ```
 
-5. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/).
+5. Install library for testing Python applications (see also https://pypi.org/project/testresources/).
 ```
 sudo -H pip3 install testresources
 ```
 
-6. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
+6. Install library for testing Python applications (see also https://pypi.org/project/mock/).
 ```
 sudo -H pip3 install mock
 ```
 
-7. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
+7. Install library for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
 ```
 sudo -H pip3 install pybind11
 ```
 
 ## Libraries (Numeric)
 
-1. Install libraries for linear algebra (see also http://math-atlas.sourceforge.net).
+1. Install library for linear algebra (see also http://math-atlas.sourceforge.net).
 ```
 sudo apt install libatlas-base-dev
 ```
@@ -234,7 +239,7 @@ sudo apt install libatlas-base-dev
 sudo apt install hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev
 ```
 
-2. Install libraries for array manipulation (see also https://pypi.org/project/numpy/)
+2. Install library for array manipulation (see also https://pypi.org/project/numpy/)
 ```
 sudo -H pip3 install numpy
 ```
@@ -246,19 +251,19 @@ sudo -H pip3 install h5py
 
 ## Libraries (Visualization)
 
-1. Install libraries for formatting terminal output (see also https://pypi.org/project/colorama/).
+1. Install library for formatting terminal output (see also https://pypi.org/project/colorama/).
 ```
 sudo -H pip3 install colorama
 ```
 
-2. Install libraries for imaging (see also https://pypi.org/project/Pillow/).
+2. Install library for imaging (see also https://pypi.org/project/Pillow/).
 ```
 sudo -H pip3 install pillow
 ```
 
 ## Frameworks (Networking)
 
-1. Install frameworks for remote procedure calls (see also https://pypi.org/project/grpc/).
+1. Install remote procedure calls (see also https://pypi.org/project/grpc/).
 ```
 sudo -H pip3 install grpcio
 ```
