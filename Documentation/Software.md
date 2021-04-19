@@ -200,27 +200,22 @@ sudo -H pip3 install astor
 sudo -H pip3 install wrapt
 ```
 
-4. Install libraries for concurrency (see also https://pypi.org/project/futures3/).
-```
-sudo -H pip3 install futures3
-```
-
-5. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
+4. Install libraries for supporting cross version Python codebases (see https://pypi.org/project/future/)
 ```
 sudo -H pip3 install future
 ```
 
-6. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/).
+5. Install libraries for testing Python applications (see also https://pypi.org/project/testresources/).
 ```
 sudo -H pip3 install testresources
 ```
 
-7. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
+6. Install libraries for testing Python applications (see also https://pypi.org/project/mock/).
 ```
 sudo -H pip3 install mock
 ```
 
-8. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
+7. Install libraries for exposing C++ types in Python (see also https://pypi.org/project/pybind11/).
 ```
 sudo -H pip3 install pybind11
 ```
