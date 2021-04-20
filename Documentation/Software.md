@@ -227,12 +227,7 @@ sudo -H pip3 install pybind11
 
 ## Libraries (Data)
 
-1. Install libraries for storing hierarchical data  (see also https://www.hdfgroup.org/solutions/hdf5/).
-```
-sudo apt install hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev
-```
-
-2. Install libraries for manipulating HDF data (see also https://pypi.org/project/h5py/). Don't be alarmed by error messages you may see along the way.
+1. Install libraries for manipulating HDF data (see also https://pypi.org/project/h5py/). Don't be alarmed by error messages you may see along the way.
 ```
 sudo -H pip3 install h5py
 ```
