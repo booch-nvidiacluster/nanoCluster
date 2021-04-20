@@ -94,7 +94,20 @@ source .bashrc</code></pre>
 
 # Python
 
-1. Install the latest Python package installers (see also https://pypi.org/project/pip/).
+1. Install Python3.9 (see also https://www.python.org/downloads/release/python-390/)
+```
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.9
+```
+
+2. Make Python3.9 the default Python3 installation
+<pre><code>cd ~
+sudo vi .bashrc
+    <i>Add the following line.</i>
+        alias python3="python3.9"
+source .bashrc</code></pre>
+
+3. Install the latest Python package installers (see also https://pypi.org/project/pip/).
 ```
 sudo apt install python-pip
 sudo apt install python3-pip
