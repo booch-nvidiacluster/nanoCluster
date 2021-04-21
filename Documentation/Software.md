@@ -3,7 +3,7 @@ The cluster's setup and provisioning.
 
 <img src="/Documentation/Images/Jetson Nano.jpg">
 
-Here are instructions for provisioning each Nano in the cluster with a basic compute stack, together with support for other languages, runtimes, tools, libraries, and frameworks. A few of these instructions will direct you to certain actions using the Nano's graphical user interface (for example, step 3); most of the instructions will direct you to certain actions using a host terminal connected to the Nano via ssh (for example, step 5). Certain files needed in support of this provisioning reside <a href="../source">here</a>.
+Here are instructions for provisioning each Nano in the cluster with a basic compute stack, together with support for other languages, runtimes, tools, libraries, and frameworks. A few of these instructions will direct you to certain actions using the Nano's graphical user interface (for example, step 3); most of the instructions will direct you to certain actions using a host terminal connected to the Nano via ssh (for example, step 6). Certain files needed in support of this provisioning reside <a href="../source">here</a>.
 
 ## Ubuntu
  
@@ -18,7 +18,11 @@ Here are instructions for provisioning each Nano in the cluster with a basic com
       
 where you will set an appropriate IP address, netmask, gateway, and DNS server. Along the way, the Nano's start up process may ask you to update your software and to reboot. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
 
-4. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
+4. For convience, disable turning off the Nano's screen.
+
+        System Settings -> Brightness & Lock -> Turn screen off when inactive for -> Never
+
+5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
 
           Disks -> Format -> Compatible with modern systems and hard drives > 2TB (GPT)
           Disks -> Create Partition -> 499GB | nanoCluster#SSD | Internal disk for use with Linux only (Ext4)
