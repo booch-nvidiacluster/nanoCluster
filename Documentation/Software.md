@@ -16,7 +16,7 @@ Here are instructions for provisioning each Nano in the cluster with a basic com
           System Settings -> Network -> *connection* -> Settings -> IPV4 Settings -> Method -> Manual
           System Settings -> Network -> *connection* -> Settings -> IPV4 Settings -> Add
       
-where you will set an appropriate IP address, netmask, gateway, and DNS server. Along the way, the Nano's start up process may ask you to update your software and to reboot. (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
+where you will set an appropriate IP address, netmask, gateway, and DNS server (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
 
 4. For convience, disable the Nano's screen lock.
 
