@@ -18,7 +18,7 @@ Here are instructions for provisioning each Nano in the cluster with a basic com
       
 where you will set an appropriate IP address, netmask, gateway, and DNS server (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
 
-4. For convience, disable the Nano's screen lock.
+4. For convenience, disable the Nano's screen lock.
 
         System Settings -> Brightness & Lock -> Turn screen off when inactive for -> Never
 
