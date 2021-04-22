@@ -82,13 +82,7 @@ sudo apt upgrade
 sudo apt autoremove
 ```
 
-13. For convenience, set up email notification for updates (see also https://manpages.debian.org/buster/apticron/apticron.1.en.html).
-<pre><code>sudo apt install apticron
-cd /etc/apticron
-sudo vi apticron.conf
-    <i>Enter an appropriate email address.</i></code></pre>
-
-14. For convenience, set up a customer bash prompt.
+13 For convenience, set up a custom bash prompt.
 <pre><code>cd ~
 sudo vi .bashrc
     <i>Add the following line.</i>
