@@ -102,7 +102,7 @@ sudo reboot now
 
 ## Python
 
-`. Install the latest Python package installers (see also https://pypi.org/project/pip/).
+1. Install the latest Python package installers (see also https://pypi.org/project/pip/).
 ```
 sudo apt install python-pip
 sudo apt install python3-pip
