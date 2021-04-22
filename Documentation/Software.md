@@ -82,19 +82,26 @@ sudo apt upgrade
 sudo apt autoremove
 ```
 
-13. Reboot the Nano.
+13. For convenience, set up email notification for updates (see also https://manpages.debian.org/buster/apticron/apticron.1.en.html).
+<pre><code>sudo apt install apticron
+cd /etc/apticron
+sudo vi apticron.conf
+    <i>Enter an appropriate email address.</i></code></pre>
+
+14. For convenience, set up a customer bash prompt.
+<pre><code>cd ~
+sudo vi .bashrc
+    <i>Add the following line.</i>
+        export PS1="\e[0;34m\u@\h (\t) [\w]:\e[0m"
+source .bashrc</code></pre>
+
+15. Reboot the Nano.
 ```
 sudo reboot now
 ```
 
 ## Bash
 
-1. If you'd like a custom bash prompt, do the following.
-<pre><code>cd ~
-sudo vi .bashrc
-    <i>Add the following line.</i>
-        export PS1="\e[0;34m\u@\h (\t) [\w]:\e[0m"
-source .bashrc</code></pre>
 
 # Python
 
