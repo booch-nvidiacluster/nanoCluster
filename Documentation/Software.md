@@ -102,6 +102,8 @@ sudo apt install python-pip
 sudo apt install python3-pip
 ```
 
+-------
+
 ## Nginx
 
 1. Install Nginx (see also https://www.nginx.com).
@@ -274,6 +276,8 @@ sudo -H pip3 install --no-cache-dir --pre --extra-index-url https://developer.do
 ```
 sudo -H pip3 install keras
 ```
+
+-------
 
 ## Microservices
 
