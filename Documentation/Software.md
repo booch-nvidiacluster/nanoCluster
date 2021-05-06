@@ -18,9 +18,10 @@ Here are instructions for provisioning each Nano in the cluster with a basic com
       
     where you will set an appropriate IP address, netmask, gateway, and DNS server (see also https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-first-boot).
 
-4. For convenience, disable the Nano's screen lock.
+4. For convenience, disable the Nano's screen lock and set up automatic login.
 
         System Settings -> Brightness & Lock -> Turn screen off when inactive for -> Never
+        System Settings -> User Accounts -> nano -> Automatic login on
 
 5. Attach the SSD to the Nano's USB port, then use the Nano's Disk application to name (in the form *nanoCluster#SSD*, where # is the node ID from 0 to 3), format, and mount the SSD.
 
