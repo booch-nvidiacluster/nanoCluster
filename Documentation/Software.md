@@ -73,8 +73,12 @@ sudo reboot now
 
 11. Make the Nano headless and remove various unnecessary applications.
 ```
+sudo systemctl stop gdm3
+sudo systemctl disable gdm3
 sudo systemctl set-default multi-user.target
+sudo apt remove --purge ubuntu-desktop gdm3
 sudo apt purge libreoffice*
+sudo reboot now
 ```
 
 12. Refresh the installation.
