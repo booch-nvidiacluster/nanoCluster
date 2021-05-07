@@ -67,7 +67,7 @@ sudo jetson_clocks
 cd ~/Downloads
 sudo git clone https://github.com/JetsonHacksNano/installSwapfile
 cd installSwapfile
-./installSwapfile.sh -s 12
+./installSwapfile.sh
 ```
 
 11. Make the Nano headless and remove various unnecessary applications.
