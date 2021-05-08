@@ -75,7 +75,7 @@ sudo reboot now
 ```
 sudo systemctl stop gdm3
 sudo systemctl disable gdm3
-sudo systemctl set-default multi-user.target
+<sudo systemctl set-default multi-user.target>
 sudo apt remove --purge ubuntu-desktop gdm3
 sudo apt purge libreoffice*
 sudo reboot now
