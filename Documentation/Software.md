@@ -282,8 +282,6 @@ sudo -H pip3 install --no-cache-dir --pre --extra-index-url https://developer.do
 sudo -H pip3 install keras
 ```
 
--------
-
 ## Microservices
 
 1. Configure the firewall using files from <a href="https://github.com/booch-nvidiacluster/nanoCluster/tree/master/source">here</a>. To get the URL for the daemon, find the json then select Raw.
@@ -310,6 +308,8 @@ sudo -H pip3 install fastapi
 ```
 sudo -H pip3 install uvicorn
 ```
+
+-------
 
 ## Kubernetes
 
