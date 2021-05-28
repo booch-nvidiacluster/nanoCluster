@@ -321,7 +321,7 @@ sudo systemctl disable nginx
 
 0. Install MicroK8s (see also https://microk8s.io/docs).
 ```
-sudo snap install microk8s --classic --channel=1.18/stable
+sudo snap install microk8s --classic --channel=1.21
 ```
 
 1. Join the microk8s group.
