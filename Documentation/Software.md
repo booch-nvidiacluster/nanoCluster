@@ -313,13 +313,13 @@ sudo -H pip3 install uvicorn
 
 ## Kubernetes
 
-1. As a precondition to configuring the Kubernetes infrastructure, disable Nginx on the node.
+1. As a precondition to configuring the Kubernetes infrastructure, disable Nginx.
 ```
 sudo systemctl stop nginx
 sudo systemctl disable nginx
 ```
 
-0. Install MicroK8s on the node (see also https://microk8s.io/docs).
+0. Install MicroK8s (see also https://microk8s.io/docs).
 ```
 sudo snap install microk8s --classic --channel=1.18/stable
 ```
@@ -342,14 +342,14 @@ sudo vi bash.bashrc
     <i>Add the following line.</i>
         alias kubectl='microk8s kubectl'</code></pre>
 
-5. Designate one node as master; designate the others as workers
+5. Designate one node as master; designate all others as workers
 <pre><code><i>On the master node (nanoCluster0), get a join token.</i>
     microk8s add-node
 <i>On a woker node, join the node to the master.</i>
    microk8s join <i>&lt;directive from the previous command on the master node&gt;</i>
 <i>Repeat these two commands for each worker node in the cluster.</i></code></pre>
 
-6. On the master node, confirm that all the woker nodes are properly connected.
+6. On the master node, confirm that all the worker nodes are properly connected.
 ```
 kubectl get nodes
 ```
