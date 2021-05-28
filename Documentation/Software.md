@@ -287,7 +287,7 @@ sudo -H pip3 install keras
 ## Microservices
 
 1. Configure the firewall using files from <a href="https://github.com/booch-nvidiacluster/nanoCluster/tree/master/source">here</a>. To get the URL for the daemon, find the json then select Raw.
-<pre><code>sudo apt-get install iptables-persistent
+<pre><code>sudo apt install iptables-persistent
 sudo iptables -P FORWARD ACCEPT
 cd /etc/docker
 sudo rm daemon.json
