@@ -337,10 +337,11 @@ microk8s status
 ```
 
 3. For convenience, make an alias to kubectl.
-<pre><code>cd /etc
-sudo vi bash.bashrc
+<pre><code>cd ~
+sudo vi .bashrc
     <i>Add the following line.</i>
-        alias kubectl='microk8s kubectl'</code></pre>
+        alias kubectl='microk8s kubectl'
+source .bashrc</code></pre>
 
 5. Designate one node as master; designate all others as workers
 <pre><code><i>On the master node (nanoCluster0), get a join token.</i>
