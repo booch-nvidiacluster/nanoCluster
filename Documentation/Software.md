@@ -346,9 +346,9 @@ source .bashrc</code></pre>
 5. Designate one node as master; designate all others as workers
 <pre><code><i>On the master node (nanoCluster0), get a join token.</i>
     microk8s add-node
-<i>On a woker node, join the node to the master.</i>
+<i>On a worker node, join the node to the master.</i>
    microk8s join <i>&lt;directive from the previous command on the master node&gt;</i>
-<i>Repeat these two commands for each worker node in the cluster.</i></code></pre>
+<i>Repeat the join for each worker node in the cluster.</i></code></pre>
 
 6. On the master node, confirm that all the worker nodes are properly connected.
 ```
